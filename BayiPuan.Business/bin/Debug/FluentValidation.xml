@@ -972,6 +972,18 @@
             <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
             <returns></returns>
         </member>
+        <member name="M:FluentValidation.DefaultValidatorExtensions.ScalePrecision``2(FluentValidation.IRuleBuilder{``0,``1},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Defines a scale precision validator on the current rule builder that ensures that the specific value has a certain scale and precision
+            </summary>
+            <typeparam name="T">Type of object being validated</typeparam>
+            <typeparam name="TProperty">Type of property being validated</typeparam>
+            <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
+            <param name="scale">Allowed scale of the value</param>
+            <param name="precision">Allowed precision of the value</param>
+            <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros.</param>
+            <returns></returns>
+        </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.Custom``2(FluentValidation.IRuleBuilder{``0,``1},System.Action{``1,FluentValidation.Validators.CustomContext})">
             <summary>
             Defines a custom validation rule
@@ -1761,6 +1773,16 @@
         <member name="T:FluentValidation.Internal.PropertyRule">
             <summary>
             Defines a rule associated with a property.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.Internal.PropertyRule.Condition">
+            <summary>
+            Condition for all validators in this rule.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.Internal.PropertyRule.AsyncCondition">
+            <summary>
+            Asynchronous condition for all validators in this rule.
             </summary>
         </member>
         <member name="P:FluentValidation.Internal.PropertyRule.Member">

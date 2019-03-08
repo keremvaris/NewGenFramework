@@ -39,9 +39,9 @@ using [ProjectName].Entities.Concrete;
 
 namespace [ProjectName].DataAccess.Concrete.EntityFramework
 {
-     public class Ef[ClassName]Dal:EfEntityRepositoryBase<[ClassName],[ContextName]>,I[ClassName]Dal
-    {
-    }
+		 public class Ef[ClassName]Dal:EfEntityRepositoryBase<[ClassName],[ContextName]>,I[ClassName]Dal
+		{
+		}
 }
 ";
 	}

@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="641" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
+    <Instance Declaration="#2=A:BayiPuan.Business" Id="542a49f3b7e5069c">
+      <Target Target="#3=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnException" Ordinal="2" />
+      </Target>
+      <Target Target="#5=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="12" />
+      </Target>
+      <Target Target="#6=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="22" />
+      </Target>
+      <Target Target="#7=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="32" />
+      </Target>
+      <Target Target="#8=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="42" />
+      </Target>
+      <Target Target="#9=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="52" />
+      </Target>
+      <Target Target="#10=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="62" />
+      </Target>
+      <Target Target="#11=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::GetAll(System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="72" />
+      </Target>
+      <Target Target="#12=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="82" />
+      </Target>
+      <Target Target="#13=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="92" />
+      </Target>
+      <Target Target="#14=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="102" />
+      </Target>
+      <Target Target="#15=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageWordManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="113" />
+      </Target>
+      <Target Target="#16=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageWordManager::GetByLanguage(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="115" />
+      </Target>
+      <Target Target="#17=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageWordManager::GetValue(System.Int32, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="117" />
+      </Target>
+      <Target Target="#18=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="122" />
+      </Target>
+      <Target Target="#19=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="132" />
+      </Target>
+      <Target Target="#20=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="142" />
+      </Target>
+      <Target Target="#21=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="152" />
+      </Target>
+      <Target Target="#22=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="162" />
+      </Target>
+      <Target Target="#23=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="172" />
+      </Target>
+      <Target Target="#24=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="182" />
+      </Target>
+      <Target Target="#25=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="192" />
+      </Target>
+      <Target Target="#26=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="202" />
+      </Target>
+      <Target Target="#27=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="212" />
+      </Target>
+      <Target Target="#28=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="222" />
+      </Target>
+      <Target Target="#29=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::Add(BayiPuan.Entities.Concrete.Answer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="5" />
+      </Target>
+      <Target Target="#30=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::Update(BayiPuan.Entities.Concrete.Answer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="7" />
+      </Target>
+      <Target Target="#31=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::Add(BayiPuan.Entities.Concrete.Brand)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="15" />
+      </Target>
+      <Target Target="#32=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::Update(BayiPuan.Entities.Concrete.Brand)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="17" />
+      </Target>
+      <Target Target="#33=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::Add(BayiPuan.Entities.Concrete.Buy)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="25" />
+      </Target>
+      <Target Target="#34=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::Update(BayiPuan.Entities.Concrete.Buy)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="27" />
+      </Target>
+      <Target Target="#35=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::Add(BayiPuan.Entities.Concrete.Campaign)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="35" />
+      </Target>
+      <Target Target="#36=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::Update(BayiPuan.Entities.Concrete.Campaign)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="37" />
+      </Target>
+      <Target Target="#37=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::Add(BayiPuan.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="45" />
+      </Target>
+      <Target Target="#38=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::Update(BayiPuan.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="47" />
+      </Target>
+      <Target Target="#39=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::Add(BayiPuan.Entities.Concrete.City)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="55" />
+      </Target>
+      <Target Target="#40=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::Update(BayiPuan.Entities.Concrete.City)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="57" />
+      </Target>
+      <Target Target="#41=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::Add(BayiPuan.Entities.Concrete.Customer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="65" />
+      </Target>
+      <Target Target="#42=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::Update(BayiPuan.Entities.Concrete.Customer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="67" />
+      </Target>
+      <Target Target="#43=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::Add(BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="75" />
+      </Target>
+      <Target Target="#44=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::Update(BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="77" />
+      </Target>
+      <Target Target="#45=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::Add(BayiPuan.Entities.Concrete.GN_Report)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="85" />
+      </Target>
+      <Target Target="#46=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::Update(BayiPuan.Entities.Concrete.GN_Report)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="87" />
+      </Target>
+      <Target Target="#47=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::Add(BayiPuan.Entities.Concrete.KnowledgeTest)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="95" />
+      </Target>
+      <Target Target="#48=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::Update(BayiPuan.Entities.Concrete.KnowledgeTest)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="97" />
+      </Target>
+      <Target Target="#49=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::Add(BayiPuan.Entities.Concrete.Language)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="105" />
+      </Target>
+      <Target Target="#50=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::Update(BayiPuan.Entities.Concrete.Language)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="107" />
+      </Target>
+      <Target Target="#51=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageWordManager::Add(BayiPuan.Entities.Concrete.LanguageWord)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="119" />
+      </Target>
+      <Target Target="#52=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::Add(BayiPuan.Entities.Concrete.MyNew)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="125" />
+      </Target>
+      <Target Target="#53=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::Update(BayiPuan.Entities.Concrete.MyNew)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="127" />
+      </Target>
+      <Target Target="#54=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::Add(BayiPuan.Entities.Concrete.MyProduct)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="135" />
+      </Target>
+      <Target Target="#55=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::Update(BayiPuan.Entities.Concrete.MyProduct)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="137" />
+      </Target>
+      <Target Target="#56=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::Add(BayiPuan.Entities.Concrete.Product)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="145" />
+      </Target>
+      <Target Target="#57=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::Update(BayiPuan.Entities.Concrete.Product)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="147" />
+      </Target>
+      <Target Target="#58=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::Add(BayiPuan.Entities.Concrete.RelationalPerson)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="155" />
+      </Target>
+      <Target Target="#59=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::Update(BayiPuan.Entities.Concrete.RelationalPerson)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="157" />
+      </Target>
+      <Target Target="#60=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::Add(BayiPuan.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="165" />
+      </Target>
+      <Target Target="#61=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::Update(BayiPuan.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="167" />
+      </Target>
+      <Target Target="#62=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::Add(BayiPuan.Entities.Concrete.Sale)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="175" />
+      </Target>
+      <Target Target="#63=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::Update(BayiPuan.Entities.Concrete.Sale)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="177" />
+      </Target>
+      <Target Target="#64=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::Add(BayiPuan.Entities.Concrete.Seller)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="185" />
+      </Target>
+      <Target Target="#65=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::Update(BayiPuan.Entities.Concrete.Seller)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="187" />
+      </Target>
+      <Target Target="#66=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::Add(BayiPuan.Entities.Concrete.UnitType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="195" />
+      </Target>
+      <Target Target="#67=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::Update(BayiPuan.Entities.Concrete.UnitType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="197" />
+      </Target>
+      <Target Target="#68=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::Add(BayiPuan.Entities.Concrete.UserRole)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="205" />
+      </Target>
+      <Target Target="#69=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::Update(BayiPuan.Entities.Concrete.UserRole)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="207" />
+      </Target>
+      <Target Target="#70=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::Add(BayiPuan.Entities.Concrete.UserType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="215" />
+      </Target>
+      <Target Target="#71=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::Update(BayiPuan.Entities.Concrete.UserType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="217" />
+      </Target>
+      <Target Target="#72=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::Add(BayiPuan.Entities.Concrete.Score)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="225" />
+      </Target>
+      <Target Target="#73=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::Update(BayiPuan.Entities.Concrete.Score)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="227" />
+      </Target>
+      <Target Target="#74=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::GetByUserNameAndPassword(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="232" />
+      </Target>
+      <Target Target="#75=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::#ctor(BayiPuan.DataAccess.Abstract.IAnswerDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="0" />
+      </Target>
+      <Target Target="#76=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="3" />
+      </Target>
+      <Target Target="#77=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::Delete(BayiPuan.Entities.Concrete.Answer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="8" />
+      </Target>
+      <Target Target="#78=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::GetByAnswer(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="9" />
+      </Target>
+      <Target Target="#79=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::#ctor(BayiPuan.DataAccess.Abstract.IBrandDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="10" />
+      </Target>
+      <Target Target="#80=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="13" />
+      </Target>
+      <Target Target="#81=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::Delete(BayiPuan.Entities.Concrete.Brand)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="18" />
+      </Target>
+      <Target Target="#82=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BrandManager::GetByBrand(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="19" />
+      </Target>
+      <Target Target="#83=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::#ctor(BayiPuan.DataAccess.Abstract.IBuyDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="20" />
+      </Target>
+      <Target Target="#84=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="23" />
+      </Target>
+      <Target Target="#85=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::Delete(BayiPuan.Entities.Concrete.Buy)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="28" />
+      </Target>
+      <Target Target="#86=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.BuyManager::GetByBuy(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="29" />
+      </Target>
+      <Target Target="#87=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::#ctor(BayiPuan.DataAccess.Abstract.ICampaignDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="30" />
+      </Target>
+      <Target Target="#88=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="33" />
+      </Target>
+      <Target Target="#89=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::Delete(BayiPuan.Entities.Concrete.Campaign)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="38" />
+      </Target>
+      <Target Target="#90=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CampaignManager::GetByCampaign(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="39" />
+      </Target>
+      <Target Target="#91=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::#ctor(BayiPuan.DataAccess.Abstract.ICategoryDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="40" />
+      </Target>
+      <Target Target="#92=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="43" />
+      </Target>
+      <Target Target="#93=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::Delete(BayiPuan.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="48" />
+      </Target>
+      <Target Target="#94=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CategoryManager::GetByCategory(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="49" />
+      </Target>
+      <Target Target="#95=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::#ctor(BayiPuan.DataAccess.Abstract.ICityDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="50" />
+      </Target>
+      <Target Target="#96=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="53" />
+      </Target>
+      <Target Target="#97=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::Delete(BayiPuan.Entities.Concrete.City)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="58" />
+      </Target>
+      <Target Target="#98=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CityManager::GetByCity(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="59" />
+      </Target>
+      <Target Target="#99=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::#ctor(BayiPuan.DataAccess.Abstract.ICustomerDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="60" />
+      </Target>
+      <Target Target="#100=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="63" />
+      </Target>
+      <Target Target="#101=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::Delete(BayiPuan.Entities.Concrete.Customer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="68" />
+      </Target>
+      <Target Target="#102=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.CustomerManager::GetByCustomer(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="69" />
+      </Target>
+      <Target Target="#103=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::#ctor(BayiPuan.DataAccess.Abstract.IGiftDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="70" />
+      </Target>
+      <Target Target="#104=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="73" />
+      </Target>
+      <Target Target="#105=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::Delete(BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="78" />
+      </Target>
+      <Target Target="#106=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GiftManager::GetByGift(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="79" />
+      </Target>
+      <Target Target="#107=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::#ctor(BayiPuan.DataAccess.Abstract.IGN_ReportDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="80" />
+      </Target>
+      <Target Target="#108=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="83" />
+      </Target>
+      <Target Target="#109=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::Delete(BayiPuan.Entities.Concrete.GN_Report)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="88" />
+      </Target>
+      <Target Target="#110=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.GN_ReportManager::GetByGN_Report(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="89" />
+      </Target>
+      <Target Target="#111=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::#ctor(BayiPuan.DataAccess.Abstract.IKnowledgeTestDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="90" />
+      </Target>
+      <Target Target="#112=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="93" />
+      </Target>
+      <Target Target="#113=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::Delete(BayiPuan.Entities.Concrete.KnowledgeTest)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="98" />
+      </Target>
+      <Target Target="#114=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.KnowledgeTestManager::GetByKnowledgeTest(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="99" />
+      </Target>
+      <Target Target="#115=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::#ctor(BayiPuan.DataAccess.Abstract.ILanguageDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="100" />
+      </Target>
+      <Target Target="#116=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="103" />
+      </Target>
+      <Target Target="#117=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::Delete(BayiPuan.Entities.Concrete.Language)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="108" />
+      </Target>
+      <Target Target="#118=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::Get(System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="109" />
+      </Target>
+      <Target Target="#119=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageManager::GetByLanguage(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="110" />
+      </Target>
+      <Target Target="#120=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.LanguageWordManager::#ctor(BayiPuan.DataAccess.Abstract.ILanguageWordDal, AutoMapper.IMapper)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="111" />
+      </Target>
+      <Target Target="#121=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::#ctor(BayiPuan.DataAccess.Abstract.IMyNewDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="120" />
+      </Target>
+      <Target Target="#122=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="123" />
+      </Target>
+      <Target Target="#123=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::Delete(BayiPuan.Entities.Concrete.MyNew)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="128" />
+      </Target>
+      <Target Target="#124=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyNewManager::GetByMyNew(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="129" />
+      </Target>
+      <Target Target="#125=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::#ctor(BayiPuan.DataAccess.Abstract.IMyProductDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="130" />
+      </Target>
+      <Target Target="#126=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="133" />
+      </Target>
+      <Target Target="#127=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::Delete(BayiPuan.Entities.Concrete.MyProduct)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="138" />
+      </Target>
+      <Target Target="#128=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.MyProductManager::GetByMyProduct(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="139" />
+      </Target>
+      <Target Target="#129=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::#ctor(BayiPuan.DataAccess.Abstract.IProductDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="140" />
+      </Target>
+      <Target Target="#130=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="143" />
+      </Target>
+      <Target Target="#131=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::Delete(BayiPuan.Entities.Concrete.Product)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="148" />
+      </Target>
+      <Target Target="#132=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ProductManager::GetByProduct(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="149" />
+      </Target>
+      <Target Target="#133=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::#ctor(BayiPuan.DataAccess.Abstract.IRelationalPersonDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="150" />
+      </Target>
+      <Target Target="#134=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="153" />
+      </Target>
+      <Target Target="#135=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::Delete(BayiPuan.Entities.Concrete.RelationalPerson)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="158" />
+      </Target>
+      <Target Target="#136=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RelationalPersonManager::GetByRelationalPerson(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="159" />
+      </Target>
+      <Target Target="#137=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::#ctor(BayiPuan.DataAccess.Abstract.IRoleDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="160" />
+      </Target>
+      <Target Target="#138=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="163" />
+      </Target>
+      <Target Target="#139=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::Delete(BayiPuan.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="168" />
+      </Target>
+      <Target Target="#140=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.RoleManager::GetByRole(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="169" />
+      </Target>
+      <Target Target="#141=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::#ctor(BayiPuan.DataAccess.Abstract.ISaleDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="170" />
+      </Target>
+      <Target Target="#142=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="173" />
+      </Target>
+      <Target Target="#143=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::Delete(BayiPuan.Entities.Concrete.Sale)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="178" />
+      </Target>
+      <Target Target="#144=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SaleManager::GetBySale(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="179" />
+      </Target>
+      <Target Target="#145=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::#ctor(BayiPuan.DataAccess.Abstract.ISellerDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="180" />
+      </Target>
+      <Target Target="#146=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="183" />
+      </Target>
+      <Target Target="#147=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::Delete(BayiPuan.Entities.Concrete.Seller)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="188" />
+      </Target>
+      <Target Target="#148=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.SellerManager::GetBySeller(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="189" />
+      </Target>
+      <Target Target="#149=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::#ctor(BayiPuan.DataAccess.Abstract.IUnitTypeDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="190" />
+      </Target>
+      <Target Target="#150=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="193" />
+      </Target>
+      <Target Target="#151=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::Delete(BayiPuan.Entities.Concrete.UnitType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="198" />
+      </Target>
+      <Target Target="#152=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UnitTypeManager::GetByUnitType(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="199" />
+      </Target>
+      <Target Target="#153=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::#ctor(BayiPuan.DataAccess.Abstract.IUserDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="230" />
+      </Target>
+      <Target Target="#154=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::GetAll()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="233" />
+      </Target>
+      <Target Target="#155=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="234" />
+      </Target>
+      <Target Target="#156=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::GetByUser(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="235" />
+      </Target>
+      <Target Target="#157=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::GetUserRoles(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="236" />
+      </Target>
+      <Target Target="#158=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::Add(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="237" />
+      </Target>
+      <Target Target="#159=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::Update(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="238" />
+      </Target>
+      <Target Target="#160=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::Delete(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="239" />
+      </Target>
+      <Target Target="#161=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::UniqueUserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="240" />
+      </Target>
+      <Target Target="#162=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserManager::UniqueEmail(System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="241" />
+      </Target>
+      <Target Target="#163=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::#ctor(BayiPuan.DataAccess.Abstract.IUserRoleDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="200" />
+      </Target>
+      <Target Target="#164=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="203" />
+      </Target>
+      <Target Target="#165=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::Delete(BayiPuan.Entities.Concrete.UserRole)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="208" />
+      </Target>
+      <Target Target="#166=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserRoleManager::GetByUserRole(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="209" />
+      </Target>
+      <Target Target="#167=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::#ctor(BayiPuan.DataAccess.Abstract.IUserTypeDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="210" />
+      </Target>
+      <Target Target="#168=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="213" />
+      </Target>
+      <Target Target="#169=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::Delete(BayiPuan.Entities.Concrete.UserType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="218" />
+      </Target>
+      <Target Target="#170=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.UserTypeManager::GetByUserType(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="219" />
+      </Target>
+      <Target Target="#171=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.vwRP_StockCountManager::#ctor(BayiPuan.DataAccess.Abstract.IvwRP_StockCount)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="242" />
+      </Target>
+      <Target Target="#172=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.vwRP_StockCountManager::StockCounts()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="243" />
+      </Target>
+      <Target Target="#173=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::#ctor(BayiPuan.DataAccess.Abstract.IScoreDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="220" />
+      </Target>
+      <Target Target="#174=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="223" />
+      </Target>
+      <Target Target="#175=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::Delete(BayiPuan.Entities.Concrete.Score)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="228" />
+      </Target>
+      <Target Target="#176=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.ScoreManager::GetByScore(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="229" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#177=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
+    <Instance Declaration="#3" Id="542a49f366dd0ad7">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#5" Id="542a49f3c5cc5b58">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="11" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#6" Id="542a49f3d205da95">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="21" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#7" Id="542a49f33f93b141">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="31" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#8" Id="542a49f3d35186f6">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="41" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#9" Id="542a49f3afa3b62b">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="51" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#10" Id="542a49f38fe92dbf">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="61" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#11" Id="542a49f37f21e240">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="71" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#12" Id="542a49f3c5a8131f">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="81" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#13" Id="542a49f35c9d14e5">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="91" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#14" Id="542a49f3dbf7c9bd">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="101" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#15" Id="542a49f36f1b3f3d">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="112" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#16" Id="542a49f37704a233">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="114" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#17" Id="542a49f3bf851434">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="116" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#18" Id="542a49f3652f04b0">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="121" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#19" Id="542a49f3f439a9d5">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="131" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#20" Id="542a49f32df83445">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="141" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#21" Id="542a49f38ea9e0f8">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="151" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#22" Id="542a49f30e0beefa">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="161" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23" Id="542a49f3bb48d3bd">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="171" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#24" Id="542a49f3dcdc9860">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="181" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#25" Id="542a49f36563d5b5">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="191" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#26" Id="542a49f317fd9378">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="201" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27" Id="542a49f3e845968f">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="211" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#28" Id="542a49f3ca86b3fb">
+      <Target>
+        <JoinPoint Advising="#177" Description="#178" Ordinal="221" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#179=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
+    <Instance Declaration="#29" Id="542a49f3bdc27340">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="4" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#30" Id="542a49f3fc9eb7d1">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="6" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#31" Id="542a49f3828b32b6">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="14" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#32" Id="542a49f3248c12d5">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="16" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#33" Id="542a49f3487eeaaa">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="24" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#34" Id="542a49f32a697a81">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="26" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#35" Id="542a49f3a76a24a5">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="34" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#36" Id="542a49f361cc68a4">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="36" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#37" Id="542a49f31a8a1289">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="44" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#38" Id="542a49f379e031d6">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="46" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="542a49f37c8477f8">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="54" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40" Id="542a49f3cb41f6bb">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="56" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#41" Id="542a49f3bd404725">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="64" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#42" Id="542a49f32c0b05de">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="66" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#43" Id="542a49f376f0387e">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="74" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#44" Id="542a49f3be059746">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="76" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#45" Id="542a49f30feaabc6">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="84" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#46" Id="542a49f32f8d7504">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="86" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#47" Id="542a49f30a3af610">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="94" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#48" Id="542a49f382e4dfe2">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="96" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#49" Id="542a49f31e53d607">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="104" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#50" Id="542a49f376ac5874">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="106" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#51" Id="542a49f385dfff51">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="118" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#52" Id="542a49f3875b662e">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="124" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#53" Id="542a49f3422f2e34">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="126" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#54" Id="542a49f3307a87f2">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="134" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#55" Id="542a49f326e3c835">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="136" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#56" Id="542a49f3bd6edf52">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="144" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#57" Id="542a49f3b29f1a1e">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="146" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#58" Id="542a49f3e087dfed">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="154" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#59" Id="542a49f3d69cd69b">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="156" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#60" Id="542a49f3cbaa5fd1">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="164" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#61" Id="542a49f3edb51575">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="166" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#62" Id="542a49f395baf24e">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="174" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#63" Id="542a49f3f4a9fdbf">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="176" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#64" Id="542a49f3c77aea7a">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="184" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#65" Id="542a49f3786bc4bb">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="186" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#66" Id="542a49f3e211dca3">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="194" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#67" Id="542a49f304805147">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="196" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#68" Id="542a49f33df39907">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="204" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#69" Id="542a49f35a292744">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="206" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#70" Id="542a49f3f70f85d0">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="214" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#71" Id="542a49f37b857fc2">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="216" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#72" Id="542a49f378d32984">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="224" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#73" Id="542a49f39c77b4a0">
+      <Target>
+        <JoinPoint Advising="#179" Description="#178" Ordinal="226" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#180=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
+    <Instance Declaration="#74" Id="542a49f3c3b97eda">
+      <Target>
+        <JoinPoint Advising="#180" Description="#178" Ordinal="231" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#181=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect::OnException(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182=2" Description="#183=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#184=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#185=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#186=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#187=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#188=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnEntry([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#189=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#190=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+  <Annotation Target="#191=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#182" Description="#183" />
+</Symbols>

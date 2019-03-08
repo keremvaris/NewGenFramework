@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NewGenFramework.Core">
-      <HintPath>..\..\NewGenFramework.Core\bin\Release\NewGenFramework.Core.dll</HintPath>
+    <Reference Include="NewGenFramework.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\src\NewGenSource\NewGenFramework.Core\bin\Release\NewGenFramework.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

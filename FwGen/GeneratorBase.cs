@@ -9,7 +9,7 @@ namespace FwGen
 {
 	public abstract class GeneratorBase
 	{
-		protected List<Type> Types => new List<Type>();
+		protected List<Type> Types = new List<Type>();
 
 		public void Add(Type t)
 		{

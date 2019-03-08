@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Symbols LinesOfCode="953" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
-    <Instance Declaration="#2=A:BayiPuan.Business" Id="542a49f3d08f96ce">
+    <Instance Declaration="#2=A:BayiPuan.Business" Id="542a49f35b698836">
       <Target Target="#3=M:[BayiPuan.Business]BayiPuan.Business.Concrete.Managers.AnswerManager::GetAll()">
         <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnException" Ordinal="2" />
       </Target>
@@ -524,361 +524,361 @@
     </Instance>
   </Class>
   <Class Class="#177=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
-    <Instance Declaration="#3" Id="542a49f32c3e3da0">
+    <Instance Declaration="#3" Id="542a49f37a9f15de">
       <Target>
         <JoinPoint Advising="#177" Description="#178=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="542a49f3f32994e6">
+    <Instance Declaration="#5" Id="542a49f351f88264">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="11" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="542a49f3bdc18b0e">
+    <Instance Declaration="#6" Id="542a49f364269174">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="21" />
       </Target>
     </Instance>
-    <Instance Declaration="#7" Id="542a49f3f1344d6a">
+    <Instance Declaration="#7" Id="542a49f391f4ec8b">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="31" />
       </Target>
     </Instance>
-    <Instance Declaration="#8" Id="542a49f32838af67">
+    <Instance Declaration="#8" Id="542a49f355a2cf96">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="41" />
       </Target>
     </Instance>
-    <Instance Declaration="#9" Id="542a49f3cbe88430">
+    <Instance Declaration="#9" Id="542a49f3c0800235">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="51" />
       </Target>
     </Instance>
-    <Instance Declaration="#10" Id="542a49f36c67570a">
+    <Instance Declaration="#10" Id="542a49f3c8fc2bb1">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="61" />
       </Target>
     </Instance>
-    <Instance Declaration="#11" Id="542a49f319fddc4b">
+    <Instance Declaration="#11" Id="542a49f38f9cb685">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="71" />
       </Target>
     </Instance>
-    <Instance Declaration="#12" Id="542a49f3aabfaa60">
+    <Instance Declaration="#12" Id="542a49f374617781">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="81" />
       </Target>
     </Instance>
-    <Instance Declaration="#13" Id="542a49f36e754dd3">
+    <Instance Declaration="#13" Id="542a49f347172f09">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="91" />
       </Target>
     </Instance>
-    <Instance Declaration="#14" Id="542a49f383598c0c">
+    <Instance Declaration="#14" Id="542a49f34775da45">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="101" />
       </Target>
     </Instance>
-    <Instance Declaration="#15" Id="542a49f328c9ea22">
+    <Instance Declaration="#15" Id="542a49f3e378550d">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="112" />
       </Target>
     </Instance>
-    <Instance Declaration="#16" Id="542a49f311be3f91">
+    <Instance Declaration="#16" Id="542a49f35fb8e6c9">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="114" />
       </Target>
     </Instance>
-    <Instance Declaration="#17" Id="542a49f320affab0">
+    <Instance Declaration="#17" Id="542a49f35df52447">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="116" />
       </Target>
     </Instance>
-    <Instance Declaration="#18" Id="542a49f338e4cb28">
+    <Instance Declaration="#18" Id="542a49f38980c943">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="121" />
       </Target>
     </Instance>
-    <Instance Declaration="#19" Id="542a49f335b4d7a5">
+    <Instance Declaration="#19" Id="542a49f3e49efe06">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="131" />
       </Target>
     </Instance>
-    <Instance Declaration="#20" Id="542a49f36d5c1113">
+    <Instance Declaration="#20" Id="542a49f37a462f6c">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="141" />
       </Target>
     </Instance>
-    <Instance Declaration="#21" Id="542a49f3749f4aef">
+    <Instance Declaration="#21" Id="542a49f303b5944e">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="151" />
       </Target>
     </Instance>
-    <Instance Declaration="#22" Id="542a49f3f0b0abb8">
+    <Instance Declaration="#22" Id="542a49f3f3ccbe2f">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="161" />
       </Target>
     </Instance>
-    <Instance Declaration="#23" Id="542a49f3a5b93873">
+    <Instance Declaration="#23" Id="542a49f363145d9a">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="171" />
       </Target>
     </Instance>
-    <Instance Declaration="#24" Id="542a49f3c231cc29">
+    <Instance Declaration="#24" Id="542a49f34653bb4e">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="181" />
       </Target>
     </Instance>
-    <Instance Declaration="#25" Id="542a49f363e2142a">
+    <Instance Declaration="#25" Id="542a49f3a45e7ae0">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="191" />
       </Target>
     </Instance>
-    <Instance Declaration="#26" Id="542a49f370ad54fb">
+    <Instance Declaration="#26" Id="542a49f3bb23b941">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="201" />
       </Target>
     </Instance>
-    <Instance Declaration="#27" Id="542a49f34344f094">
+    <Instance Declaration="#27" Id="542a49f3cc79e4db">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="211" />
       </Target>
     </Instance>
-    <Instance Declaration="#28" Id="542a49f3ba22ed6d">
+    <Instance Declaration="#28" Id="542a49f312afc726">
       <Target>
         <JoinPoint Advising="#177" Description="#178" Ordinal="221" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#179=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
-    <Instance Declaration="#29" Id="542a49f30aaee983">
+    <Instance Declaration="#29" Id="542a49f3e3e90b30">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="4" />
       </Target>
     </Instance>
-    <Instance Declaration="#30" Id="542a49f386074118">
+    <Instance Declaration="#30" Id="542a49f3edba2b46">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="6" />
       </Target>
     </Instance>
-    <Instance Declaration="#31" Id="542a49f37c0ed49c">
+    <Instance Declaration="#31" Id="542a49f38ffcde5e">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="14" />
       </Target>
     </Instance>
-    <Instance Declaration="#32" Id="542a49f37c5ebde4">
+    <Instance Declaration="#32" Id="542a49f3135de923">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="16" />
       </Target>
     </Instance>
-    <Instance Declaration="#33" Id="542a49f31593c24d">
+    <Instance Declaration="#33" Id="542a49f384301bfa">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="24" />
       </Target>
     </Instance>
-    <Instance Declaration="#34" Id="542a49f3edf05921">
+    <Instance Declaration="#34" Id="542a49f387bdafb0">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="26" />
       </Target>
     </Instance>
-    <Instance Declaration="#35" Id="542a49f3eb32a03d">
+    <Instance Declaration="#35" Id="542a49f393f11982">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="34" />
       </Target>
     </Instance>
-    <Instance Declaration="#36" Id="542a49f36ebcd03f">
+    <Instance Declaration="#36" Id="542a49f3e595d6c7">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="36" />
       </Target>
     </Instance>
-    <Instance Declaration="#37" Id="542a49f3a5feca0d">
+    <Instance Declaration="#37" Id="542a49f326714427">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="44" />
       </Target>
     </Instance>
-    <Instance Declaration="#38" Id="542a49f3831c1568">
+    <Instance Declaration="#38" Id="542a49f3b6ad1b93">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="46" />
       </Target>
     </Instance>
-    <Instance Declaration="#39" Id="542a49f370300ce8">
+    <Instance Declaration="#39" Id="542a49f33078cb8c">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="54" />
       </Target>
     </Instance>
-    <Instance Declaration="#40" Id="542a49f3bc85871e">
+    <Instance Declaration="#40" Id="542a49f381215935">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="56" />
       </Target>
     </Instance>
-    <Instance Declaration="#41" Id="542a49f3d9317f9c">
+    <Instance Declaration="#41" Id="542a49f3707039f4">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="64" />
       </Target>
     </Instance>
-    <Instance Declaration="#42" Id="542a49f33d0c56b5">
+    <Instance Declaration="#42" Id="542a49f38c550334">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="66" />
       </Target>
     </Instance>
-    <Instance Declaration="#43" Id="542a49f316b3d367">
+    <Instance Declaration="#43" Id="542a49f305d0ca8e">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="74" />
       </Target>
     </Instance>
-    <Instance Declaration="#44" Id="542a49f3666c3726">
+    <Instance Declaration="#44" Id="542a49f3a96814df">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="76" />
       </Target>
     </Instance>
-    <Instance Declaration="#45" Id="542a49f31518a571">
+    <Instance Declaration="#45" Id="542a49f3fab6a054">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="84" />
       </Target>
     </Instance>
-    <Instance Declaration="#46" Id="542a49f370f95694">
+    <Instance Declaration="#46" Id="542a49f35fa6acd5">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="86" />
       </Target>
     </Instance>
-    <Instance Declaration="#47" Id="542a49f3ea64c454">
+    <Instance Declaration="#47" Id="542a49f34cd96457">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="94" />
       </Target>
     </Instance>
-    <Instance Declaration="#48" Id="542a49f34e02bf68">
+    <Instance Declaration="#48" Id="542a49f3b7372388">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="96" />
       </Target>
     </Instance>
-    <Instance Declaration="#49" Id="542a49f370ce9f2a">
+    <Instance Declaration="#49" Id="542a49f3b6c49d39">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="104" />
       </Target>
     </Instance>
-    <Instance Declaration="#50" Id="542a49f3a08406c6">
+    <Instance Declaration="#50" Id="542a49f37f2f0bbe">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="106" />
       </Target>
     </Instance>
-    <Instance Declaration="#51" Id="542a49f35a38614c">
+    <Instance Declaration="#51" Id="542a49f38100c8bc">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="118" />
       </Target>
     </Instance>
-    <Instance Declaration="#52" Id="542a49f30f11c0ae">
+    <Instance Declaration="#52" Id="542a49f3d26141b6">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="124" />
       </Target>
     </Instance>
-    <Instance Declaration="#53" Id="542a49f35a780f6b">
+    <Instance Declaration="#53" Id="542a49f39c464015">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="126" />
       </Target>
     </Instance>
-    <Instance Declaration="#54" Id="542a49f32ce61f66">
+    <Instance Declaration="#54" Id="542a49f34f80dd35">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="134" />
       </Target>
     </Instance>
-    <Instance Declaration="#55" Id="542a49f37c02f755">
+    <Instance Declaration="#55" Id="542a49f38abd920e">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="136" />
       </Target>
     </Instance>
-    <Instance Declaration="#56" Id="542a49f3bfda142c">
+    <Instance Declaration="#56" Id="542a49f3aec8bfa3">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="144" />
       </Target>
     </Instance>
-    <Instance Declaration="#57" Id="542a49f3a657973a">
+    <Instance Declaration="#57" Id="542a49f37e2e5bdd">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="146" />
       </Target>
     </Instance>
-    <Instance Declaration="#58" Id="542a49f324053495">
+    <Instance Declaration="#58" Id="542a49f3343558fb">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="154" />
       </Target>
     </Instance>
-    <Instance Declaration="#59" Id="542a49f3b1bc83f6">
+    <Instance Declaration="#59" Id="542a49f337a7972a">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="156" />
       </Target>
     </Instance>
-    <Instance Declaration="#60" Id="542a49f36ec16f49">
+    <Instance Declaration="#60" Id="542a49f3017aa689">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="164" />
       </Target>
     </Instance>
-    <Instance Declaration="#61" Id="542a49f33221160a">
+    <Instance Declaration="#61" Id="542a49f3fc8f5feb">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="166" />
       </Target>
     </Instance>
-    <Instance Declaration="#62" Id="542a49f3e142aae0">
+    <Instance Declaration="#62" Id="542a49f350c88cf7">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="174" />
       </Target>
     </Instance>
-    <Instance Declaration="#63" Id="542a49f33b9718b7">
+    <Instance Declaration="#63" Id="542a49f37a3e811a">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="176" />
       </Target>
     </Instance>
-    <Instance Declaration="#64" Id="542a49f30ee84592">
+    <Instance Declaration="#64" Id="542a49f3ec789f9e">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="184" />
       </Target>
     </Instance>
-    <Instance Declaration="#65" Id="542a49f354530399">
+    <Instance Declaration="#65" Id="542a49f3ca91063f">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="186" />
       </Target>
     </Instance>
-    <Instance Declaration="#66" Id="542a49f3c3fe1ff0">
+    <Instance Declaration="#66" Id="542a49f34a8e9ac9">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="194" />
       </Target>
     </Instance>
-    <Instance Declaration="#67" Id="542a49f3ff4b5f1f">
+    <Instance Declaration="#67" Id="542a49f385cc8401">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="196" />
       </Target>
     </Instance>
-    <Instance Declaration="#68" Id="542a49f327f4e45b">
+    <Instance Declaration="#68" Id="542a49f350d67034">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="204" />
       </Target>
     </Instance>
-    <Instance Declaration="#69" Id="542a49f349b592d2">
+    <Instance Declaration="#69" Id="542a49f3ffd688c5">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="206" />
       </Target>
     </Instance>
-    <Instance Declaration="#70" Id="542a49f3fae304f5">
+    <Instance Declaration="#70" Id="542a49f3c555fe18">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="214" />
       </Target>
     </Instance>
-    <Instance Declaration="#71" Id="542a49f3a20f352d">
+    <Instance Declaration="#71" Id="542a49f3e5ba17c9">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="216" />
       </Target>
     </Instance>
-    <Instance Declaration="#72" Id="542a49f3d439de92">
+    <Instance Declaration="#72" Id="542a49f32a1d63fa">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="224" />
       </Target>
     </Instance>
-    <Instance Declaration="#73" Id="542a49f34868e699">
+    <Instance Declaration="#73" Id="542a49f3dc681587">
       <Target>
         <JoinPoint Advising="#179" Description="#178" Ordinal="226" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#180=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
-    <Instance Declaration="#74" Id="542a49f33ee98d3b">
+    <Instance Declaration="#74" Id="542a49f32025a36f">
       <Target>
         <JoinPoint Advising="#180" Description="#178" Ordinal="231" />
       </Target>

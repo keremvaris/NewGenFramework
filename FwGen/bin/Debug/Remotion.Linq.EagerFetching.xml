@@ -1,0 +1,813 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Remotion.Linq.EagerFetching</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Annotations.AssertionConditionAttribute">
+            <summary>
+            Indicates the condition parameter of the assertion method. 
+            The method itself should be marked by <see cref="T:JetBrains.Annotations.AssertionMethodAttribute"/> attribute.
+            The mandatory argument of the attribute is the assertion type.
+            </summary>
+            <seealso cref="T:JetBrains.Annotations.AssertionConditionType"/>
+        </member>
+        <member name="M:JetBrains.Annotations.AssertionConditionAttribute.#ctor(JetBrains.Annotations.AssertionConditionType)">
+            <summary>
+            Initializes new instance of AssertionConditionAttribute
+            </summary>
+            <param name="conditionType">Specifies condition type</param>
+        </member>
+        <member name="P:JetBrains.Annotations.AssertionConditionAttribute.ConditionType">
+            <summary>
+            Gets condition type
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.AssertionConditionType">
+            <summary>
+            Specifies assertion type. If the assertion method argument satisifes the condition, then the execution continues. 
+            Otherwise, execution is assumed to be halted
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_TRUE">
+            <summary>
+            Indicates that the marked parameter should be evaluated to true
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_FALSE">
+            <summary>
+            Indicates that the marked parameter should be evaluated to false
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_NULL">
+            <summary>
+            Indicates that the marked parameter should be evaluated to null value
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.AssertionConditionType.IS_NOT_NULL">
+            <summary>
+            Indicates that the marked parameter should be evaluated to not null value
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.AssertionMethodAttribute">
+            <summary>
+            Indicates that the marked method is assertion method, i.e. it halts control flow if one of the conditions is satisfied. 
+            To set the condition, mark one of the parameters with <see cref="T:JetBrains.Annotations.AssertionConditionAttribute"/> attribute
+            </summary>
+            <seealso cref="T:JetBrains.Annotations.AssertionConditionAttribute"/>
+        </member>
+        <member name="T:JetBrains.Annotations.BaseTypeRequiredAttribute">
+            <summary>
+            When applied to target attribute, specifies a requirement for any type which is marked with 
+            target attribute to implement or inherit specific type or types
+            </summary>
+            <example>
+            <code>
+            [BaseTypeRequired(typeof(IComponent)] // Specify requirement
+            public class ComponentAttribute : Attribute 
+            {}
+            
+            [Component] // ComponentAttribute requires implementing IComponent interface
+            public class MyComponent : IComponent
+            {}
+            </code>
+            </example>
+        </member>
+        <member name="M:JetBrains.Annotations.BaseTypeRequiredAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes new instance of BaseTypeRequiredAttribute
+            </summary>
+            <param name="baseType">Specifies which types are required</param>
+        </member>
+        <member name="P:JetBrains.Annotations.BaseTypeRequiredAttribute.BaseTypes">
+            <summary>
+            Gets enumerations of specified base types
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.CanBeNullAttribute">
+            <summary>
+            Indicates that the value of marked element could be <c>null</c> sometimes, so the check for <c>null</c> is necessary before its usage
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.CannotApplyEqualityOperatorAttribute">
+            <summary>
+            Indicates that the value of marked type (or its derivatives) cannot be compared using '==' or '!=' operators.
+            There is only exception to compare with <c>null</c>, it is permitted
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.ContractAnnotationAttribute">
+            <summary>
+            Describes dependency between method input and output
+            </summary>
+            <syntax>
+            <p>Function definition table syntax:</p>
+            <list>
+            <item>FDT      ::= FDTRow [;FDTRow]*</item>
+            <item>FDTRow   ::= Input =&gt; Output | Output &lt;= Input</item>
+            <item>Input    ::= ParameterName: Value [, Input]*</item>
+            <item>Output   ::= [ParameterName: Value]* {halt|stop|void|nothing|Value}</item>
+            <item>Value    ::= true | false | null | notnull | canbenull</item>
+            </list>
+            If method has single input parameter, it's name could be omitted. <br/>
+            Using "halt" (or "void"/"nothing", which is the same) for method output means that methos doesn't return normally. <br/>
+            "canbenull" annotation is only applicable for output parameters. <br/>
+            You can use multiple [ContractAnnotation] for each FDT row, or use single attribute with rows separated by semicolon. <br/>
+            </syntax>
+            <examples>
+            <list>
+            <item>[ContractAnnotation("=> halt")] public void TerminationMethod()</item>
+            <item>[ContractAnnotation("halt &lt;= condition: false")] public void Assert(bool condition, string text) // Regular Assertion method</item>
+            <item>[ContractAnnotation("s:null => true")] public bool IsNullOrEmpty(string s) // String.IsNullOrEmpty</item>
+            <item>[ContractAnnotation("null => null; notnull => notnull")] public object Transform(object data) // Method which returns null if parameter is null, and not null if parameter is not null</item>
+            <item>[ContractAnnotation("s:null=>false; =>true,result:notnull; =>false, result:null")] public bool TryParse(string s, out Person result)</item>
+            </list>
+            </examples>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.Access">
+            <summary>
+            Only entity marked with attribute considered used
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.Assign">
+            <summary>
+            Indicates implicit assignment to a member
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.InstantiatedWithFixedConstructorSignature">
+            <summary>
+            Indicates implicit instantiation of a type with fixed constructor signature.
+            That means any unused constructor parameters won't be reported as such.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseKindFlags.InstantiatedNoFixedConstructorSignature">
+            <summary>
+            Indicates implicit instantiation of a type
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.ImplicitUseTargetFlags">
+            <summary>
+            Specify what is considered used implicitly when marked with <see cref="T:JetBrains.Annotations.MeansImplicitUseAttribute"/> or <see cref="T:JetBrains.Annotations.UsedImplicitlyAttribute"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseTargetFlags.Members">
+            <summary>
+            Members of entity marked with attribute are considered used
+            </summary>
+        </member>
+        <member name="F:JetBrains.Annotations.ImplicitUseTargetFlags.WithMembers">
+            <summary>
+            Entity marked with attribute and all its members considered used
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.InstantHandleAttribute">
+            <summary>
+            Tells code analysis engine if the parameter is completely handled when the invoked method is on stack. 
+            If the parameter is delegate, indicates that delegate is executed while the method is executed.
+            If the parameter is enumerable, indicates that it is enumerated while the method is executed.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.InvokerParameterNameAttribute">
+            <summary>
+            Indicates that the function argument should be string literal and match one of the parameters of the caller function.
+            For example, <see cref="T:System.ArgumentNullException"/> has such parameter.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.LinqTunnelAttribute">
+            <summary>
+            Indicates that method is *pure* linq method, with postponed enumeration. C# iterator methods (yield ...) are always LinqTunnel.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.LocalizationRequiredAttribute">
+            <summary>
+            Indicates that marked element should be localized or not.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.LocalizationRequiredAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.Annotations.LocalizationRequiredAttribute"/> class with
+            <see cref="P:JetBrains.Annotations.LocalizationRequiredAttribute.Required"/> set to <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.LocalizationRequiredAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.Annotations.LocalizationRequiredAttribute"/> class.
+            </summary>
+            <param name="required"><c>true</c> if a element should be localized; otherwise, <c>false</c>.</param>
+        </member>
+        <member name="P:JetBrains.Annotations.LocalizationRequiredAttribute.Required">
+            <summary>
+            Gets a value indicating whether a element should be localized.
+            <value><c>true</c> if a element should be localized; otherwise, <c>false</c>.</value>
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.LocalizationRequiredAttribute.Equals(System.Object)">
+            <summary>
+            Returns whether the value of the given object is equal to the current <see cref="T:JetBrains.Annotations.LocalizationRequiredAttribute"/>.
+            </summary>
+            <param name="obj">The object to test the value equality of. </param>
+            <returns>
+            <c>true</c> if the value of the given object is equal to that of the current; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:JetBrains.Annotations.LocalizationRequiredAttribute.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for the current <see cref="T:JetBrains.Annotations.LocalizationRequiredAttribute"/>.</returns>
+        </member>
+        <member name="T:JetBrains.Annotations.MeansImplicitUseAttribute">
+            <summary>
+            Should be used on attributes and causes ReSharper to not mark symbols marked with such attributes as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="P:JetBrains.Annotations.MeansImplicitUseAttribute.TargetFlags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.NoEnumerationAttribute">
+            <summary>
+            Indicates that IEnumarable, passed as parameter, is not enumerated.
+            
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.NotifyPropertyChangedInvocatorAttribute">
+            <summary>
+            Indicates that the function is used to notify class type property value is changed.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.NotNullAttribute">
+            <summary>
+            Indicates that the value of marked element could never be <c>null</c>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.PublicAPIAttribute">
+            <summary>
+            This attribute is intended to mark publicly available API which should not be removed and so is treated as used.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.PureAttribute">
+            <summary>
+            Indicates that method doesn't contain observable side effects.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.StringFormatMethodAttribute">
+            <summary>
+            Indicates that marked method builds string by format pattern and (optional) arguments. 
+            Parameter, which contains format string, should be given in constructor.
+            The format string should be in <see cref="M:System.String.Format(System.IFormatProvider,System.String,System.Object[])"/> -like form
+            </summary>
+        </member>
+        <member name="M:JetBrains.Annotations.StringFormatMethodAttribute.#ctor(System.String)">
+            <summary>
+            Initializes new instance of StringFormatMethodAttribute
+            </summary>
+            <param name="formatParameterName">Specifies which parameter of an annotated method should be treated as format-string</param>
+        </member>
+        <member name="P:JetBrains.Annotations.StringFormatMethodAttribute.FormatParameterName">
+            <summary>
+            Gets format parameter name
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.TerminatesProgramAttribute">
+            <summary>
+            Indicates that the marked method unconditionally terminates control flow execution.
+            For example, it could unconditionally throw exception
+            </summary>
+        </member>
+        <member name="T:JetBrains.Annotations.UsedImplicitlyAttribute">
+            <summary>
+            Indicates that the marked symbol is used implicitly (e.g. via reflection, in external library),
+            so this symbol will not be marked as unused (as well as by other usage inspections)
+            </summary>
+        </member>
+        <member name="P:JetBrains.Annotations.UsedImplicitlyAttribute.TargetFlags">
+            <summary>
+            Gets value indicating what is meant to be used
+            </summary>
+        </member>
+        <member name="T:Remotion.Utilities.ArgumentUtility">
+            <summary>
+            This utility class provides methods for checking arguments.
+            </summary>
+            <remarks>
+            Some methods of this class return the value of the parameter. In some cases, this is useful because the value will be converted to another 
+            type:
+            <code><![CDATA[
+            void foo (object o) 
+            {
+              int i = ArgumentUtility.CheckNotNullAndType<int> ("o", o);
+            }
+            ]]></code>
+            In some other cases, the input value is returned unmodified. This makes it easier to use the argument checks in calls to base class constructors
+            or property setters:
+            <code><![CDATA[
+            class MyType : MyBaseType
+            {
+              public MyType (string name) : base (ArgumentUtility.CheckNotNullOrEmpty ("name", name))
+              {
+              }
+            
+              public override Name
+              {
+                set { base.Name = ArgumentUtility.CheckNotNullOrEmpty ("value", value); }
+              }
+            }
+            ]]></code>
+            </remarks>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckNotNullAndType``1(System.String,System.Object)">
+            <summary>Returns the value itself if it is not <see langword="null"/> and of the specified value type.</summary>
+            <typeparam name="TExpected"> The type that <paramref name="actualValue"/> must have. </typeparam>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="actualValue"/> is a <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">The <paramref name="actualValue"/> is an instance of another type.</exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.DebugCheckNotNullAndType(System.String,System.Object,System.Type)">
+            <summary>Checks of the <paramref name="actualValue"/> is of the <paramref name="expectedType"/>.</summary>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="actualValue"/> is a <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">The <paramref name="actualValue"/> is an instance of another type.</exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckType``1(System.String,System.Object)">
+            <summary>Returns the value itself if it is of the specified type.</summary>
+            <typeparam name="TExpected"> The type that <paramref name="actualValue"/> must have. </typeparam>
+            <exception cref="T:System.ArgumentException"> 
+                <paramref name="actualValue"/> is an instance of another type (which is not a subtype of <typeparamref name="TExpected"/>).</exception>
+            <exception cref="T:System.ArgumentNullException"> 
+                <paramref name="actualValue" /> is null and <typeparamref name="TExpected"/> cannot be null. </exception>
+            <remarks>
+              For non-nullable value types, you should use either <see cref="M:Remotion.Utilities.ArgumentUtility.CheckNotNullAndType``1(System.String,System.Object)"/> or pass the type 
+              <see cref="T:System.Nullable`1" /> instead.
+            </remarks>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckNotNullAndTypeIsAssignableFrom(System.String,System.Type,System.Type)">
+            <summary>Checks whether <paramref name="actualType"/> is not <see langword="null"/> and can be assigned to <paramref name="expectedType"/>.</summary>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="actualType"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">The <paramref name="actualType"/> cannot be assigned to <paramref name="expectedType"/>.</exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckTypeIsAssignableFrom(System.String,System.Type,System.Type)">
+            <summary>Checks whether <paramref name="actualType"/> can be assigned to <paramref name="expectedType"/>.</summary>
+            <exception cref="T:System.ArgumentException">The <paramref name="actualType"/> cannot be assigned to <paramref name="expectedType"/>.</exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.DebugCheckTypeIsAssignableFrom(System.String,System.Type,System.Type)">
+            <summary>Checks whether <paramref name="actualType"/> can be assigned to <paramref name="expectedType"/>.</summary>
+            <exception cref="T:System.ArgumentException">The <paramref name="actualType"/> cannot be assigned to <paramref name="expectedType"/>.</exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckItemsType``1(System.String,``0,System.Type)">
+            <summary>Checks whether all items in <paramref name="collection"/> are of type <paramref name="itemType"/> or a null reference.</summary>
+            <exception cref="T:System.ArgumentException"> If at least one element is not of the specified type or a derived type. </exception>
+        </member>
+        <member name="M:Remotion.Utilities.ArgumentUtility.CheckItemsNotNullAndType``1(System.String,``0,System.Type)">
+            <summary>Checks whether all items in <paramref name="collection"/> are of type <paramref name="itemType"/> and not null references.</summary>
+            <exception cref="T:System.ArgumentException"> If at least one element is not of the specified type or a derived type. </exception>
+            <exception cref="T:System.ArgumentNullException"> If at least one element is a null reference. </exception>
+        </member>
+        <member name="T:Remotion.Utilities.Assertion">
+            <summary>
+            Provides methods that throw an <see cref="T:System.InvalidOperationException"/> if an assertion fails.
+            </summary>
+            <remarks>
+              <para>
+              This class contains methods that are conditional to the DEBUG and TRACE attributes (<see cref="M:Remotion.Utilities.Assertion.DebugAssert(System.Boolean)"/> and <see cref="M:Remotion.Utilities.Assertion.TraceAssert(System.Boolean)"/>). 
+              </para><para>
+              Note that assertion expressions passed to these methods are not evaluated (read: executed) if the respective symbol are not defined during
+              compilation, nor are the methods called. This increases performance for production builds, but make sure that your assertion expressions do
+              not cause any side effects! See <see cref="T:System.Diagnostics.ConditionalAttribute"/> or <see cref="T:System.Diagnostics.Debug"/> and <see cref="T:System.Diagnostics.Trace"/> the for more information 
+              about conditional compilation.
+              </para><para>
+              Assertions are no replacement for checking input parameters of public methods (see <see cref="T:Remotion.Utilities.ArgumentUtility"/>).  
+              </para>
+            </remarks>
+        </member>
+        <member name="M:Remotion.Utilities.NullableTypeUtility.IsNullableType(System.Type)">
+            <summary>
+            Determines whether a type is nullable, ie. whether variables of it can be assigned <see langword="null"/>.
+            </summary>
+            <param name="type">The type to check.</param>
+            <returns>
+            true if <paramref name="type"/> is nullable; otherwise, false.
+            </returns>
+            <remarks>
+            A type is nullable if it is a reference type or a nullable value type. This method returns false only for non-nullable value types.
+            </remarks>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchFilteringQueryModelVisitor">
+            <summary>
+            Visits a <see cref="T:Remotion.Linq.QueryModel"/>, removing all <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> instances from its <see cref="P:Remotion.Linq.QueryModel.ResultOperators"/>
+            collection and returning <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> objects for them.
+            </summary>
+            <remarks>
+            Note that this visitor does not remove fetch requests from sub-queries.
+            </remarks>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchManyRequest">
+            <summary>
+            Represents a relation collection property that should be eager-fetched by means of a lambda expression.
+            </summary>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchManyRequest.ModifyFetchQueryModel(Remotion.Linq.QueryModel)">
+            <summary>
+            Modifies the given query model for fetching, adding an <see cref="T:Remotion.Linq.Clauses.AdditionalFromClause"/> and changing the <see cref="P:Remotion.Linq.Clauses.SelectClause.Selector"/> to 
+            retrieve the result of the <see cref="T:Remotion.Linq.Clauses.AdditionalFromClause"/>.
+            For example, a fetch request such as <c>FetchMany (x => x.Orders)</c> will be transformed into a <see cref="T:Remotion.Linq.Clauses.AdditionalFromClause"/> selecting
+            <c>y.Orders</c> (where <c>y</c> is what the query model originally selected) and a <see cref="T:Remotion.Linq.Clauses.SelectClause"/> selecting the result of the
+            <see cref="T:Remotion.Linq.Clauses.AdditionalFromClause"/>.
+            This method is called by <see cref="M:Remotion.Linq.EagerFetching.FetchRequestBase.CreateFetchQueryModel(Remotion.Linq.QueryModel)"/> in the process of creating the new fetch query model.
+            </summary>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchManyRequest.Clone(Remotion.Linq.Clauses.CloneContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchManyRequest.TransformExpressions(System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <inheritdoc />
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchOneRequest">
+            <summary>
+            Represents a property holding one object that should be eager-fetched when a query is executed.
+            </summary>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchOneRequest.ModifyFetchQueryModel(Remotion.Linq.QueryModel)">
+            <summary>
+            Modifies the given query model for fetching, changing the <see cref="P:Remotion.Linq.Clauses.SelectClause.Selector"/> to the fetch source expression.
+            For example, a fetch request such as <c>FetchOne (x => x.Customer)</c> will be transformed into a <see cref="T:Remotion.Linq.Clauses.SelectClause"/> selecting
+            <c>y.Customer</c> (where <c>y</c> is what the query model originally selected).
+            This method is called by <see cref="M:Remotion.Linq.EagerFetching.FetchRequestBase.CreateFetchQueryModel(Remotion.Linq.QueryModel)"/> in the process of creating the new fetch query model.
+            </summary>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchOneRequest.Clone(Remotion.Linq.Clauses.CloneContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchOneRequest.TransformExpressions(System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <inheritdoc />
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder">
+            <summary>
+            Holds a <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>, a <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/> for which the fetch request was created, and the position
+            where the <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> occurred in the <see cref="P:Remotion.Linq.QueryModel.ResultOperators"/> list of the <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/>. From
+            this information, it builds a new <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/> that represents the <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> as a query.
+            </summary>
+            <remarks>
+            Use <see cref="T:Remotion.Linq.EagerFetching.FetchFilteringQueryModelVisitor"/> to retrieve the <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> instances for a <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/>.
+            </remarks>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.#ctor(Remotion.Linq.EagerFetching.FetchRequestBase,Remotion.Linq.QueryModel,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> class.
+            </summary>
+            <param name="fetchRequest">The fetch request.</param>
+            <param name="queryModel">The query model for which the <paramref name="fetchRequest"/> was originally defined.</param>
+            <param name="resultOperatorPosition">The result operator position where the <paramref name="fetchRequest"/> was originally located.
+            The <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> will include all result operators prior to this position into the fetch <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/>,
+            but it will not include any result operators occurring after (or at) that position.</param>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.GetOrCreateFetchQueryModel">
+            <summary>
+            Creates the fetch query model for the <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>, caching the result.
+            </summary>
+            <returns>
+            A new <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/> which represents the same query as <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/> but selecting
+            the objects described by <see cref="P:Remotion.Linq.EagerFetching.FetchRequestBase.RelationMember"/> instead of the objects selected by the 
+            <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/>. From the original <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.SourceItemQueryModel"/>, only those result operators are included that occur
+            prior to <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.ResultOperatorPosition"/>.
+            </returns>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.CreateInnerBuilders">
+            <summary>
+            Creates <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> objects for the <see cref="P:Remotion.Linq.EagerFetching.FetchRequestBase.InnerFetchRequests"/> of the 
+            <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.FetchRequest"/>. Inner fetch requests start from the fetch query model of the outer fetch request, and they have
+            a <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.ResultOperatorPosition"/> of 0.
+            </summary>
+            <returns>An array of <see cref="T:Remotion.Linq.EagerFetching.FetchQueryModelBuilder"/> objects for the <see cref="P:Remotion.Linq.EagerFetching.FetchRequestBase.InnerFetchRequests"/> of the
+            <see cref="P:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.FetchRequest"/>.</returns>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchRequestBase">
+            <summary>
+            Base class for classes representing a property that should be eager-fetched when a query is executed.
+            </summary>
+        </member>
+        <member name="P:Remotion.Linq.EagerFetching.FetchRequestBase.RelationMember">
+            <summary>
+            Gets the <see cref="T:System.Reflection.MemberInfo"/> of the relation member whose contained object(s) should be fetched.
+            </summary>
+            <value>The relation member.</value>
+        </member>
+        <member name="P:Remotion.Linq.EagerFetching.FetchRequestBase.InnerFetchRequests">
+            <summary>
+            Gets the inner fetch requests that were issued for this <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>.
+            </summary>
+            <value>The fetch requests added via <see cref="M:Remotion.Linq.EagerFetching.FetchRequestBase.GetOrAddInnerFetchRequest(Remotion.Linq.EagerFetching.FetchRequestBase)"/>.</value>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchRequestBase.CreateFetchQueryModel(Remotion.Linq.QueryModel)">
+            <summary>
+            Gets a the fetch query model, i.e. a new <see cref="T:Remotion.Linq.QueryModel"/> that incorporates a given <paramref name="sourceItemQueryModel"/> as a
+            <see cref="T:Remotion.Linq.Clauses.Expressions.SubQueryExpression"/> and selects the fetched items from it.
+            </summary>
+            <param name="sourceItemQueryModel">A <see cref="T:Remotion.Linq.QueryModel"/> that yields the source items for which items are to be fetched.</param>
+            <returns>A <see cref="T:Remotion.Linq.QueryModel"/> that selects the fetched items from <paramref name="sourceItemQueryModel"/> as a subquery.</returns>
+            <remarks>
+            This method does not clone the <paramref name="sourceItemQueryModel"/>, remove result operatores, etc. Use 
+            <see cref="M:Remotion.Linq.EagerFetching.FetchQueryModelBuilder.GetOrCreateFetchQueryModel"/> (via <see cref="T:Remotion.Linq.EagerFetching.FetchFilteringQueryModelVisitor"/>) for the full algorithm.
+            </remarks>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchRequestBase.ModifyFetchQueryModel(Remotion.Linq.QueryModel)">
+            <summary>
+            Modifies the given query model for fetching, adding new <see cref="T:Remotion.Linq.Clauses.AdditionalFromClause"/> instances and changing the 
+            <see cref="T:Remotion.Linq.Clauses.SelectClause"/> as needed.
+            This method is called by <see cref="M:Remotion.Linq.EagerFetching.FetchRequestBase.CreateFetchQueryModel(Remotion.Linq.QueryModel)"/> in the process of creating the new fetch query model.
+            </summary>
+            <param name="fetchQueryModel">The fetch query model to modify.</param>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchRequestBase.GetOrAddInnerFetchRequest(Remotion.Linq.EagerFetching.FetchRequestBase)">
+            <summary>
+            Gets or adds an inner eager-fetch request for this <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>.
+            </summary>
+            <param name="fetchRequest">The <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> to be added.</param>
+            <returns>
+            <paramref name="fetchRequest"/> or, if another <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> for the same relation member already existed,
+            the existing <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>.
+            </returns>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.FetchRequestCollection">
+            <summary>
+            Holds a number of <see cref="T:Remotion.Linq.EagerFetching.FetchManyRequest"/> instances keyed by the <see cref="T:System.Reflection.MemberInfo"/> instances representing the relation members
+            to be eager-fetched.
+            </summary>
+        </member>
+        <member name="M:Remotion.Linq.EagerFetching.FetchRequestCollection.GetOrAddFetchRequest(Remotion.Linq.EagerFetching.FetchRequestBase)">
+            <summary>
+            Gets or adds an eager-fetch request to this <see cref="T:Remotion.Linq.EagerFetching.FetchRequestCollection"/>.
+            </summary>
+            <param name="fetchRequest">The <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> to be added.</param>
+            <returns>
+            <paramref name="fetchRequest"/> or, if another <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/> for the same relation member already existed,
+            the existing <see cref="T:Remotion.Linq.EagerFetching.FetchRequestBase"/>.
+            </returns>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.FetchExpressionNodeBase">
+            <summary>
+            Provides common functionality used by all expression nodes representing fetch operations.
+            </summary>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode">
+            <summary>
+            Parses query operators that instruct the LINQ provider to fetch a collection-valued relationship starting from the values selected by the query. 
+            The node creates <see cref="T:Remotion.Linq.EagerFetching.FetchManyRequest"/> instances and adds them to the <see cref="T:Remotion.Linq.QueryModel"/> as 
+            <see cref="P:Remotion.Linq.QueryModel.ResultOperators"/> (unless the <see cref="T:Remotion.Linq.QueryModel"/> already has an equivalent fetch request).
+            </summary>
+            <remarks>
+            This class is not automatically configured for any query operator methods. LINQ provider implementations must explicitly provide and register 
+            these  methods with the <see cref="T:Remotion.Linq.Parsing.Structure.QueryParser"/> in order for <see cref="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode"/> to be used.
+            <example>
+            Sample code for using fluent syntax when specifying fetch requests.
+              <code>
+              public static class EagerFetchingExtensionMethods
+              {
+                public static FluentFetchRequest&lt;TOriginating, TRelated&gt; FetchMany&lt;TOriginating, TRelated&gt; (
+                    this IQueryable&lt;TOriginating&gt; query, 
+                    Expression&lt;Func&lt;TOriginating, IEnumerable&lt;TRelated&gt;&gt;&gt; relatedObjectSelector)
+                {
+                 
+                  var methodInfo = ((MethodInfo) MethodBase.GetCurrentMethod ()).MakeGenericMethod (typeof (TOriginating), typeof (TRelated));
+                  return CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (methodInfo, query, relatedObjectSelector);
+                }
+             
+                private static FluentFetchRequest&lt;TOriginating, TRelated&gt; CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (
+                    MethodInfo currentFetchMethod, 
+                    IQueryable&lt;TOriginating&gt; query, 
+                    LambdaExpression relatedObjectSelector)
+                {
+                  var queryProvider = (QueryProviderBase) query.Provider;
+                  var callExpression = Expression.Call (currentFetchMethod, query.Expression, relatedObjectSelector);
+                  return new FluentFetchRequest&lt;TOriginating, TRelated&gt; (queryProvider, callExpression);
+                }
+              }
+              
+              public class FluentFetchRequest&lt;TQueried, TFetch&gt; : QueryableBase&lt;TQueried&gt;
+              {
+                public FluentFetchRequest (IQueryProvider provider, Expression expression)
+                    : base (provider, expression)
+                {
+                }
+              }
+              
+              public IQueryParser CreateQueryParser ()
+              {
+                var customNodeTypeProvider = new MethodInfoBasedNodeTypeRegistry ();
+                customNodeTypeProvider.Register (new[] { typeof (EagerFetchingExtensionMethods).GetMethod ("FetchMany") }, typeof (FetchManyExpressionNode));
+                
+                var nodeTypeProvider = ExpressionTreeParser.CreateDefaultNodeTypeProvider ();
+                nodeTypeProvider.InnerProviders.Insert (0, customNodeTypeProvider);
+                
+                var transformerRegistry = ExpressionTransformerRegistry.CreateDefault ();
+                var processor = ExpressionTreeParser.CreateDefaultProcessor (transformerRegistry);
+                var expressionTreeParser = new ExpressionTreeParser (nodeTypeProvider, processor);
+                
+                return new QueryParser (expressionTreeParser);
+              }
+              </code>
+            </example>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode"/>
+            </remarks>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode">
+            <summary>
+            Parses query operators that instruct the LINQ provider to fetch an object-valued relationship starting from the values selected by the query. 
+            The node creates <see cref="T:Remotion.Linq.EagerFetching.FetchOneRequest"/> instances and adds them to the <see cref="T:Remotion.Linq.QueryModel"/> as 
+            <see cref="P:Remotion.Linq.QueryModel.ResultOperators"/> (unless the <see cref="T:Remotion.Linq.QueryModel"/> already has an equivalent fetch request).
+            </summary>
+            <remarks>
+            This class is not automatically configured for any query operator methods. LINQ provider implementations must explicitly provide and register 
+            these methods with the <see cref="T:Remotion.Linq.Parsing.Structure.QueryParser"/> in order for <see cref="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode"/> to be used.
+            <example>
+            Sample code for using fluent syntax when specifying fetch requests.
+              <code>
+              public static class EagerFetchingExtensionMethods
+              {
+                public static FluentFetchRequest&lt;TOriginating, TRelated&gt; FetchOne&lt;TOriginating, TRelated&gt; (
+                    this IQueryable&lt;TOriginating&gt; query, 
+                    Expression&lt;Func&lt;TOriginating, TRelated&gt;&gt; relatedObjectSelector)
+                {
+                 
+                  var methodInfo = ((MethodInfo) MethodBase.GetCurrentMethod ()).MakeGenericMethod (typeof (TOriginating), typeof (TRelated));
+                  return CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (methodInfo, query, relatedObjectSelector);
+                }
+             
+                private static FluentFetchRequest&lt;TOriginating, TRelated&gt; CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (
+                    MethodInfo currentFetchMethod, 
+                    IQueryable&lt;TOriginating&gt; query, 
+                    LambdaExpression relatedObjectSelector)
+                {
+                  var queryProvider = (QueryProviderBase) query.Provider;
+                  var callExpression = Expression.Call (currentFetchMethod, query.Expression, relatedObjectSelector);
+                  return new FluentFetchRequest&lt;TOriginating, TRelated&gt; (queryProvider, callExpression);
+                }
+              }
+              
+              public class FluentFetchRequest&lt;TQueried, TFetch&gt; : QueryableBase&lt;TQueried&gt;
+              {
+                public FluentFetchRequest (IQueryProvider provider, Expression expression)
+                    : base (provider, expression)
+                {
+                }
+              }
+              
+              public IQueryParser CreateQueryParser ()
+              {
+                var customNodeTypeProvider = new MethodInfoBasedNodeTypeRegistry ();
+                customNodeTypeProvider.Register (new[] { typeof (EagerFetchingExtensionMethods).GetMethod ("FetchOne") }, typeof (FetchOneExpressionNode));
+                
+                var nodeTypeProvider = ExpressionTreeParser.CreateDefaultNodeTypeProvider ();
+                nodeTypeProvider.InnerProviders.Insert (0, customNodeTypeProvider);
+                
+                var transformerRegistry = ExpressionTransformerRegistry.CreateDefault ();
+                var processor = ExpressionTreeParser.CreateDefaultProcessor (transformerRegistry);
+                var expressionTreeParser = new ExpressionTreeParser (nodeTypeProvider, processor);
+                
+                return new QueryParser (expressionTreeParser);
+              }
+              </code>
+            </example>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode"/>
+            </remarks>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.OuterFetchExpressionNodeBase">
+            <summary>
+            Provides common functionality for <see cref="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode"/> and <see cref="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode"/>.
+            </summary>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchExpressionNodeBase">
+            <summary>
+            Provides common functionality for <see cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode"/> and <see cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode"/>.
+            </summary>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode">
+            <summary>
+            Parses query operators that instruct the LINQ provider to fetch a collection-valued relationship starting from another fetch operation. The node 
+            creates <see cref="T:Remotion.Linq.EagerFetching.FetchManyRequest"/> instances and attaches them to the preceding fetch operation (unless the previous fetch operation already 
+            has an equivalent fetch request).
+            </summary>
+            <remarks>
+            This class is not automatically configured for any query operator methods. LINQ provider implementations must explicitly provide and register 
+            these methods with the <see cref="T:Remotion.Linq.Parsing.Structure.QueryParser"/> in order for <see cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode"/> to be used.
+            <example>
+            Sample code for using fluent syntax when specifying fetch requests.
+              <code>
+              public static class EagerFetchingExtensionMethods
+              {
+                public static FluentFetchRequest&lt;TQueried, TRelated&gt; ThenFetchMany&lt;TQueried, TFetch, TRelated&gt; (
+                    this FluentFetchRequest&lt;TQueried, TFetch&gt; query, 
+                    Expression&lt;Func&lt;TFetch, IEnumerable&lt;TRelated&gt;&gt;&gt; relatedObjectSelector)
+                {
+                 
+                  var methodInfo = ((MethodInfo) MethodBase.GetCurrentMethod()).MakeGenericMethod (typeof (TQueried), typeof (TFetch), typeof (TRelated));
+                  return CreateFluentFetchRequest&lt;TQueried, TRelated&gt; (methodInfo, query, relatedObjectSelector);
+                }
+             
+                private static FluentFetchRequest&lt;TOriginating, TRelated&gt; CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (
+                    MethodInfo currentFetchMethod, 
+                    IQueryable&lt;TOriginating&gt; query, 
+                    LambdaExpression relatedObjectSelector)
+                {
+                  var queryProvider = (QueryProviderBase) query.Provider;
+                  var callExpression = Expression.Call (currentFetchMethod, query.Expression, relatedObjectSelector);
+                  return new FluentFetchRequest&lt;TOriginating, TRelated&gt; (queryProvider, callExpression);
+                }
+              }
+              
+              public class FluentFetchRequest&lt;TQueried, TFetch&gt; : QueryableBase&lt;TQueried&gt;
+              {
+                public FluentFetchRequest (IQueryProvider provider, Expression expression)
+                    : base (provider, expression)
+                {
+                }
+              }
+              
+              public IQueryParser CreateQueryParser ()
+              {
+                var customNodeTypeProvider = new MethodInfoBasedNodeTypeRegistry ();
+                customNodeTypeProvider.Register (new[] { typeof (EagerFetchingExtensionMethods).GetMethod ("ThenFetchMany") }, typeof (ThenFetchManyExpressionNode));
+                
+                var nodeTypeProvider = ExpressionTreeParser.CreateDefaultNodeTypeProvider ();
+                nodeTypeProvider.InnerProviders.Insert (0, customNodeTypeProvider);
+                
+                var transformerRegistry = ExpressionTransformerRegistry.CreateDefault ();
+                var processor = ExpressionTreeParser.CreateDefaultProcessor (transformerRegistry);
+                var expressionTreeParser = new ExpressionTreeParser (nodeTypeProvider, processor);
+                
+                return new QueryParser (expressionTreeParser);
+              }
+              </code>
+            </example>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode"/>
+            </remarks>
+        </member>
+        <member name="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode">
+            <summary>
+            Parses query operators that instruct the LINQ provider to fetch an object-valued relationship starting from another fetch operation. The node 
+            creates <see cref="T:Remotion.Linq.EagerFetching.FetchOneRequest"/> instances and attaches them to the preceding fetch operation (unless the previous fetch operation already 
+            has an equivalent fetch request).
+            </summary>
+            <remarks>
+            This class is not automatically configured for any query operator methods. LINQ provider implementations must explicitly provide and register 
+            these methods with the <see cref="T:Remotion.Linq.Parsing.Structure.QueryParser"/> in order for <see cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchOneExpressionNode"/> to be used.
+            <example>
+            Sample code for using fluent syntax when specifying fetch requests.
+              <code>
+              public static class EagerFetchingExtensionMethods
+              {
+                public static FluentFetchRequest&lt;TQueried, TRelated&gt; ThenFetchOne&lt;TQueried, TFetch, TRelated&gt; (
+                    this FluentFetchRequest&lt;TQueried, TFetch&gt; query, 
+                    Expression&lt;Func&lt;TFetch, TRelated&gt;&gt; relatedObjectSelector)
+                {
+                 
+                  var methodInfo = ((MethodInfo) MethodBase.GetCurrentMethod()).MakeGenericMethod (typeof (TQueried), typeof (TFetch), typeof (TRelated));
+                  return CreateFluentFetchRequest&lt;TQueried, TRelated&gt; (methodInfo, query, relatedObjectSelector);
+                }
+             
+                private static FluentFetchRequest&lt;TOriginating, TRelated&gt; CreateFluentFetchRequest&lt;TOriginating, TRelated&gt; (
+                    MethodInfo currentFetchMethod, 
+                    IQueryable&lt;TOriginating&gt; query, 
+                    LambdaExpression relatedObjectSelector)
+                {
+                  var queryProvider = (QueryProviderBase) query.Provider;
+                  var callExpression = Expression.Call (currentFetchMethod, query.Expression, relatedObjectSelector);
+                  return new FluentFetchRequest&lt;TOriginating, TRelated&gt; (queryProvider, callExpression);
+                }
+              }
+              
+              public class FluentFetchRequest&lt;TQueried, TFetch&gt; : QueryableBase&lt;TQueried&gt;
+              {
+                public FluentFetchRequest (IQueryProvider provider, Expression expression)
+                    : base (provider, expression)
+                {
+                }
+              }
+              
+              public IQueryParser CreateQueryParser ()
+              {
+                var customNodeTypeProvider = new MethodInfoBasedNodeTypeRegistry ();
+                customNodeTypeProvider.Register (new[] { typeof (EagerFetchingExtensionMethods).GetMethod ("ThenFetchOne") }, typeof (ThenFetchOneExpressionNode));
+                
+                var nodeTypeProvider = ExpressionTreeParser.CreateDefaultNodeTypeProvider ();
+                nodeTypeProvider.InnerProviders.Insert (0, customNodeTypeProvider);
+                
+                var transformerRegistry = ExpressionTransformerRegistry.CreateDefault ();
+                var processor = ExpressionTreeParser.CreateDefaultProcessor (transformerRegistry);
+                var expressionTreeParser = new ExpressionTreeParser (nodeTypeProvider, processor);
+                
+                return new QueryParser (expressionTreeParser);
+              }
+              </code>
+            </example>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchOneExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.FetchManyExpressionNode"/>
+            <seealso cref="T:Remotion.Linq.EagerFetching.Parsing.ThenFetchManyExpressionNode"/>
+            </remarks>
+        </member>
+    </members>
+</doc>
