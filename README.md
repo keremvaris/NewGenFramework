@@ -30,7 +30,7 @@ codegeneratorı çalıştırmak ve debug yada release de oluşan dosyaları ilgi
 
 ![CodeGen](https://github.com/keremvaris/NewGenFramework/blob/master/ReadmeImages/2019-03-08_16-00-31.png)
 
-![CodeGen](https://github.com/keremvaris/NewGenFramework/blob/master/ReadmeImages/c2019-03-08_16-00-55.png)
+![CodeGen](https://github.com/keremvaris/NewGenFramework/blob/master/ReadmeImages/2019-03-08_16-00-55.png)
 
 
 
