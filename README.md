@@ -1,5 +1,6 @@
 # NewGenFramework
 SOLID Framework Sample
+
 Bu Uygulama aşağıda linkleri bulunan ve Engin Demiroğ'a ait eğitim setinin 
 Udemy ve Telegram grubu üzerinden gelen soruları yanıtlamaya yönelik gerçek hayat projesinin implementasyonunu içerir.
 İçeriğinde basit bir Codegenerator, tabular raporlama aracı, NonFactorGrid kullanımı IQueryableRepository yapısının kullanımı, 
