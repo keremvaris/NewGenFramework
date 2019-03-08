@@ -1,0 +1,294 @@
+﻿@using System.Threading
+@*@using System.Web.Optimization
+    @using BayiPuan.MvcWebUi.HtmlHelpers*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bayi Puan | Bayi ve Çalışan Motivasyon ve Ödüllendirme Yazılımı</title>
+    <link rel="Togaysan Icon" href="~/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/w3.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    @*<link href="~/Content/fontawesome.min.css" rel="stylesheet" />*@
+    <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.structure.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.theme.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.UI.block.js"></script>
+    <script src="~/Scripts/highcharts.js"></script>
+
+
+    @RenderSection("scriptsTop", false)
+
+    <style>
+        /* Preloader */
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff; /* sayfa yüklenirken gösterilen arkaplan rengimiz */
+            z-index: 99; /* efektin arkada kalmadığından emin oluyoruz */
+        }
+
+        #status {
+            width: 314px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-image: url('/images/loading.png'); /* burası yazının ilk başında bahsettiğimiz animasyonu çağırır */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -100px 0 0 -100px;
+        }
+
+        .w3-container, .w3-panel {
+            padding: 0 0;
+        }
+
+        .w3-col.s8 {
+            width: 250px;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #267FFF;
+            border-radius: 10px;
+        }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #2196F3;
+            }
+
+        .ba {
+            color: chocolate;
+            font-weight: bolder
+        }
+
+        .pu {
+            color: darkred;
+            font-weight: bolder
+        }
+        .w3-bar .w3-bar-item {
+            padding: 8px 5px;
+            float: left;
+            width: auto;
+            border: none;
+            outline: 0;
+            display: block;
+        }
+        .w3-btn, .w3-button {
+           
+            padding: 8px 10px !important;
+            
+        }
+    </style>
+    @RenderSection("head", false)
+</head>
+<body class="w3-light-grey">
+    @if (HttpContext.Current.User.Identity.IsAuthenticated == false)
+    {
+        Response.Redirect("NotAuthorization");
+    }
+    <!-- Top container -->
+    <
+    <div class="w3-bar w3-top w3-darkblue w3-medium" style="text-align: center; z-index: 4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
+        <span class="w3-bar-item w3-right">
+            @*<i class="fa fa-cogs w3-circle w3-margin-left"></i>
+                <span>@Word("General.Welcome"), <strong>@HttpContext.Current.User.Identity.Name.ToUpper()</strong> Kalan <span class="ba">Ba</span><span class="pu">Pu</span>:<strong> @GeneralHelpers.GetRemainingPoint()</strong></span>*@
+        </span>
+        <span class="w3-bar-item w3-centered">
+            @*<span style="color: #ff5722; font-weight:bold">Ba</span>yi<span style="color:darkred; font-weight:bold">Pu</span>an*@
+            @*<img src="~/images/logo.png" title="BayiPuan.com" />*@
+
+
+        </span>
+        <span class="w3-bar-item w3-left">
+            <a href="@Url.Action("Index", "UserHome", new {id = GeneralHelpers.GetUserId()})" class="fa fa-home fa-fw" style="color: white; padding-right: 1.9em;" title="Ana Sayfa"></a>
+            @*@Html.LangSelector()*@
+            <a href="@Url.Action("SaleIndex", "Sale")" class="fas fa-money-bill-wave fa-fw" style="color: tomato; padding-right: 1.9em;" title="Puan Kazan"></a>
+            <a href="@Url.Action("Index", "BuyUser")" class="fa fa-gift fa-fw" style="color: orange; padding-right: 1.9em;" title="Puan Kullan"></a>
+            <a href="@Url.Action("ChangePassword", "Account")" class="fa fa-key fa-fw" style="color: white; padding-right: 1.9em;" title="Parola Değiştir"></a>
+            <a href="@Url.Action("SignOut", "Account")" class="fa fa-power-off fa-fw" style="color: white; padding-right: 1.9em;" title="Çıkış"></a>
+        </span>
+    </div>
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 300px;" id="mySidebar">
+        <br>
+        <i class="fa fa-user w3-circle w3-margin-left"></i><span>&nbsp;@Word("General.Welcome"), <strong>@HttpContext.Current.User.Identity.Name.ToUpper()</strong><br /></span>
+        <i class="fa fa-gift w3-circle w3-margin-left"></i><span>&nbsp;&nbsp;Kalan <span class="ba">Ba</span><span class="pu">Pu</span>:<strong> @GeneralHelpers.GetRemainingPoint()</strong> </span><br />
+        <i class="fab fa-fort-awesome w3-circle w3-margin-left"></i><span>&nbsp;Bayi:<strong>@GeneralHelpers.GetUserFacility()</strong></span>
+        <hr>
+        <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.ProductActions')">
+            <i class="fas fa-money-bill-wave" style="float: left; margin-top: 3px; color: orange"></i>
+            <div style="width: 230px; float: left; padding-left: 5px;"> Puan Kazan </div>
+            <i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+        </button>
+        <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.ProductActions" style="padding-left: 15px;">
+            <a class="w3-bar-item w3-button w3-padding" href="/Sale/SaleIndex"><i class="fas fa-money-bill-wave fa-fw"></i> Puan Kazan</a>
+            <a class="w3-bar-item w3-button w3-padding" href="/Customer/CustomerIndex"><i class="fas fa-user-tie fa-fw"></i> Müşteri Ekle</a>
+            <a class="w3-bar-item w3-button w3-padding" href="/KnowledgeTest/Question"><i class="far fa-question-circle fa-fw"></i> Bilgini Sına</a>
+            <a class="w3-bar-item w3-button w3-padding" href="/Score/UserScoreIndex"><i class="far fa-star fa-fw"></i> Puan Geçmişi</a>
+        </div>
+        <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.Gifts')">
+            <i class="fa fa-gift" style="float: left; margin-top: 3px; color: deeppink"></i>
+            <div style="width: 230px; float: left; padding-left: 5px;"> Puan Kullan </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+        </button>
+        <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.Gifts" style="padding-left: 15px;">
+            <a class="w3-bar-item w3-button w3-padding" href="/BuyUser/Index"><i class="fa fa-gift fa-fw"></i> Hediye Kataloğu</a>
+            <a class="w3-bar-item w3-button w3-padding" href="/Buy/BuyIndex"><i class="fa fa-gift fa-fw"></i> Hediye Takip</a>
+
+        </div>
+        <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.Companies')">
+            <i class="fas fa-city" style="float: left; margin-top: 3px; color:indigo  "></i>
+            <div style="width: 230px; float: left; padding-left: 5px;"> Firmamız </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+        </button>
+        <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.Companies" style="padding-left: 15px;">
+            <a class="w3-bar-item w3-button w3-padding" href="/MyNew/UserMyNewIndex"><i class="far fa-newspaper fa-fw"></i> Haberler</a>
+            <a class="w3-bar-item w3-button w3-padding" href="/MyProduct/UserMyProductIndex"><i class="fas fa-project-diagram fa-fw"></i> Ürünlerimiz</a>
+        </div>
+        @if (HttpContext.Current.User.IsInRole("SystemAdmin") || HttpContext.Current.User.IsInRole("Admin"))
+        {
+            <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.SaleActions')">
+                <i class="fa fa-check-square" style="float: left; margin-top: 3px; color: green"></i>
+                <div style="width: 230px; float: left; padding-left: 5px;"> Yönetici Onay İşlemleri </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+            </button>
+            <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.SaleActions" style="padding-left: 15px;">
+                <a class="w3-bar-item w3-button w3-padding" href="/Sale/ApprovedSaleIndex">
+                    <i class="fa fa-cart-plus fa-fw"></i> Satış Onayı
+                </a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Score/ScoreIndex">
+                    <i class="fas fa-balance-scale fa-fw"></i> Puan Düzelt
+                </a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Buy/ApprovedBuyIndex">
+                    <i class="fa fa-gift fa-fw"></i> Hediye Onayı
+                </a>
+
+            </div>
+
+            <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.AccountActions')">
+                <i class="fa fa-user" style="float: left; margin-top: 3px; color: #673ab7;"></i>
+                <div style="width: 230px; float: left; padding-left: 5px;"> Kullanıcı İşlemleri </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+            </button>
+            <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.AccountActions" style="padding-left: 15px;">
+                <a class="w3-bar-item w3-button w3-padding" href="/Account/ChangePassword"><i class="fa fa-key fa-fw"></i> Parola Değiştir</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Account/UserIndex"><i class="fa fa-user-plus fa-fw"></i> Kullanıcılar</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Account/Index"><i class="fa fa-user-times fa-fw"></i> Onaylanmamış Kullanıcılar</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/UserRole/UserRoleIndex"><i class="fa fa-users fa-fw"></i> Kullanıcı Rol Tanımlama</a>
+            </div>
+
+            <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.Definitions')">
+                <i class="fa fa-cogs" style="float: left; margin-top: 3px; color: #ff5722;"></i>
+                <div style="width: 230px; float: left; padding-left: 5px;"> Tanımlar </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+            </button>
+            <div class="w3-bar-block w3-hide w3-white w3-card-4  w3-animate-zoom" id="Main.Definitions" style="padding-left: 15px;">
+                <a class="w3-bar-item w3-button w3-padding" href="/Gift/GiftIndex"><i class="fa fa-gift fa-fw"></i> Hediye Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/KnowledgeTest/KnowledgeTestIndex"><i class="fas fa-question fa-fw"></i> Soru Hazırlama</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Brand/BrandIndex"><i class="fa fa-cog fa-fw"></i> Marka Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Seller/SellerIndex"><i class="fa fa-cog fa-fw"></i> Bayi Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Product/ProductIndex"><i class="fa fa-cog fa-fw"></i> Satılacak Ürün Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/City/CityIndex"><i class="fa fa-cog fa-fw"></i> Şehir Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Campaign/CampaignIndex"><i class="fa fa-cog fa-fw"></i> Kampanya Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/Category/CategoryIndex"><i class="fa fa-cog fa-fw"></i> Kategori Türleri</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/UnitType/UnitTypeIndex"><i class="fa fa-cog fa-fw"></i> Ürün Birimleri Tanımı</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/MyNew/MyNewIndex"><i class="far fa-newspaper fa-fw"></i> Haber Tanımları</a>
+                <a class="w3-bar-item w3-button w3-padding" href="/MyProduct/MyProductIndex"><i class="fas fa-project-diagram fa-fw"></i> Firmamız Ürün Tanımları</a>
+            </div>
+        }
+        <button class="w3-button w3-block w3-left-align" onclick="myFunction('Main.Reports')">
+            <i class="fas fa-chart-bar" style="float: left; margin-top: 3px; color: #3f51b5;"></i>
+            <div style="width: 230px; float: left; padding-left: 5px;"> Raporlar </div><i class="fa fa-chevron-down" style="float: right; margin-top: 3px;"></i>
+        </button>
+        <div class="w3-bar-block w3-hide w3-white w3-card-4 w3-animate-zoom" id="Main.Reports" style="padding-left: 15px;">
+            <a class="w3-bar-item w3-button w3-padding" href="/GN_Report/GN_ReportIndex"><i class="fas fa-chart-bar fa-fw"></i> Raporlar</a>
+
+        </div>
+    </nav>
+    @*<i class="fa fa-certificate fa-5x fa-border icon-grey badge"></i>*@
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left: 300px; margin-top: 1px;">
+        <!-- Header -->
+
+        <header class="w3-container" style="padding-top: 1px">
+            <h2>
+
+                <div id="loading" class="alert alert-warning" style="display: none;">
+                    <b>@Word("General.Wait") !</b> @Word("General.Loading")...
+                </div>
+                @Html.Partial("_Notification")
+            </h2>
+
+        </header>
+
+        @RenderBody()
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-16 w3-light-grey">
+            <h4></h4>
+            <p>
+                Powered by <a href="#">Bayi Puan</a>
+            </p>
+        </footer>
+        <!-- End page content -->
+    </div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @Word("General.Wait")</div>
+    </div>
+    <!-- Preloader -->
+
+    <script src="~/Scripts/bootbox.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/tinymce/tinymce.min.js"></script>
+
+
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+
+    <script src="~/Content/js/public.common.min.js"></script>
+    <script src="~/Content/js/layouttinymce.min.js"></script>
+    <script src="~/Content/js/layoutContent.js"></script>
+    <script src="~/Scripts/Common.js">
+    </script>
+
+    @Html.Partial("_Timeout")
+    @RenderSection("Scripts", false)
+
+
+    <script src="/Scripts/jquery-ui.js"></script>
+    <script src="/Scripts/jquery.UI.block.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/MvcGrid/mvc-grid.min.js"></script>
+    <script src="~/Scripts/gridmvc.lang.tr.js"></script>
+    <script>
+        $('.mvc-grid').mvcgrid();
+
+    </script>
+</body>
+</html>

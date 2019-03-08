@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>BayiPuan.Entities</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>afa5e425-603a-4ad6-9824-073245ccfa31</ProjectGuid>
+  <FullPath>E:\src\NewGenSource\BayiPuan\BayiPuan.Entities\BayiPuan.Entities.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="E:\src\NewGenSource\BayiPuan\.sonarqube\out\1\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">E:\src\NewGenSource\BayiPuan\BayiPuan.Entities\bin\Debug\BayiPuan.Entities.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">E:\src\NewGenSource\BayiPuan\.sonarqube\out\1</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+</ProjectInfo>

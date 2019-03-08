@@ -1,0 +1,34 @@
+﻿@model BayiPuan.MvcWebUi.Models.ComplexTypeModels.ViewModel
+<style>
+    .w3-left {
+        padding-left: 5px !important;
+    }
+</style>
+@{ var order = 0;}
+<div class="w3-quarter">
+    <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+            @{
+                var userId = Convert.ToInt32(GeneralHelpers.GetUserId());
+                var models = Model.saleRankings.Where(x => x.UserId == userId);
+            }
+            @foreach (var item in Model.saleRankings)
+            {
+                order += item.SaleOrder;
+                if (item.UserId == userId)
+                {
+                    foreach (var sale in models)
+                    {
+                        <h3>Sıralamanız: @order</h3>
+                    }
+
+                }
+
+            }
+
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Sıralamanız</h4>
+    </div>
+</div>

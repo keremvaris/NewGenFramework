@@ -1,0 +1,96 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+@*@using GenericFW.DataAccessLayer;*@
+@using System.Linq;
+@using Antlr.Runtime.Tree
+@model TemplateItemModel
+@{
+  var col = Model.CurrentColumn;
+  var displayAttr = col.Display;
+  var prop = col.Property;
+
+  var hasCascadeParent = col.ParentColumn != null;
+  var pkt = col.PrimaryTable;
+
+  String parentControl = string.Empty;
+  List<ListItem> result;
+  if (hasCascadeParent)
+  {
+      parentControl = col.ParentColumn.Property.Name;
+      var parentId = Model.Model.Data[parentControl];
+
+      result = Tools.Select<ListItem>(
+
+          string.Format("select {0} [Text], {1} [Id] from {2} where {3}=@p0", pkt.DisplayColumn.DisplayColumn, pkt.PrimaryColumn.Name, pkt.ActualTableName, pkt.MasterFk.Property.Name, parentId));
+  }
+  else
+  {
+      result = Tools.Select<ListItem>(
+          string.Format("select {0} [Text], {1} [Id] from {2}", pkt.DisplayColumn.DisplayColumn, pkt.PrimaryColumn.Name, pkt.ActualTableName));
+  }
+
+
+  result = result ?? new List<ListItem>();
+
+  var sval = Model.Model.Data[prop.Name];
+
+  var items = result.Select(k => new SelectListItem
+  {
+      Selected = k.Id.Equals(sval),
+      Text = k.Text,
+      Value = k.Id.ToString(),
+  });
+  ViewData.TemplateInfo.HtmlFieldPrefix = "";
+  // Diger attributelari ayarla
+  Dictionary<string, object> attrs = null;
+  if (Model.Mode == RenderMode.Readonly || col.IsReadonly)
+  {
+      attrs = new Dictionary<string, object>();
+  }
+  else if (col.Required)
+  {
+      attrs = new Dictionary<string, object>
+{
+{"class", "w3-input"}, {"required", "required"}, {"data-val", "true"}, {"data-trigger", "hover"},
+{"data-content", "Lütfen " + @col.Display.Name + " giriniz."}, {"data-original-title", col.Display.Name},
+{"placeholder", @col.Display.Name}, {"data-val-required", @col.Display.Name + " Alanı Zorunlu!"}
+};
+  }
+  else
+  {
+      attrs = new Dictionary<string, object>
+{
+{"class", "w3-input"}, {"data-trigger", "hover"},
+{"data-content", "Lütfen " + @col.Display.Name + " giriniz."}, {"data-original-title", col.Display.Name}
+};
+  }
+  if (!string.IsNullOrEmpty(parentControl))
+  {
+      attrs.Add("data-parent", parentControl);
+      attrs.Add("data-entity", pkt.ActualTableName);
+  }
+}
+
+@if (hasCascadeParent)
+{
+    @Model.Model.Data[col.ParentColumn.Property.Name];
+}
+
+@if (Model.Mode == RenderMode.Readonly)
+{
+    <span>@sval</span>
+}
+else if (Model.Mode == RenderMode.Edit && col.IsReadonly == true)
+{
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+    <input type="text" id="@prop.Name" step="0,01" placeholder="@col.Display.Name" data-trigger='hover' data-content='Lütfen @prop.Name giriniz.' data-original-title='@prop.Name' class="w3-input" @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-val-required='" + @col.Display.Name + " Alanı Boş ya da Sayısal Bir Değer İçermiyor !' " : "" + "readonly") name="@prop.Name" value="@sval" />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else if (col.Required)
+{
+    @Html.DropDownList(prop.Name, items, "-Seçiniz-", attrs);
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else
+{
+    @Html.DropDownList(prop.Name, items, "-Seçiniz-", attrs);
+}

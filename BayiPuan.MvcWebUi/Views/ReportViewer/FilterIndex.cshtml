@@ -1,0 +1,92 @@
+﻿@using System.Data;
+@model DataTable
+<style>
+    .w3-input {
+        width: 400px !important;
+    }
+</style>
+
+<script>
+    function yazdir() {
+        var yazdirilacakAlan = document.getElementById('content').innerHTML;
+        var orjinalSayfa = document.body.innerHTML;
+        document.body.innerHTML = yazdirilacakAlan;
+        window.print();
+        document.body.innerHTML = orjinalSayfa;
+    };
+</script>
+<div class="w3-container w3-blue w3-center">
+    <div align="center">
+        <h2>@ViewData["ReportTitle"]</h2>
+    </div>
+    <div align="right" style="float: right; margin-top: -32px;">
+        <a onclick="document.getElementById('id01').style.display = 'block'" class="fa fa-print btn btn-default btn-sm"></a>
+    </div>
+</div>
+<div class="w3-container">
+    <table class="w3-table-all">
+        <thead>
+            <tr class="w3-green">
+                @foreach (DataColumn col in Model.Columns)
+                {
+                    <th>@col.ColumnName</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow row in Model.Rows)
+            {
+                <tr>
+                    @foreach (DataColumn col in Model.Columns)
+                    {
+                        <td>@row[col.ColumnName]</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="w3-container">
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+                <div id="content" style="overflow: hidden">
+                    <div align="center">
+                        <h2>@ViewData["ReportTitle"]</h2>
+                    </div>
+                    <table class="w3-table-all">
+                        <thead>
+                            <tr class="w3-green">
+                                @foreach (DataColumn col in Model.Columns)
+                                {
+                                    <th>@col.ColumnName</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DataRow row in Model.Rows)
+                            {
+                                <tr>
+                                    @foreach (DataColumn col in Model.Columns)
+                                    {
+                                        <td>@row[col.ColumnName]</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="w3-half w3-half w3-row-padding">
+                    <button id="cmd" onclick='yazdir()' class="fa fa-print btn btn-block w3-green w3-display-bottom"> Yazdır</button>
+                </div>
+                <div class="w3-half w3-half w3-row-padding">
+                    <button onclick="document.getElementById('id01').style.display='none'" class="fa fa-times btn btn-block w3-red w3-display-bottom"> Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

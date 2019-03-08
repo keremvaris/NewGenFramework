@@ -1,0 +1,75 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+@using System.ComponentModel.DataAnnotations
+@*@using GenericFW.Attr*@
+@model TemplateItemModel
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    .aw-zoom {
+        /*padding: 50px;*/
+        padding-left: 30px;
+        padding-top: 10px;
+        transition: transform .2s;
+        width: 200px;
+        height: 200px;
+        margin: 0px auto;
+    }
+    .aw-zoom:hover {
+        -ms-transform: scale(3.2); /* IE 9 */
+        -webkit-transform: scale(3.2); /* Safari 3-8 */
+        transform: scale(3.2); 
+    }
+</style>
+@{
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    byte[] modelData = Model.Mode == RenderMode.Create ? null : (byte[])Model.Model.Data[prop.Name];
+    var fileExt = string.Empty;
+    if (Model.Model.Data.ContainsKey(prop.Name + "Ext"))
+    {
+        fileExt = (string)Model.Model.Data[prop.Name + "Ext"];
+    }
+}
+
+
+@if (Model.Mode == RenderMode.Readonly || col.IsReadonly)
+{
+    if (UploadUtils.IsImage(fileExt))
+    {
+        var base64 = Convert.ToBase64String(modelData);
+        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+        <a href="@imgSrc" target="_blank"><img src="@imgSrc" width="40" height="40" /></a>
+    }
+    else if (UploadUtils.IsFile(fileExt))
+    {
+        var base64 = Convert.ToBase64String(modelData);
+        var imgSrc = String.Format("data:application/pdf;base64,{0}", base64);
+
+        <a href="@imgSrc" target="_blank"><strong>@Model.Model.Data["Name"].ToString().ToUpper()</strong> İndir!</a>
+    }
+    else
+    {
+        <a href="~/images/indir.gif" target="_blank"><strong>@Model.Model.Data["Name"].ToString().ToUpper()</strong> İndir!</a>
+    }
+}
+else if (col.DataType.DataType == DataType.Upload && Model.Mode == RenderMode.Create)
+{
+    <input type="file" class="span6 m-wrap popovers" required name="@prop.Name" value="@modelData" id="@prop.Name">
+    <br>
+    <span class="label btn-danger">NOT!</span>
+    <span>Desteklenen dosya biçimleri jpeg, jpg, gif, png, pdf, doc, docx, xls, xlsx, ppt, pptx </span>
+}
+else if(col.DataType.DataType == DataType.Upload && Model.Mode == RenderMode.Edit)
+{
+    var base64 = Convert.ToBase64String(modelData);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+    <a href="@imgSrc" target="_blank"><img src="@imgSrc" class="aw-zoom" width="40" height="40" /></a>
+    <input type="file" class="span6 m-wrap popovers"  name="@prop.Name" value="@modelData" id="@prop.Name">
+    <br>
+    <span class="label btn-danger">NOT!</span>
+    <span>Desteklenen dosya biçimleri jpeg, jpg, gif, png, pdf, doc, docx, xls, xlsx, ppt, pptx </span>
+}
+

@@ -1,0 +1,183 @@
+﻿@model List<KnowledgeTest>
+
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+<style>
+    /* Customize the label (the container) */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 135px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* Hide the browser's default radio button */
+        .container input {
+            position: absolute;
+            opacity: 0;
+        }
+
+    /* Create a custom radio button */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 100px;
+        height: 25px;
+        width: 25px;
+        background-color: deepskyblue;
+        border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: green;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+        margin: 0
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        position: relative;
+        background: #f1f1f1f1;
+    }
+
+    /* Slides */
+    .mySlides {
+        display: none;
+        padding: 80px;
+        /*text-align: center;*/
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -30px;
+        padding: 16px;
+        color: #888;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        position: absolute;
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+        }
+
+    /* The dot/bullet/indicator container */
+    .dot-container {
+        text-align: center;
+        padding: 20px;
+        background: #ddd;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+        /* Add a background color to the active dot/circle */
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+    /* Add an italic font style to all quotes */
+    q {
+        font-style: italic;
+    }
+
+    /* Add a blue color to the author */
+    .author {
+        color: cornflowerblue;
+    }
+</style>
+@foreach (var item in Model)
+{
+
+    using (Html.BeginForm("Question", "KnowledgeTest", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+    {
+        @Html.Hidden("questionid", item.KnowledgeTestId)
+        <div class="w3-container">
+            <div class="w3-card-4" style="width:50%;">
+                <header class="w3-container w3-blue">
+                    <h1>@item.Question</h1>
+                </header>
+                <div class="w3-container">
+                    @Html.RadioButtonFor(x => item.Question, item.Answer1, new { @id = 1, @class = "w3-radio" })@Html.Label(item.Answer1)<br />
+                    @Html.RadioButtonFor(x => item.Question, item.Answer2, new { @id = 2, @class = "w3-radio" })@Html.Label(item.Answer2)<br />
+                    @Html.RadioButtonFor(x => item.Question, item.Answer3, new { @id = 3, @class = "w3-radio" })@Html.Label(item.Answer3)<br />
+                    @Html.RadioButtonFor(x => item.Question, item.Answer4, new { @id = 4, @class = "w3-radio" })@Html.Label(item.Answer4)<br />
+                    <input type="submit" name="submit" class="w3-button w3-teal" value="Yanıtla" />
+                </div>
+            </div>
+        </div><br />
+        @*<script>
+                $(document).ready(function () {
+                    $(".w3-radio").change(function () {
+                        var val = $('.w3-radio:checked').val();
+                        alert(val);
+                    });
+                });
+
+            </script>*@
+    }
+
+}

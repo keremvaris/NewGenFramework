@@ -1,0 +1,13 @@
+﻿@model List<BayiPuan.MvcWebUi.GenericVM.Models.LanguageListViewModel>
+
+
+
+
+<div class="w3-dropdown-hover">
+    <button class="w3-button"><i class="fa fa-language fa-fw"></i></button>
+    <div class="w3-dropdown-content w3-bar-block w3-border">
+        @foreach(var item in Model.) {
+        @Html.ActionLink(item.Name, "ChangeCulture", "Home", new {dilId = item.Id, lang = item.Code, returnUrl = this.Request.RawUrl,}, null)<br/>
+        }
+    </div>
+</div>

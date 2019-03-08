@@ -1,0 +1,27 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+
+@model BayiPuan.MvcWebUi.GenericVM.TemplateItemModel
+
+
+@{
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    var modelData = Model.Model.Data[prop.Name];
+}
+
+@if (Model.Mode == RenderMode.Readonly)
+{
+    <span>@modelData</span>
+}
+else if (Model.Mode == RenderMode.Edit && col.IsReadonly == true)
+{
+    <input type="text" id="@prop.Name" placeholder="@col.Display.Name" class="w3-input" name="@prop.Name" value="@modelData"
+           @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "'  data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "" + "readonly") />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else
+{
+    <input type="datetime" id="@prop.Name" placeholder="@col.Display.Name" data-trigger='hover' data-content='Lütfen @col.Display.Name giriniz.' data-original-title='@col.Display.Name' class="w3-input" name="@prop.Name" value="@modelData" />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+
+}

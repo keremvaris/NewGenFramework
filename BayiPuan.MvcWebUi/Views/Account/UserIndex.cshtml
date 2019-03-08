@@ -1,0 +1,37 @@
+﻿@model IGrid<User>
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+<style>
+    .table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+        border-top: 0;
+        background: #8bc34a;
+    }
+
+    .actions {
+        margin-left: 5px;
+    }
+
+    .w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
+        padding-left: 5px;
+        width: 100px;
+    }
+</style>
+
+<div class="w3-container w3-card-4 w3-text-blue w3-margin " style="background: white;">
+    <div class="w3-container w3-blue w3-center">
+        <div align="left" style="float: left;margin-top: 7px;">
+
+        </div>
+        <div align="center">
+            <h4>Kullanıcı Tanımları(@ViewBag.totalRows)</h4>
+        </div>
+        <div align="right" style="float: right;margin-top: -32px;">
+           @* <a href="@(Url.Action("Create"))" title="Ekle" class="fa fa-plus btn btn-primary btn-sm"> </a>*@
+            <a href="@(Url.Action("UserIndex"))" title="Tazele" class="fas fa-sync-alt btn btn-info btn-sm"> </a>
+           
+        </div>
+
+    </div>
+    <div class="w3-responsive">
+        @(new HtmlGrid<User>(Html, grid: Model))
+    </div>
+</div>

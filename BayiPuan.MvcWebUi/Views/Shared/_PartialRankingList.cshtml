@@ -1,0 +1,26 @@
+﻿@model BayiPuan.MvcWebUi.Models.ComplexTypeModels.ViewModel
+<div class="w3-card w3-white w3-padding">
+    <div class="w3-content w3-display-container">
+        @{ var order = 0;}
+        <table class="w3-table-all">
+            <thead>
+                <tr class="w3-green">
+                    <th>Sıra No</th>
+                    <th>Ad Soyad</th>
+                    <th>Satış Miktarı</th>
+                </tr>
+            </thead>
+            @{ var models = Model.saleRankings;}
+            @foreach (var item in models)
+            {
+                order += item.SaleOrder;
+                <tr>
+                    <td>@order</td>
+                    <td>@item.FirstName.ToString() @item.LastName.ToString()</td>
+                    <td>@item.SumSale</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+
+@model TemplateItemModel
+@{
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    var modelData = Model.Mode == RenderMode.Create ? string.Empty : Model.Model.Data[prop.Name];
+}
+
+@if (Model.Mode == RenderMode.Readonly)
+{
+    <span>@modelData</span>
+}
+else if (Model.Mode == RenderMode.Edit && col.IsReadonly == true)
+{
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+    <input type="text" id="@prop.Name" step="0,01" placeholder="@col.Display.Name" data-trigger='hover' data-content='Lütfen @prop.Name giriniz.' data-original-title='@prop.Name' class="w3-input" @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-val-required='" + @col.Display.Name + " Alanı Boş ya da Sayısal Bir Değer İçermiyor !' " : "" + "readonly") name="@prop.Name" value="@modelData" />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else
+{
+    <input type="number" id="@prop.Name" pattern="[0-9]{10}" placeholder="@col.Display.Name" data-trigger='hover' data-content='Lütfen "+@prop.Name+" giriniz.' data-original-title='"+@prop.Name+"' class="w3-input" @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-val-required='" + @col.Display.Name + " Alanı Boş ya da Sayısal Bir Değer İçermiyor !' " : "") name="@prop.Name" value="@modelData" />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}

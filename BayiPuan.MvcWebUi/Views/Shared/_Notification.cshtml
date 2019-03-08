@@ -1,0 +1,80 @@
+﻿@using NewGenFramework.Core.Utilities.MVC.Enums
+
+@{
+  //success messages
+  var successMessages = new List<string>();
+
+  if (TempData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Success)] != null)
+  {
+      successMessages.Add(TempData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Success)].ToString());
+  }
+
+  if (ViewData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Success)] != null)
+  {
+      successMessages.Add(ViewData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Success)].ToString());
+  }
+
+  //error messages
+  var errorMessages = new List<string>();
+
+  if (TempData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Error)] != null)
+  {
+      errorMessages.Add(TempData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Error)].ToString());
+  }
+
+  if (ViewData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Error)] != null)
+  {
+      errorMessages.Add(ViewData[string.Format("NewGenFramework.notifications.{0}", NotifyType.Error)].ToString());
+  }
+}
+
+@foreach (var message in successMessages)
+{
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'success');
+        });
+
+    </script>
+}
+@foreach (var message in errorMessages)
+{
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'error');
+        });
+
+    </script>
+}
+
+<div id="dialog-notifications-success" style="display: none;" class="alert alert-success alert-dismissible" role="alert">
+    <a class="close" onclick="$('#dialog-notifications-success').hide()">×</a>
+    <span class="mesaj"></span>
+</div>
+
+<div id="dialog-notifications-danger" style="display: none;" class="alert alert-danger alert-dismissible" role="alert">
+    <a class="close" onclick="$('#dialog-notifications-danger').hide()">×</a>
+    <span class="mesaj"></span>
+</div>
+
+<div id="myModalSuccess" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">@Word("Basari")</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+
+

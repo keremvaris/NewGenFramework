@@ -1,0 +1,83 @@
+﻿<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Oturum Durumu</h4>
+            </div>
+            <div class="modal-body">
+                Oturumunuz <span id="CountDownHolder"></span> saniye sonra kapanacaktır. Devam et butonuna basarak bu süreyi uzatabilirsiniz.
+            </div>
+            <div class="modal-footer">
+                @*<button type="button" class="btn btn-default" data-dismiss="modal">Oturumu Kapat</button>*@
+                <button type="button" class="btn btn-primary" onclick="SessionTimeout.sendKeepAlive();">Devam Et</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@functions {
+
+    public int PopupShowDelay
+    {
+        get { return 60000 * (Session.Timeout - 1); }
+    }
+}
+<script type="text/javascript">
+    window.SessionTimeout = (function() {
+        var _timeLeft, _popupTimer, _countDownTimer;
+
+        var stopTimers = function() {
+            window.clearTimeout(_popupTimer);
+            window.clearTimeout(_countDownTimer);
+        };
+
+        var updateCountDown = function() {
+            var min = Math.floor(_timeLeft / 60);
+            var sec = _timeLeft % 60;
+            if(sec < 10)
+                sec = "0" + sec;
+
+            document.getElementById("CountDownHolder").innerHTML = min + ":" + sec;
+
+            if(_timeLeft > 0) {
+                _timeLeft--;
+                _countDownTimer = window.setTimeout(updateCountDown, 1000);
+            } else {
+                document.location = "@Url.RouteUrl("Default",new{controller="Account",action="SignOut"})";
+            }
+        };
+
+        var showPopup = function() {
+
+            _timeLeft = 10;
+            updateCountDown();
+            $("#myModal").modal({
+                backdrop:'static',
+                show:true
+            });
+        };
+
+        var schedulePopup = function() {
+            stopTimers();
+            _popupTimer = window.setTimeout(showPopup, @PopupShowDelay);
+        };
+
+        var sendKeepAlive = function() {
+            stopTimers();
+            $("#myModal").modal('hide');
+            SessionTimeout.schedulePopup();
+        };
+
+        return {
+            schedulePopup: schedulePopup,
+            sendKeepAlive: sendKeepAlive
+        };
+
+    })();
+
+    SessionTimeout.schedulePopup();
+</script>
+

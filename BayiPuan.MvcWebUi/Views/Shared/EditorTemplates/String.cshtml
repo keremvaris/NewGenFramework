@@ -1,0 +1,60 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+@using System.ComponentModel.DataAnnotations
+@*@using GenericFW.Attr*@
+@model TemplateItemModel
+
+@{
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    var modelData = Model.Mode == RenderMode.Create ? string.Empty : Model.Model.Data[prop.Name];
+}
+
+@if (Model.Mode == RenderMode.Readonly)
+{
+    <span>@Html.Raw(modelData)</span>
+}
+else if (Model.Mode == RenderMode.Edit && col.IsReadonly == true)
+{
+    <input type="text" id="@prop.Name" placeholder="@col.Display.Name" class="w3-input" name="@prop.Name" value="@modelData"
+           @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "'  data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "" + "readonly") />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else if (col.DataType.DataType == DataType.Password)
+{
+    <input type="password" id="@prop.Name" placeholder="@col.Display.Name" class="w3-input" name="@prop.Name" value="@modelData"
+           @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "'  data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "") />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+
+}
+else if (col.DataType.DataType == DataType.MultilineText)
+{
+    <textarea class="w3-input" rows="3" id="@prop.Name" placeholder="@col.Display.Name" name="@prop.Name" value="@modelData"
+              @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "' data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "") type="text"></textarea>
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else if (col.DataType.DataType == DataType.Html)
+{
+    <textarea class="w3-input" rows="3" id="@prop.Name" name="@prop.Name" value="@modelData"
+              placeholder="col.Display.Name" @Html.Raw(col.Required ? " data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "' data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "") type="text">
+        @modelData
+        </textarea>
+}
+else if (col.DataType.DataType == DataType.Upload)
+{
+    <input type="file" class="span6 m-wrap popovers" name="@prop.Name" value="@modelData" id="@prop.Name">
+    <input type="submit" name="upload" />
+}
+else
+{
+    <input type="text" id="@prop.Name" name="@prop.Name" value="@modelData"
+           placeholder="@col.Display.Name" class="w3-input" data-trigger='hover' data-content='Lütfen  @col.Display.Name  giriniz.' data-original-title='@col.Display.Name' @Html.Raw(col.Required ? "class= 'form-control text-danger' data-rule-required='true' data-val='true' aria-required='true'  data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : " ") />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+
+
+    <div class="popover fade right">
+        <div class="arrow"></div><h3 class="popover-title">@col.Display.Name Alanı</h3>
+        <div class="popover-content">Lütfen yandaki alana @col.Display.Name  giriniz.</div>
+    </div>
+
+
+}

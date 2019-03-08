@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = Model.Meta.Caption.DisplayName + " Kayıt Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using BayiPuan.MvcWebUi.GenericVM
+
+@model GenericVM
+<style>
+    .w3-card-4 {
+        background-color: white;
+    }
+    .form-group {
+        margin-bottom: 0px !important;
+    }
+</style>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<div class="w3-container w3-card-4 w3-text-blue w3-margin ">
+    <div class="text-left">
+        @using (@Html.BeginForm("Edit", Model.Meta.ControllerName, FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <div class="form-horizontal">
+                <div class="w3-container w3-deep-purple w3-center">
+                    <h6>
+                        <i class="fa fa-pencil"></i> @Model.Meta.Caption.DisplayName Düzenleme Sihirbazı
+                    </h6>
+                </div>
+                @foreach (var column in Model.Meta.Columns)
+                {
+                    var displayAttr = column.Display;
+                    var col = column.Property;
+                    if (displayAttr == null)
+                    {
+                        <input type="hidden" name="@col.Name" value="@Model.Data[col.Name]" />
+                        continue;
+                    }
+                    //if (Model.Meta.Columns.Count>10)
+                    //{
+
+                    //}
+                    <div class="form-group-sm">
+                        <div class="w3-row w3-section">
+                            <div class="w3-col" style="width:150px">@displayAttr.Name</div>
+                            <div class="w3-rest">
+                                @{
+                                    var tim = new TemplateItemModel { Model = Model, CurrentColumn = column, Mode = RenderMode.Edit };
+                                    var templateName = column.Template ?? column.InnerType.Name;
+                                }
+                                @Html.EditorFor(m => tim, templateName)
+
+                                <span class="help-block">
+                                    @Html.Raw(displayAttr.Description)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                <div class="w3-half w3-half w3-row-padding">
+                    <button type="button" id="sButton" name="sButton" styel="display:inline !important;" class="w3-button w3-block w3-section w3-green w3-ripple w3-padding" value="Kaydet"
+                            onclick="$('form').submit()">
+                        <i class="fa fa-check m-icon-white"></i> Kaydet
+                    </button>
+                </div>
+                <div class="w3-half w3-half w3-row-padding">
+                    <button type="button" class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" value="İptal" onclick="location.href='@Request.UrlReferrer.ToString()'"><i class="fa fa-share-square-o"></i> İptal</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section scriptsTop{
+    <!--Kayıt Düzenle Modal Sonu-->
+}
+@section head{
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css">
+
+}
+@section scripts{
+
+    @*<script src="//code.jquery.com/jquery-1.10.2.js"></script>*@
+
+    @*<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>*@
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/i18n/jquery-ui-i18n.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $.datepicker.setDefaults($.datepicker.regional['tr']);
+            $("input[type=datetime]").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'dd.mm.yy'
+            });
+            $(function() {
+                $('select').select2({
+                    minimumResultsForSearch: 50,
+                    allowClear: true,
+                    placeholder: " Seçiniz...",
+                    language: "tr"
+                });
+               
+            });
+            $("[data-parent]").map(function (i, v) {
+                var me = $(v);
+                var pc = $('#' + me.attr("data-parent"));
+                pc.change(function (ev) {
+                    var pId = $(ev.target).val();
+                    var url = "/GenericLookup/Get?entityName=" + me.attr("data-entity") + "&parentId=" + pId;
+                    console.log(url);
+                    $.getJSON(url,
+                        function (d) {
+                            me.empty();
+                            $(d).each(function (idx, va) {
+                                me.append(
+                                    $("<option/>")
+                                        .attr("value", va.id)
+                                        .html(va.text)
+                                );
+                            });
+                        });
+                });
+                return pc;
+            });
+
+        });
+    </script>
+}

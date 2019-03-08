@@ -1,0 +1,29 @@
+Product projects
+---------------------------------------
+E:\src\NewGenSource\BayiPuan\FwGen\FwGen.csproj
+E:\src\NewGenSource\BayiPuan\BayiPuan.Entities\BayiPuan.Entities.csproj
+E:\src\NewGenSource\BayiPuan\BayiPuan.DataAccess\BayiPuan.DataAccess.csproj
+E:\src\NewGenSource\BayiPuan\BayiPuan.Business\BayiPuan.Business.csproj
+E:\src\NewGenSource\BayiPuan\BayiPuan.MvcWebUi\BayiPuan.MvcWebUi.csproj
+E:\src\NewGenSource\BayiPuan\BayiPuan.WebSite\BayiPuan.WebSite.csproj
+
+
+Test projects
+---------------------------------------
+
+
+Invalid projects
+---------------------------------------
+{none}
+
+
+Skipped projects
+---------------------------------------
+{none}
+
+
+Excluded projects
+---------------------------------------
+{none}
+
+

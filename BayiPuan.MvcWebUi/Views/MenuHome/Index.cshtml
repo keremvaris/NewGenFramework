@@ -1,0 +1,112 @@
+﻿
+<div class="w3-container w3-card-4  w3-margin " style="background: white;">
+    <h3><span style='color: crimson'>@Html.Raw(TempData["count"])</span></h3>
+    <h3><span style='color: #008000'>@Html.Raw(TempData["mesajExchange"])</span></h3>
+    <h3><span style='color: crimson'>@TempData["mesaj"]</span></h3>
+    <div class="w3-row-padding" @*style="margin:16px -16px*@>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-qrcode" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px; color: orange"></i>
+                <div class="w3-bar w3-orange">
+                    <span class="w3-bar-item">Ürün İşlemleri</span>
+                    <div class="w3-dropdown-hover w3-right">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="../Product/PM_ProductIndex"><i class="fa fa-barcode fa-fw"></i> Stok Kartı</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../WareHouseStockCount/PM_WarehouseStockCountIndex"><i class="fa fa-signal fa-fw"></i> Depo Stok Dağılımı</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-wrench" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px;"></i>
+                <div class="w3-bar w3-black">
+                    <span class="w3-bar-item">Depo İşlemleri</span>
+                    <div class="w3-dropdown-hover w3-right">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="../PM_Acceptance/PM_AcceptanceIndex"><i class="fa fa-cubes fa-fw"></i> Ürün Kabul</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../PM_WarehouseTransfer/PM_WarehouseTransferIndex"><i class="fa fa-random fa-fw"></i> Depolar Arası Transfer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-cart-plus fa-fw" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px; color: #4CAF50;"></i>
+                <div class="w3-bar w3-green">
+                    <span class="w3-bar-item">Satış İşlemleri</span>
+                    <div class="w3-dropdown-hover w3-left">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="../PM_ProductOut/PM_ProductOutIndex"><i class="fa fa-cart-plus fa-fw"></i> Kasiyer Çıkışı</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../PM_Bid/PM_BidIndex">
+                                <i class="fa fa-handshake-o fa-fw"></i> Plasiyer Satışı
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-user" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px; color: #673ab7;"></i>
+                <div class="w3-bar w3-deep-purple">
+                    <span class="w3-bar-item">Kullanıcı İşlemleri</span>
+                    <div class="w3-dropdown-hover w3-right">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="../Account/Index"><i class="fa fa-user-times fa-fw"></i> Onaylanmamış Kullanıcılar</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../UserRole/UserRoleIndex"><i class="fa fa-users fa-fw"></i> Kullanıcı Rol Tanımlama</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../Account/UserIndex"><i class="fa fa-user-plus fa-fw"></i> Kullanıcılar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-cogs" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px; color: #ff5722;"></i>
+                <div class="w3-bar w3-deep-orange">
+                    <span class="w3-bar-item">Tanımlar</span>
+                    <div class="w3-dropdown-hover w3-right">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="/GN_Exchange/GN_ExchangeIndex"><i class="fa fa-money fa-fw"></i> Kur Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_Brand/DF_BrandIndex"><i class="fa fa-cog fa-fw"></i> Marka Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_Model/DF_ModelIndex"><i class="fa fa-cog fa-fw"></i> Model Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_WareHouse/DF_WareHouseIndex"><i class="fa fa-cog fa-fw"></i> Depo Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_WareHouseShelf/DF_WareHouseShelfIndex"><i class="fa fa-cog fa-fw"></i> Raf Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_WarehouseShelfDrawer/DF_WarehouseShelfDrawerIndex"><i class="fa fa-cog fa-fw"></i> Çekmece Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_InventoryType/DF_InventoryTypeIndex"><i class="fa fa-cog fa-fw"></i> Stok Türleri</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../DF_Lookup/DF_LookupIndex"><i class="fa fa-cog fa-fw"></i> Ürün Birimleri Tanımı</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../GN_Firm/GN_FirmIndex"><i class="fa fa-cog fa-fw"></i> Firma Tanımları</a>
+                            <a class="w3-bar-item w3-button w3-padding" href="../GN_Catalog/GN_CatalogIndex"><i class="fa fa-cog fa-fw"></i> Katalog Tanımları</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third">
+            <div class="w3-card-4">
+                <i class="fa fa-line-chart" style="float: left; margin-top: 3px; font-size: 200px; text-align: center; width: 100%; height: 200px; color: #3f51b5;"></i>
+                <div class="w3-bar w3-indigo">
+                    <span class="w3-bar-item">Raporlar</span>
+                    <div class="w3-dropdown-hover w3-left">
+                        <button class="w3-bar-item w3-button w3-right"><i class="fa fa-caret-right"></i></button>
+                        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+                            <a class="w3-bar-item w3-button w3-padding" href="/GN_Report/GN_ReportIndex"><i class="fas fa-chart-line fa-fw"></i> Raporlar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

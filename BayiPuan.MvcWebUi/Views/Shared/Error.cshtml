@@ -1,0 +1,14 @@
+﻿@model Exception
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="panel panel-danger">
+    <div class="panel-heading"><b>Hata:</b> @Model.Message</div>
+    <div class="panel-body">
+        @Model.StackTrace
+    </div>
+</div>
+

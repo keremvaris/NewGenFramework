@@ -1,0 +1,26 @@
+﻿
+
+@using BayiPuan.MvcWebUi.GenericVM
+@model TemplateItemModel
+@{ 
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    var modelData = Model.Model.Data[prop.Name];
+   ViewData.TemplateInfo.HtmlFieldPrefix = "";
+
+}
+
+ @if (Model.Mode == RenderMode.Readonly || col.IsReadonly)
+ {
+    <span>@modelData</span>
+ }
+ else
+ {
+    @Html.CheckBox(prop.Name, (bool)@modelData, new { @class = "checkbox" })
+ }
+
+
+
+
+
+  

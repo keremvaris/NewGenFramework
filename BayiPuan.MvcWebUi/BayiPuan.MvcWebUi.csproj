@@ -1,0 +1,569 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07917F22-6F7A-4C86-BE4A-57A04844EAD3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BayiPuan.MvcWebUi</RootNamespace>
+    <AssemblyName>BayiPuan.MvcWebUi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNet.Highcharts">
+      <HintPath>..\..\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.1.3\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.Mvc5.8.1.3\lib\net45\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.ValidatorAttribute, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.ValidatorAttribute.8.1.3\lib\net45\FluentValidation.ValidatorAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mvc.Grid.Core, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.4.3.0\lib\net45\Mvc.Grid.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NewGenFramework.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NewGenFramework.Core\bin\Release\NewGenFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.4.2.17\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Primitives.4.3.0\lib\net45\System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap4.min.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\gridmvc.datepicker.css" />
+    <Content Include="Content\gridmvc.datepicker.min.css" />
+    <Content Include="Content\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
+    <Content Include="Content\js\JsBarcode.all.min.js" />
+    <Content Include="Content\js\layoutContent.js" />
+    <Content Include="Content\js\layouttinymce.min.js" />
+    <Content Include="Content\js\public.common.js" />
+    <Content Include="Content\js\public.common.min.js" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
+    <Content Include="Content\one-page-wonder.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Content\tinymce\langs\tr.js" />
+    <Content Include="Content\tinymce\license.txt" />
+    <Content Include="Content\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="Content\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Content\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\example\dialog.html" />
+    <Content Include="Content\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Content\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Content\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Content\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Content\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Content\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Content\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Content\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Content\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Content\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Content\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Content\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Content\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Content\tinymce\tinymce.min.js" />
+    <Content Include="Content\w3.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\img_avatar3.png" />
+    <Content Include="images\indir.gif" />
+    <Content Include="images\loading.png" />
+    <Content Include="images\Login.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="Scripts\gridmvc.min.js.map" />
+    <Content Include="log4net.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\gridmvc.customwidgets.js" />
+    <Content Include="Scripts\gridmvc.customwidgetsFirm.js" />
+    <Content Include="Scripts\gridmvc.js" />
+    <Content Include="Scripts\gridmvc.lang.fr.js" />
+    <Content Include="Scripts\gridmvc.lang.tr.js" />
+    <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\adapters\mootools-adapter.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\adapters\mootools-adapter.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\adapters\prototype-adapter.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\adapters\prototype-adapter.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\highcharts.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\data.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\themes\gray.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\themes\grid.js" />
+    <Content Include="Scripts\Highcharts-3.0.1\js\themes\skies.js" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\html2canvas.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.UI.block.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jspdf.min.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.min.js" />
+    <Content Include="Scripts\tr.js" />
+    <Content Include="Views\Shared\loading.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\BuyController.cs" />
+    <Compile Include="Controllers\BuyUserController.cs" />
+    <Compile Include="Controllers\CampaignController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ChartDemoController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\GiftController.cs" />
+    <Compile Include="Controllers\GN_ReportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KnowledgeTestController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\LanguageWordController.cs" />
+    <Compile Include="Controllers\MenuHomeController.cs" />
+    <Compile Include="Controllers\MyNewController.cs" />
+    <Compile Include="Controllers\MyProductController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RelationalPersonController.cs" />
+    <Compile Include="Controllers\ReportViewerController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="Controllers\ScoreController.cs" />
+    <Compile Include="Controllers\SellerController.cs" />
+    <Compile Include="Controllers\UnitTypeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserHomeController.cs" />
+    <Compile Include="Controllers\UserRoleController.cs" />
+    <Compile Include="Controllers\UserTypeController.cs" />
+    <Compile Include="Filters\AuthorizationFilter.cs" />
+    <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="GenericVM\ColumnMeta.cs" />
+    <Compile Include="GenericVM\CrudExtensions.cs" />
+    <Compile Include="GenericVM\CustomModelBinder.cs" />
+    <Compile Include="GenericVM\GenericListVM.cs" />
+    <Compile Include="GenericVM\GenericVM.cs" />
+    <Compile Include="GenericVM\ListItem.cs" />
+    <Compile Include="GenericVM\PageFeatures.cs" />
+    <Compile Include="GenericVM\PageVM.cs" />
+    <Compile Include="GenericVM\TableMeta.cs" />
+    <Compile Include="GenericVM\TemplateModel.cs" />
+    <Compile Include="GenericVM\Tools.cs" />
+    <Compile Include="GenericVM\UIAttribute.cs" />
+    <Compile Include="GenericVM\UploadModelBinder.cs" />
+    <Compile Include="GenericVM\UploadUtils.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\GeneralHelpers.cs" />
+    <Compile Include="HtmlHelpers\LanguageSelectorHelper.cs" />
+    <Compile Include="HtmlHelpers\MyCheckBoxForHelpers.cs" />
+    <Compile Include="HtmlHelpers\MyEditorForHelpers.cs" />
+    <Compile Include="Infrastructure\BaseController.cs" />
+    <Compile Include="Infrastructure\MultipleButtonAttribute.cs" />
+    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Localize\LanguageWord.cs" />
+    <Compile Include="Localize\LocalizedString.cs" />
+    <Compile Include="Localize\SetUserLocale.cs" />
+    <Compile Include="Localize\WebViewPage.cs" />
+    <Compile Include="Models\ComplexTypeModels\ViewModel.cs" />
+    <Compile Include="Models\ViewModels\AnswerViewModel.cs" />
+    <Compile Include="Models\ViewModels\BuyViewModel.cs" />
+    <Compile Include="Models\ViewModels\GiftViewModel.cs" />
+    <Compile Include="Models\ViewModels\GN_ReportViewModel.cs" />
+    <Compile Include="Models\ViewModels\KnowledgeTestViewModel.cs" />
+    <Compile Include="Models\ViewModels\MyNewViewModel.cs" />
+    <Compile Include="Models\ViewModels\MyProductViewModel.cs" />
+    <Compile Include="Models\ViewModels\NotApproveSaleViewModel.cs" />
+    <Compile Include="Models\ViewModels\BrandViewModel.cs" />
+    <Compile Include="Models\ViewModels\CampaignViewModel.cs" />
+    <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
+    <Compile Include="Models\ViewModels\CityViewModel.cs" />
+    <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
+    <Compile Include="Models\ViewModels\LanguageViewModel.cs" />
+    <Compile Include="Models\ViewModels\LanguageWordViewModel.cs" />
+    <Compile Include="Models\ViewModels\ProductViewModel.cs" />
+    <Compile Include="Models\ViewModels\RelationalPersonViewModel.cs" />
+    <Compile Include="Models\ViewModels\RoleViewModel.cs" />
+    <Compile Include="Models\ViewModels\ApproveSaleViewModel.cs" />
+    <Compile Include="Models\ViewModels\SaleViewModel.cs" />
+    <Compile Include="Models\ViewModels\ScoreViewModel.cs" />
+    <Compile Include="Models\ViewModels\SellerViewModel.cs" />
+    <Compile Include="Models\ViewModels\TopCategoryViewModel.cs" />
+    <Compile Include="Models\ViewModels\UnitTypeViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserRoleViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserTypeViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\MvcGrid\Fonts\GridGlyphs.woff" />
+    <Content Include="Content\MvcGrid\mvc-grid.css_" />
+    <Content Include="Content\tinymce\langs\readme.md" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Content\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\Create.cshtml" />
+    <Content Include="Views\Shared\Delete.cshtml" />
+    <Content Include="Views\Shared\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Byte[].cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int16.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Lookup.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_AjaxGrid.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+    <Content Include="Views\Shared\NoAuthorize.cshtml" />
+    <Content Include="Views\Shared\NoPageFound.cshtml" />
+    <Content Include="Views\Shared\NotAuthorization.cshtml" />
+    <Content Include="Views\Shared\UnExpected.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Lang.cshtml" />
+    <Content Include="Views\Shared\_Languages.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Shared\_NotificationPopup.cshtml" />
+    <Content Include="Views\Shared\_PartialCampaign.cshtml" />
+    <Content Include="Views\Shared\_PartialRanking.cshtml" />
+    <Content Include="Views\Shared\_PartialRemainingScore.cshtml" />
+    <Content Include="Views\Shared\_PartialTotalSpent.cshtml" />
+    <Content Include="Views\Shared\_PartialTotalWon.cshtml" />
+    <Content Include="Views\Shared\_TimeOut.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\NewUser.cshtml" />
+    <Content Include="Views\Account\SignIn.cshtml" />
+    <Content Include="Views\Account\UpdateActivation.cshtml" />
+    <Content Include="Views\Account\UserIndex.cshtml" />
+    <Content Include="Views\MenuHome\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Role\RoleIndex.cshtml" />
+    <Content Include="Views\Brand\BrandIndex.cshtml" />
+    <Content Include="Views\Campaign\CampaignIndex.cshtml" />
+    <Content Include="Views\Category\CategoryIndex.cshtml" />
+    <Content Include="Views\City\CityIndex.cshtml" />
+    <Content Include="Views\Customer\CustomerIndex.cshtml" />
+    <Content Include="Views\Product\ProductIndex.cshtml" />
+    <Content Include="Views\RelationalPerson\RelationalPersonIndex.cshtml" />
+    <Content Include="Views\Sale\SaleIndex.cshtml" />
+    <Content Include="Views\Seller\SellerIndex.cshtml" />
+    <Content Include="Views\UnitType\UnitTypeIndex.cshtml" />
+    <Content Include="Views\UserHome\Index.cshtml" />
+    <Content Include="Views\Sale\ApprovedSaleIndex.cshtml" />
+    <Content Include="Views\Shared\DeleteEdit.cshtml" />
+    <Content Include="Views\ReportViewer\FilterIndex.cshtml" />
+    <Content Include="Views\ReportViewer\Index.cshtml" />
+    <Content Include="Views\GN_Report\GN_ReportIndex.cshtml" />
+    <Content Include="Views\UserRole\UserRoleIndex.cshtml" />
+    <Content Include="Views\Gift\GiftIndex.cshtml" />
+    <Content Include="Views\Buy\BuyIndex.cshtml" />
+    <Content Include="Views\Buy\BuyUserIndex.cshtml" />
+    <Content Include="Views\BuyUser\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialRankingList.cshtml" />
+    <Content Include="Views\Buy\ApprovedBuyIndex.cshtml" />
+    <Content Include="Views\BuyUser\CategoryIndex.cshtml" />
+    <Content Include="Views\ChartDemo\Index.cshtml" />
+    <Content Include="Views\Score\ScoreIndex.cshtml" />
+    <Content Include="Views\Answer\AnswerIndex.cshtml" />
+    <Content Include="Views\KnowledgeTest\KnowledgeTestIndex.cshtml" />
+    <Content Include="Views\KnowledgeTest\Question.cshtml" />
+    <Content Include="Views\Score\UserScoreIndex.cshtml" />
+    <Content Include="Views\MyNew\MyNewIndex.cshtml" />
+    <Content Include="Views\MyProduct\MyProductIndex.cshtml" />
+    <Content Include="Views\MyNew\UserMyNewIndex.cshtml" />
+    <Content Include="Views\MyNew\Detail.cshtml" />
+    <Content Include="Views\MyProduct\UserMyProductIndex.cshtml" />
+    <Content Include="Views\MyProduct\Detail.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BayiPuan.Business\BayiPuan.Business.csproj">
+      <Project>{4BC616A8-E4FC-4F87-B27C-96F9A65D288C}</Project>
+      <Name>BayiPuan.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BayiPuan.DataAccess\BayiPuan.DataAccess.csproj">
+      <Project>{22AB46C6-CBF1-40B4-B809-AC76037B0AB0}</Project>
+      <Name>BayiPuan.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BayiPuan.Entities\BayiPuan.Entities.csproj">
+      <Project>{AFA5E425-603A-4AD6-9824-073245CCFA31}</Project>
+      <Name>BayiPuan.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57159</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57159/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\PostSharp.4.2.17\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

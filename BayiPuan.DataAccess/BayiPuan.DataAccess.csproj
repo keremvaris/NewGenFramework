@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22AB46C6-CBF1-40B4-B809-AC76037B0AB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BayiPuan.DataAccess</RootNamespace>
+    <AssemblyName>BayiPuan.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NewGenFramework.Core">
+      <HintPath>..\..\NewGenFramework.Core\bin\Release\NewGenFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAnswerDal.cs" />
+    <Compile Include="Abstract\IBrandDal.cs" />
+    <Compile Include="Abstract\IBuyDal.cs" />
+    <Compile Include="Abstract\ICampaignDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\ICustomerDal.cs" />
+    <Compile Include="Abstract\IGiftDal.cs" />
+    <Compile Include="Abstract\IGN_ReportDal.cs" />
+    <Compile Include="Abstract\IKnowledgeTestDal.cs" />
+    <Compile Include="Abstract\ILanguageDal.cs" />
+    <Compile Include="Abstract\ILanguageWordDal.cs" />
+    <Compile Include="Abstract\IMyNewDal.cs" />
+    <Compile Include="Abstract\IMyProductDal.cs" />
+    <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\IRelationalPersonDal.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\ISaleDal.cs" />
+    <Compile Include="Abstract\IScoreDal.cs" />
+    <Compile Include="Abstract\ISellerDal.cs" />
+    <Compile Include="Abstract\IUnitTypeDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Abstract\IUserRoleDal.cs" />
+    <Compile Include="Abstract\IUserTypeDal.cs" />
+    <Compile Include="Abstract\IvwRP_StockCount.cs" />
+    <Compile Include="Concrete\Context\BayiPuanContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAnswerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBrandDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBuyDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCampaignDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCityDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfGiftDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfGN_ReportDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfKnowledgeTestDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfLanguageDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfLanguageWordDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMyNewDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMyProductDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRelationalPersonDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRoleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSaleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfScoreDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSellerDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUnitTypeDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserRoleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserTypeDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfvwRP_StockCountDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\AnswersMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\BrandMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\BuyMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\CampaignMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\CityMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\CustomerMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\GiftMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\GN_ReportMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\KnowledgeTestMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\LanguageMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\LanguageWordMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\MyNewMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\MyProductMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ProductMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\RelationalPersonMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\RoleMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\SaleMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\ScoreMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\SellerMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\UnitTypeMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\UserMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\UserRoleMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\UserTypeMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\vwRP_StockCountMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BayiPuan.Entities\BayiPuan.Entities.csproj">
+      <Project>{AFA5E425-603A-4AD6-9824-073245CCFA31}</Project>
+      <Name>BayiPuan.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

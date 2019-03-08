@@ -1,0 +1,43 @@
+﻿
+@using System.Linq;
+@using BayiPuan.MvcWebUi.GenericVM
+@model TemplateItemModel
+@{
+    var col = Model.CurrentColumn;
+    var prop = col.Property;
+    var modelData = Model.Mode == RenderMode.Create ? string.Empty : Model.Model.Data[prop.Name];
+
+    var list = new List<SelectListItem>();
+
+
+    var sval = (int)Model.Model.Data[prop.Name];
+
+    list.AddRange(col.ManualLookup.Select(i => new SelectListItem { Selected = i.Id.Equals(sval), Text = i.Text, Value = i.Id.ToString() }));
+    ViewData.TemplateInfo.HtmlFieldPrefix = "";
+}
+
+@if (Model.Mode == RenderMode.Readonly)
+{
+    <span>@modelData</span>
+}
+else if (Model.Mode == RenderMode.Edit && col.IsReadonly == true)
+{
+    <input type="text" id="@prop.Name" placeholder="@col.Display.Name" class="w3-input" name="@prop.Name" value="@modelData"
+           @Html.Raw(col.Required ? "data-rule-required='true' data-val='true' aria-required='true' data-trigger='hover' data-content='Lütfen " + @prop.Name + " giriniz.' data-original-title='" + @prop.Name + "'  data-val-required='" + @col.Display.Name + " Alanı Zorunlu!' " : "" + "readonly") />
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else if (col.Required)
+{
+    @Html.DropDownList(prop.Name, list, "-Seçiniz-", new Dictionary<string, object> { { "class", "w3-input" },
+{ "required", "required" }, { "data-val", "true" }, { "placeholder", @col.Display.Name }, {"data-trigger","hover" },
+{ "data-content","Lütfen "+@col.Display.Name  +" giriniz." }, {"data-original-title", col.Display.Name },
+{ "data-val-required", @col.Display.Name + " Alanı Zorunlu!" } });
+    <span class="col-sm-3 control-label text-danger" data-valmsg-for="@prop.Name" data-valmsg-replace="true"></span>
+}
+else
+{
+    @Html.DropDownList(prop.Name, list, "-Seçiniz-", new Dictionary<string, object> {
+{ "class" ,"w3-input" },{"data-trigger","hover" },
+{ "data-content","Lütfen "+@col.Display.Name  +" giriniz." }, {"data-original-title", col.Display.Name }
+});
+}

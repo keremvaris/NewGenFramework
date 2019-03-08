@@ -1,0 +1,115 @@
+﻿@using BayiPuan.MvcWebUi.HtmlHelpers
+@model BayiPuan.Entities.Concrete.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bayi Puan | Bayi ve Çalışan Motivasyon ve Ödüllendirme Yazılımı</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/Content/w3.css" rel="stylesheet" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+
+    <link href="~/Content/fontawesome.min.css" rel="stylesheet" />
+
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+</head>
+<body class="w3-light-grey">
+
+
+    <div class="w3-container w3-padding-16">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <img src="~/images/Login.png" width="211" height="113" />
+                    <h4>@Word("General.Login")</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.MyEditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Kullanıcı Adı" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            @Html.MyEditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Parola", type = "password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            @Html.ActionLink("Yeni Kullanıcı Kaydı", "NewUser", "Account", null, new { @class = "btn btn-default btn-block" })
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" value="Giriş" class="btn btn-success btn-block" onclick="document.getElementById('id01').style.display='block'" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    @if (TempData["mesaj"] != null)
+    {
+        <!-- set up the modal to start hidden and fade in and out -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- dialog body -->
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="w3-center">@Html.Raw(TempData["mesaj"])</div>
+                    </div>
+                    <!-- dialog buttons -->
+                    @*<div class="modal-footer"><button type="button" class="btn btn-primary">OK</button></div>*@
+                </div>
+            </div>
+        </div>
+
+        <!-- sometime later, probably inside your on load event callback -->
+        <script>
+            $("#myModal").on("show", function () {    // wire up the OK button to dismiss the modal when shown
+                $("#myModal a.btn").on("click", function (e) {
+                    console.log("button pressed");   // just as an example...
+                    $("#myModal").modal('hide');     // dismiss the dialog
+                });
+            });
+            $("#myModal").on("hide", function () {    // remove the event listeners when the dialog is dismissed
+                $("#myModal a.btn").off("click");
+            });
+
+            $("#myModal").on("hidden", function () {  // remove the actual elements from the DOM when fully hidden
+                $("#myModal").remove();
+            });
+
+            $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
+                "backdrop": "static",
+                "keyboard": true,
+                "show": true                     // ensure the modal is shown immediately
+            });
+        </script>
+    }
+
+</body>
+</html>

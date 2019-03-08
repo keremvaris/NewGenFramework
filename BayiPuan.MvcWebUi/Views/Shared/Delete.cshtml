@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = @Model.Meta.Caption.DisplayName + " Kayıt Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using BayiPuan.MvcWebUi.GenericVM
+@model GenericVM
+<style>
+    .w3-card-4 {
+        background-color: white;
+    }
+</style>
+<div class="w3-container w3-card-4 w3-text-blue w3-margin ">
+    <div class="text-left">
+        @using (@Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="form-horizontal">
+                <div class="w3-container w3-deep-orange w3-center">
+                    <h6>
+                        <i class="fa fa-pencil"></i> @Model.Meta.Caption.DisplayName Kayıt Silme
+                    </h6>
+                </div>
+                @foreach (var column in Model.Meta.Columns)
+                {
+                    var displayAttr = column.Display;
+                    var col = column.Property;
+                    if (displayAttr == null)
+                    {
+                        <input type="hidden" name="@col.Name" value="@Model.Data[col.Name]" />
+                        continue;
+                    }
+                    <div class="form-group">
+                        <div class="w3-row w3-section">
+                            <div class="w3-col" style="width:150px">@displayAttr.Name</div>
+                            <div class="w3-rest">
+                                @{
+                                    var tim = new TemplateItemModel { Model = Model, CurrentColumn = column, Mode = RenderMode.Readonly };
+                                    var templateName = column.Template ?? column.InnerType.Name;
+                                }
+                                @Html.EditorFor(m => tim, templateName, new { @class = "form-control", @disabled = "disabled", @readonly = "readonly" })
+
+                                <span class="help-block">
+                                    @Html.Raw(displayAttr.Description)
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                                    }
+                <div id="id01" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                        <header class="w3-container w3-red"> 
+                            <span onclick="document.getElementById('id01').style.display='none'" 
+                                  class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+                            <h2>Kayıt Silinecek</h2>
+                        </header>  
+                        <p>Kaydı Silmek İstediğinize Emin misiniz?.</p>
+                        <div class="w3-container w3-light-grey w3-padding">
+                            @*<button class="w3-button w3-right w3-white w3-border" 
+                                    onclick="document.getElementById('id01').style.display='none'">Close</button>*@
+                            
+                            <button type="button" class="w3-button w3-right w3-white w3-border" onclick="location.href='@Url.Action(Model.Meta.Caption.DisplayName+"Index",Model.Meta.ControllerName)'"><i class="fa fa-window-close-o m-icon-white"></i> Kapat</button>
+                            <button type="submit" id="deleteButton" name="deleteButton" class="w3-button w3-right w3-red w3-border" data-dismiss="w3-modal"
+                                    onclick="$('form').submit()">
+                                <i class="fa fa-trash m-icon-white"></i> Sil
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                                    }
+
+        <div>
+
+            <div class="form-group">
+                <div class="w3-half w3-half w3-row-padding">
+                    <button class="w3-button w3-block w3-section w3-red w3-ripple w3-padding" data-toggle="modal" data-target="#confirm-close-modal" onclick="document.getElementById('id01').style.display='block'" data-backdrop="modal-backdrop fade in">
+                        <i class="fa fa-trash m-icon-white"></i> Sil
+                    </button>
+                </div>
+                <div class="w3-half w3-half w3-row-padding">
+                    <button type="button" class=" w3-button w3-block w3-section w3-green w3-ripple w3-padding" value="İptal" onclick="location.href='@Request.UrlReferrer.ToString()'"><i class="fa fa-window-close-o m-icon-white"></i> İptal</button>
+                </div>
+               
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section scriptsTop{
+    
+}
+@section head{
+    
+}
+@section scripts{
+  
+}

@@ -1,0 +1,171 @@
+﻿@using System.Data
+@using BayiPuan.DataAccess.Concrete.Context
+@model IGrid<Sale>
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+<style>
+    .table > caption + thead > tr:first-child > td, .table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > td, .table > thead:first-child > tr:first-child > th {
+        border-top: 0;
+        background: #8bc34a;
+    }
+
+    .actions {
+        margin-left: 5px;
+    }
+
+    .w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child {
+        padding-left: 5px;
+        width: 100px;
+    }
+
+    /** {
+        box-sizing: border-box;
+    }*/
+
+    .aw-zoom {
+        /*padding: 50px;*/
+        padding-left: 30px;
+        padding-top: 5px;
+        transition: transform .2s;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+    }
+
+    .aw-zoom:hover {
+        -ms-transform: scale(3.2); /* IE 9 */
+        -webkit-transform: scale(3.2); /* Safari 3-8 */
+        transform: scale(3.2); 
+    }
+
+    .Approved {
+        background-color: yellowgreen;
+        color: white;
+    }
+
+    .NotApproved {
+        background-color:orangered;
+        color: white;
+    }
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: darkorange;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+
+<div class="tab">
+    <button id="defaultOpen" class="tablinks active" onclick="openCity(event, 'PuanKazan')">Puan Kazan</button>
+    <button class="tablinks" onclick="openCity(event, 'SatilabilecekUrunler')">Satılabilecek Ürünler</button>
+</div>
+
+<div id="PuanKazan" class="tabcontent">
+    <div class="w3-container w3-card-4 w3-text-blue w3-margin " style="background: white;">
+        <div class="w3-container w3-blue w3-center">
+            <div align="left" style="float: left;margin-top: 7px;">
+            </div>
+            <div align="center">
+                <h4>Puan Kazan(@ViewBag.totalRows)</h4>
+            </div>
+            <div align="right" style="float: right;margin-top: -32px;">
+                <a href="@(Url.Action("Create"))" title="Ekle" class="fa fa-plus btn btn-primary btn-sm"> </a>
+                <a href="@(Url.Action("SaleIndex"))" title="Tazele" class="fas fa-sync-alt btn btn-info btn-sm"> </a>
+
+            </div>
+        </div>
+        <div class="w3-responsive">
+            @(new HtmlGrid<Sale>(Html, grid: Model)
+                  .RowCss(model => model.IsApproved == true  ? "Approved" : model.NotApproved == true? "NotApproved" : ""))
+        </div>
+    </div>
+</div>
+
+<div id="SatilabilecekUrunler" class="tabcontent">
+  @{
+      var table = new DataTable();
+      var dt = @"select ProductName [Ürün Adı],ProductCode [Ürün Kodu],ProductShortCode 
+[Ürün Kısa Kodu],StockAmount 
+[Stok Miktarı],RemainingStockAmount [Kalan Stok] 
+from Products";
+      using (var dbx = new BayiPuanContext())
+      {
+          var cmd = dbx.Database.Connection.CreateCommand();
+          var sql = dt;
+          cmd.CommandText = sql;
+          cmd.Connection.Open();
+          table.Load(cmd.ExecuteReader());
+      }
+      <div class="w3-container">
+          <table class="w3-table-all">
+              <thead>
+              <tr class="w3-green">
+                  @foreach (DataColumn col in table.Columns)
+                  {
+                      <th>@col.ColumnName</th>
+                  }
+              </tr>
+              </thead>
+              <tbody>
+              @foreach (DataRow row in table.Rows)
+              {
+                  <tr>
+                      @foreach (DataColumn col in table.Columns)
+                      {
+                          <td>@row[col.ColumnName]</td>
+                      }
+                  </tr>
+              }
+              </tbody>
+          </table>
+      </div>
+  }
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+// Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>

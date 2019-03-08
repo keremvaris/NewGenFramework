@@ -1,0 +1,248 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+@model List<IGrouping<int, Gift>>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* Style the tab */
+    /*.tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+        /* Style the buttons inside the tab 
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+            /* Change background color of buttons on hover 
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class 
+            .tab button.active {
+                background-color: darkorange;
+            }
+
+    /* Style the tab content 
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }*/
+    .city {
+        display: none
+    }
+</style>
+<div class="w3-row">
+    <div class="w3-container w3-hover-shadow w3-quarter">
+        @using (Html.BeginForm("Index", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+        {
+            <div class="w3-padding">
+                @{
+                    var brands = Tools.Select<Brand>("SELECT * FROM Brands");
+                }
+                <div class="w3-card-4 w3-center  w3-gray">
+                    <h3></h3>
+                    <div class="w3-container  w3-center">
+                        <h3>Markalar</h3>
+                        @*<div class="w3-section">*@
+                        <table class="w3-table w3-left">
+                            <tr>
+                                <td class="w3-left"><a href="/BuyUser/Index/"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> Tüm Markalar</a></td>
+                            </tr>
+                            @foreach (var brand in brands)
+                            {
+                                <tr>
+                                    <td class="w3-left"><a href="/BuyUser/Index/@brand.BrandId"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> @brand.BrandName</a></td>
+                                    <td class="w3-right"><a href="/BuyUser/Index/@brand.BrandId"><img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(brand.BrandImage))" alt="@brand.BrandName" width="50" height="25"> </a></td>
+                                </tr>
+                            }
+                        </table>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+
+        }
+        @using (Html.BeginForm("CategoryIndex", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+        {
+            <div class="w3-padding">
+                @{
+                    var categories = Tools.Select<Category>("SELECT * FROM Categories");
+                }
+                <div class="w3-card-4 w3-center  w3-gray">
+                    <h3></h3>
+                    <div class="w3-container  w3-center">
+                        <h3>Kategoriler</h3>
+                        <table class="w3-table w3-left">
+                            <tr>
+                                <td class="w3-left"><a href="/BuyUser/Index/"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> Tüm Kategoriler</a></td>
+                            </tr>
+                            @foreach (var category in categories)
+                            {
+                                <tr>
+                                    <td class="w3-left"><a href="/BuyUser/CategoryIndex/@category.CategoryId"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> @category.CategoryName</a></td>
+                                </tr>
+
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="w3-container w3-threequarter ">
+        <div class="w3-container ">
+            <div class="w3-row-padding">
+               @{var idc = 0;} 
+                @foreach (var itemKeys in Model)
+                {
+                    foreach (var item in itemKeys)
+                    {
+                        idc = item.GiftId;
+                        <div class="w3-third w3-hover-shadow">
+                            <div class="w3-card-4 w3-center  w3-dark-grey">
+                                <h3>@item.Description</h3>
+                                <div class="w3-container  w3-center">
+                                    <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Brand.BrandImage))" alt="@item.Description" width="145" height="53">
+                                    <h3>@item.GiftPoint Puan</h3>
+                                    <div class="w3-section">
+                                        @using (Html.BeginForm("BuyGift", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+                                        {
+                                            @Html.Hidden("id", item.GiftId)
+                                            @Html.Hidden("id", "id" + item.GiftId)
+                                            @*<button type="submit" class="w3-button w3-green w3-half w3-left">Satın Al</button>*@
+
+                                            //x
+                                            <div id="@item.GiftId" class="w3-modal">
+                                                <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                                                    <header class="w3-container w3-green">
+                                                        <span onclick="document.getElementById('@item.GiftId').style.display='none'"
+                                                              class="w3-button w3-red w3-xlarge w3-display-topright">&times;</span>
+                                                        <h2>Onaylıyor musunuz?</h2>
+                                                    </header>
+                                                    <p>Bu Hediye Almak İstediğinize Emin misiniz?.</p>
+                                                    <div class="w3-container w3-light-grey w3-padding">
+                                                        <span>|</span>
+                                                        <div class="w3-display-container w3-text-dark-gray w3-center">
+                                                            <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Brand.BrandImage))" alt="Lights" width="145" height="53">
+                                                            <div class="w3-xlarge w3-display-topleft w3-padding">@item.Description</div>
+                                                            <div class="w3-xlarge w3-display-topright w3-padding">@{ @item.GiftPoint } Puan</div>
+                                                        </div>
+
+                                                        <button type="button" class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('@item.GiftId').style.display='none'"><i class="fa fa-window-close-o m-icon-white"></i> Vazgeç</button>
+                                                        <button type="submit" id="buyButton" name="buyButton" class="w3-button w3-right w3-green w3-border" data-dismiss="w3-modal"
+                                                                onclick="$('form').submit()">
+                                                            <i class="fa fa-check m-icon-white"></i> Şimdi BaPuLa :)
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            //x
+                                        }
+                                        <button class="w3-button w3-green w3-half w3-left" data-toggle="modal" data-target="#confirm-close-modal" onclick="document.getElementById('@item.GiftId').style.display='block'" data-backdrop="modal-backdrop fade in">
+                                            <i class="fa fa-check m-icon-white"></i> Şimdi BaPuLa :)
+                                        </button>
+                                        <button id="detaybutton" name="detaybutton" data-toggle="detaymodal" onclick="document.getElementById('id@{@item.GiftId}').style.display = 'block'" class="w3-button  w3-half w3-red w3-right" data-backdrop="modal-backdrop fade in">Detaylar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="id@{@item.GiftId}" name="detaymodal@{@item.GiftId}" class="w3-modal ">
+                            <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('id@{@item.GiftId}').style.display = 'none'" class="w3-button w3-display-topright">&times;</span>
+                                    <span>|</span>
+                                    <div class="w3-display-container w3-text-dark-gray w3-center">
+                                        <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Brand.BrandImage))" alt="Lights" width="145" height="53">
+                                        <div class="w3-xlarge w3-display-topleft w3-padding">@item.Description</div>
+                                        <div class="w3-xlarge w3-display-topright w3-padding">@item.GiftPoint Puan</div>
+                                    </div>
+                                    <div class="w3-row">
+                                        <div class="w3-bar w3-white">
+                                            <button id="defButton@{@item.GiftId}" style="display: block;" class="tablink w3-bar-item w3-button w3-light-grey" onclick="openCity(event, 'Kosullar@{@item.GiftId}')">Kullanım Koşulları</button>
+                                            <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'Detaylar@{@item.GiftId}')">Detaylı Açıklama</button>
+                                        </div>
+                                        <div id="Kosullar@{@item.GiftId}" class="w3-container city">
+                                            <table class="w3-table w3-striped w3-bordered">
+                                                <tr>
+                                                    <td><strong>Kullanım Şekli</strong></td>
+                                                    <td>: @item.Usage</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Kapsamı</strong></td>
+                                                    <td>: @item.Coverage</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Geçerlilik Süresi</strong></td>
+                                                    <td>: @item.ValidityPeriod</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Bölünebilir mi?</strong></td>
+                                                    <td>: @item.Indivisible</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Birleştirilebilir mi?</strong></td>
+                                                    <td>: @item.Combining</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Kullanım Şartı</strong></td>
+                                                    <td>: @item.TermOfUse</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>İptal Edilebilir mi?</strong></td>
+                                                    <td>: @item.Cancellation</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                            <div id="Detaylar@{@item.GiftId}" class="w3-container city" >
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            @Html.Raw(item.Detail)
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            function openCity(evt, cityName) {
+                                var i, x, tablinks;
+                                x = document.getElementsByClassName("city");
+                                for (i = 0; i < x.length; i++) {
+                                    x[i].style.display = "none";
+                                }
+                                tablinks = document.getElementsByClassName("tablink");
+                                for (i = 0; i < x.length; i++) {
+                                    tablinks[i].classList.remove("w3-light-grey");
+                                }
+                                document.getElementById(cityName).style.display = "block";
+                                evt.currentTarget.classList.add("w3-light-grey");
+                            }
+                        </script>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

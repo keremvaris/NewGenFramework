@@ -1,0 +1,147 @@
+﻿@using BayiPuan.MvcWebUi.GenericVM
+@model List<IGrouping<int, Gift>>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="w3-row">
+    <div class="w3-container w3-hover-shadow w3-quarter">
+        @using (Html.BeginForm("Index", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+        {
+            <div class="w3-padding">
+                @{
+                    var brands = Tools.Select<Brand>("SELECT * FROM Brands");
+                }
+                <div class="w3-card-4 w3-center  w3-gray">
+                    <h3></h3>
+                    <div class="w3-container  w3-center">
+                        <h3>Markalar</h3>
+                        @*<div class="w3-section">*@
+                        <table class="w3-table w3-left">
+                            <tr>
+                                <td class="w3-left"><a href="/BuyUser/Index/"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> Tüm Markalar</a></td>
+                            </tr>
+                            @foreach (var brand in brands)
+                            {
+                                <tr>
+                                    <td class="w3-left"><a href="/BuyUser/Index/@brand.BrandId"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> @brand.BrandName</a></td>
+                                    <td class="w3-right"><a href="/BuyUser/Index/@brand.BrandId"><img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(brand.BrandImage))" alt="@brand.BrandName" width="50" height="25"> </a></td>
+                                </tr>
+
+                            }
+                        </table>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+
+        }
+        @using (Html.BeginForm("CategoryIndex", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+        {
+            <div class="w3-padding">
+                @{
+                    var categories = Tools.Select<Category>("SELECT * FROM Categories");
+                }
+                <div class="w3-card-4 w3-center  w3-gray">
+                    <h3></h3>
+                    <div class="w3-container  w3-center">
+                        <h3>Kategoriler</h3>
+                        <table class="w3-table w3-left">
+                            <tr>
+                                <td class="w3-left"><a href="/BuyUser/Index/"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> Tüm Kategoriler</a></td>
+                            </tr>
+                            @foreach (var category in categories)
+                            {
+                                <tr>
+                                    <td class="w3-left"><a href="/BuyUser/CategoryIndex/@category.CategoryId"><i class="fa fa-arrow-circle-right" style="float: left; margin-top: 3px; margin-right: 3px; color: brown"></i> @category.CategoryName</a></td>
+                                </tr>
+
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="w3-container w3-threequarter ">
+        <div class="w3-container ">
+            <div class="w3-row-padding">
+
+                @foreach (var itemKeys in Model)
+                {
+                    foreach (var item in itemKeys)
+                    {
+
+                        <div class="w3-third w3-hover-shadow">
+                            <div class="w3-card-4 w3-center  w3-dark-grey">
+                                <h3>@item.Description</h3>
+                                <div class="w3-container  w3-center">
+                                    <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Brand.BrandImage))" alt="@item.Description" width="145" height="53">
+                                    <h3>@item.GiftPoint Puan</h3>
+                                    <div class="w3-section">
+                                        @using (Html.BeginForm("BuyGift", "BuyUser", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+                                        {
+                                            @Html.Hidden("id", item.GiftId)
+                                            <button type="submit" class="w3-button w3-green w3-half w3-left">Satın Al</button>
+                                        }
+                                        <button onclick="document.getElementById('@item.GiftId').style.display = 'block'" class="w3-button  w3-half w3-red w3-right">Detaylar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="@item.GiftId" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('@item.GiftId').style.display = 'none'" class="w3-button w3-display-topright">&times;</span>
+                                    <span>|</span>
+                                    <div class="w3-display-container w3-text-dark-gray w3-center">
+                                        <img src="@String.Format("data:image/gif;base64,{0}", Convert.ToBase64String(item.Brand.BrandImage))" alt="Lights" width="145" height="53">
+                                        <div class="w3-xlarge w3-display-topleft w3-padding">@item.Description</div>
+                                        <div class="w3-xlarge w3-display-topright w3-padding">@item.GiftPoint Puan</div>
+                                    </div>
+                                    <div class="w3-row">
+                                        <table class="w3-table w3-striped w3-bordered">
+                                            <tr>
+                                                <td><strong>Kullanım Şekli</strong></td>
+                                                <td>:@item.Usage</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kapsamı</strong></td>
+                                                <td>:@item.Coverage</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Geçerlilik Süresi</strong></td>
+                                                <td>:@item.ValidityPeriod</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Bölünebilir mi?</strong></td>
+                                                <td>:@item.Indivisible</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Birleştirilebilir mi?</strong></td>
+                                                <td>:@item.Combining</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Kullanım Şartı</strong></td>
+                                                <td>:@item.TermOfUse</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>İptal Edilebilir mi?</strong></td>
+                                                <td>:@item.Cancellation</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

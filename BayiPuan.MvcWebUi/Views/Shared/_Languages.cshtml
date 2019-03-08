@@ -1,0 +1,18 @@
+﻿<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+        <li>@Html.ActionLink("Türkçe", "ChangeCulture", "Home", new { lang = "tr-TR", returnUrl = this.Request.RawUrl }, null)</li>
+        <li>@Html.ActionLink("English", "ChangeCulture", "Home", new { lang = "en-US", returnUrl = this.Request.RawUrl }, null)</li>
+    </ul>
+</li>
+@*@model BayiPuan.MvcWebUi.GenericVM.Models.LanguageListViewModel
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@Word("General.Languages") <span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+        @foreach (var language in Model.Languages)
+        {
+            <li>@Html.ActionLink(language.Name, "ChangeCulture", "Home", new { dilId = language.Id, lang = language.Code, returnUrl = this.Request.RawUrl }, null)</li>
+        }
+    </ul>
+</li>*@

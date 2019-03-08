@@ -1,0 +1,1777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="3366" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
+    <Instance Declaration="#2=A:BayiPuan.MvcWebUi" Id="8d3a1ca6277de82f">
+      <Target Target="#3=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Index(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnException" Ordinal="7" />
+      </Target>
+      <Target Target="#5=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::UserIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="10" />
+      </Target>
+      <Target Target="#6=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="13" />
+      </Target>
+      <Target Target="#7=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Add()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="30" />
+      </Target>
+      <Target Target="#8=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::UpdateActivation(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="33" />
+      </Target>
+      <Target Target="#9=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="36" />
+      </Target>
+      <Target Target="#10=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::AnswerIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="44" />
+      </Target>
+      <Target Target="#11=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="47" />
+      </Target>
+      <Target Target="#12=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="52" />
+      </Target>
+      <Target Target="#13=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Delete(System.Int32, BayiPuan.Entities.Concrete.Answer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="57" />
+      </Target>
+      <Target Target="#14=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::BrandIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="63" />
+      </Target>
+      <Target Target="#15=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="66" />
+      </Target>
+      <Target Target="#16=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="71" />
+      </Target>
+      <Target Target="#17=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Delete(System.Int32, BayiPuan.Entities.Concrete.Brand)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="76" />
+      </Target>
+      <Target Target="#18=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::BuyIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="82" />
+      </Target>
+      <Target Target="#19=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::ApprovedBuyIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="85" />
+      </Target>
+      <Target Target="#20=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="88" />
+      </Target>
+      <Target Target="#21=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="93" />
+      </Target>
+      <Target Target="#22=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Delete(System.Int32, BayiPuan.Entities.Concrete.Buy)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="98" />
+      </Target>
+      <Target Target="#23=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyUserController::Index(System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="104" />
+      </Target>
+      <Target Target="#24=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyUserController::BuyGift(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="109" />
+      </Target>
+      <Target Target="#25=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::CampaignIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="113" />
+      </Target>
+      <Target Target="#26=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="116" />
+      </Target>
+      <Target Target="#27=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="121" />
+      </Target>
+      <Target Target="#28=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Delete(System.Int32, BayiPuan.Entities.Concrete.Campaign)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="126" />
+      </Target>
+      <Target Target="#29=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::CategoryIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="132" />
+      </Target>
+      <Target Target="#30=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="135" />
+      </Target>
+      <Target Target="#31=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="140" />
+      </Target>
+      <Target Target="#32=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Delete(System.Int32, BayiPuan.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="145" />
+      </Target>
+      <Target Target="#33=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::CityIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="151" />
+      </Target>
+      <Target Target="#34=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="154" />
+      </Target>
+      <Target Target="#35=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="159" />
+      </Target>
+      <Target Target="#36=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Delete(System.Int32, BayiPuan.Entities.Concrete.City)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="164" />
+      </Target>
+      <Target Target="#37=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::CustomerIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="170" />
+      </Target>
+      <Target Target="#38=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="173" />
+      </Target>
+      <Target Target="#39=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="178" />
+      </Target>
+      <Target Target="#40=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Delete(System.Int32, BayiPuan.Entities.Concrete.Customer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="183" />
+      </Target>
+      <Target Target="#41=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::GiftIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="189" />
+      </Target>
+      <Target Target="#42=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Create(BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="192" />
+      </Target>
+      <Target Target="#43=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="197" />
+      </Target>
+      <Target Target="#44=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Delete(System.Int32, BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="202" />
+      </Target>
+      <Target Target="#45=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::KnowledgeTestIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="208" />
+      </Target>
+      <Target Target="#46=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Question()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="211" />
+      </Target>
+      <Target Target="#47=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="216" />
+      </Target>
+      <Target Target="#48=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="221" />
+      </Target>
+      <Target Target="#49=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Delete(System.Int32, BayiPuan.Entities.Concrete.KnowledgeTest)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="226" />
+      </Target>
+      <Target Target="#50=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::MyNewIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="232" />
+      </Target>
+      <Target Target="#51=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::UserMyNewIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="235" />
+      </Target>
+      <Target Target="#52=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="240" />
+      </Target>
+      <Target Target="#53=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="245" />
+      </Target>
+      <Target Target="#54=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Delete(System.Int32, [BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.MyNewViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="250" />
+      </Target>
+      <Target Target="#55=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::MyProductIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="256" />
+      </Target>
+      <Target Target="#56=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::UserMyProductIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="259" />
+      </Target>
+      <Target Target="#57=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="264" />
+      </Target>
+      <Target Target="#58=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="269" />
+      </Target>
+      <Target Target="#59=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Delete(System.Int32, BayiPuan.Entities.Concrete.MyProduct)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="274" />
+      </Target>
+      <Target Target="#60=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::ProductIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="280" />
+      </Target>
+      <Target Target="#61=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="283" />
+      </Target>
+      <Target Target="#62=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="288" />
+      </Target>
+      <Target Target="#63=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Delete(System.Int32, BayiPuan.Entities.Concrete.Product)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="293" />
+      </Target>
+      <Target Target="#64=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::RelationalPersonIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="300" />
+      </Target>
+      <Target Target="#65=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="303" />
+      </Target>
+      <Target Target="#66=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="308" />
+      </Target>
+      <Target Target="#67=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Delete(System.Int32, BayiPuan.Entities.Concrete.RelationalPerson)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="313" />
+      </Target>
+      <Target Target="#68=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::RoleIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="320" />
+      </Target>
+      <Target Target="#69=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="323" />
+      </Target>
+      <Target Target="#70=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="328" />
+      </Target>
+      <Target Target="#71=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Delete(System.Int32, BayiPuan.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="333" />
+      </Target>
+      <Target Target="#72=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::SaleIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="339" />
+      </Target>
+      <Target Target="#73=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::ApprovedSaleIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="342" />
+      </Target>
+      <Target Target="#74=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="345" />
+      </Target>
+      <Target Target="#75=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="351" />
+      </Target>
+      <Target Target="#76=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::DeleteEdit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="356" />
+      </Target>
+      <Target Target="#77=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::ScoreIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="363" />
+      </Target>
+      <Target Target="#78=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::UserScoreIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="366" />
+      </Target>
+      <Target Target="#79=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="369" />
+      </Target>
+      <Target Target="#80=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="374" />
+      </Target>
+      <Target Target="#81=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Delete(System.Int32, BayiPuan.Entities.Concrete.Score)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="379" />
+      </Target>
+      <Target Target="#82=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::SellerIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="385" />
+      </Target>
+      <Target Target="#83=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="388" />
+      </Target>
+      <Target Target="#84=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="393" />
+      </Target>
+      <Target Target="#85=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Delete(System.Int32, BayiPuan.Entities.Concrete.Seller)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="398" />
+      </Target>
+      <Target Target="#86=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::UnitTypeIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="404" />
+      </Target>
+      <Target Target="#87=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="407" />
+      </Target>
+      <Target Target="#88=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="412" />
+      </Target>
+      <Target Target="#89=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Delete(System.Int32, BayiPuan.Entities.Concrete.UnitType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="417" />
+      </Target>
+      <Target Target="#90=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::UserIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="423" />
+      </Target>
+      <Target Target="#91=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="426" />
+      </Target>
+      <Target Target="#92=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="431" />
+      </Target>
+      <Target Target="#93=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Delete(System.Int32, BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="436" />
+      </Target>
+      <Target Target="#94=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::UserRoleIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="442" />
+      </Target>
+      <Target Target="#95=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="445" />
+      </Target>
+      <Target Target="#96=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="450" />
+      </Target>
+      <Target Target="#97=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Delete(System.Int32, [BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserRoleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="455" />
+      </Target>
+      <Target Target="#98=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::UserTypeIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="461" />
+      </Target>
+      <Target Target="#99=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Create()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="464" />
+      </Target>
+      <Target Target="#100=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Edit(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="469" />
+      </Target>
+      <Target Target="#101=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Delete(System.Int32, BayiPuan.Entities.Concrete.UserType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="474" />
+      </Target>
+      <Target Target="#102=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.SaleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="348" />
+      </Target>
+      <Target Target="#103=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::DeleteEdit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.NotApproveSaleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="359" />
+      </Target>
+      <Target Target="#104=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::#ctor(BayiPuan.Business.Abstract.IUserService, BayiPuan.Business.Abstract.IUserTypeService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Seller})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="0" />
+      </Target>
+      <Target Target="#105=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::get_PageSize()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="2" />
+      </Target>
+      <Target Target="#106=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::set_PageSize(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="4" />
+      </Target>
+      <Target Target="#107=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Edit(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="15" />
+      </Target>
+      <Target Target="#108=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::SignIn()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="17" />
+      </Target>
+      <Target Target="#109=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::SignIn(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="19" />
+      </Target>
+      <Target Target="#110=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::Login(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="21" />
+      </Target>
+      <Target Target="#111=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::SignOut()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="23" />
+      </Target>
+      <Target Target="#112=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::NewUser([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="25" />
+      </Target>
+      <Target Target="#113=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::NewUser([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserViewModel, System.String, System.String, System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="27" />
+      </Target>
+      <Target Target="#114=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::ChangePassword()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="38" />
+      </Target>
+      <Target Target="#115=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AccountController::ChangePassword(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="40" />
+      </Target>
+      <Target Target="#116=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::#ctor(BayiPuan.Business.Abstract.IAnswerService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Answer}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="41" />
+      </Target>
+      <Target Target="#117=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.AnswerViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="49" />
+      </Target>
+      <Target Target="#118=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Edit(BayiPuan.Entities.Concrete.Answer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="54" />
+      </Target>
+      <Target Target="#119=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.AnswerController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="59" />
+      </Target>
+      <Target Target="#120=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::#ctor(BayiPuan.Business.Abstract.IBrandService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Brand}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="60" />
+      </Target>
+      <Target Target="#121=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.BrandViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="68" />
+      </Target>
+      <Target Target="#122=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.BrandViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="73" />
+      </Target>
+      <Target Target="#123=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BrandController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="78" />
+      </Target>
+      <Target Target="#124=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::#ctor(BayiPuan.Business.Abstract.IBuyService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Buy}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Gift}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="79" />
+      </Target>
+      <Target Target="#125=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.BuyViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="90" />
+      </Target>
+      <Target Target="#126=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.BuyViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="95" />
+      </Target>
+      <Target Target="#127=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="100" />
+      </Target>
+      <Target Target="#128=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyUserController::#ctor(NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Gift}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Brand}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Category}, BayiPuan.Business.Abstract.IGiftService, BayiPuan.Business.Abstract.IBuyService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="101" />
+      </Target>
+      <Target Target="#129=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.BuyUserController::CategoryIndex(System.Nullable{System.Int32})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="106" />
+      </Target>
+      <Target Target="#130=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::#ctor(BayiPuan.Business.Abstract.ICampaignService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Campaign}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="110" />
+      </Target>
+      <Target Target="#131=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.CampaignViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="118" />
+      </Target>
+      <Target Target="#132=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.CampaignViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="123" />
+      </Target>
+      <Target Target="#133=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CampaignController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="128" />
+      </Target>
+      <Target Target="#134=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::#ctor(BayiPuan.Business.Abstract.ICategoryService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Category}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="129" />
+      </Target>
+      <Target Target="#135=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.CategoryViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="137" />
+      </Target>
+      <Target Target="#136=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Edit(BayiPuan.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="142" />
+      </Target>
+      <Target Target="#137=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CategoryController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="147" />
+      </Target>
+      <Target Target="#138=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController::Index()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="478" />
+      </Target>
+      <Target Target="#139=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="479" />
+      </Target>
+      <Target Target="#140=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::#ctor(BayiPuan.Business.Abstract.ICityService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.City}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="148" />
+      </Target>
+      <Target Target="#141=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.CityViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="156" />
+      </Target>
+      <Target Target="#142=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Edit(BayiPuan.Entities.Concrete.City)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="161" />
+      </Target>
+      <Target Target="#143=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CityController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="166" />
+      </Target>
+      <Target Target="#144=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::#ctor(BayiPuan.Business.Abstract.ICustomerService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Customer}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount}, BayiPuan.Business.Abstract.IUserService)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="167" />
+      </Target>
+      <Target Target="#145=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.CustomerViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="175" />
+      </Target>
+      <Target Target="#146=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Edit(BayiPuan.Entities.Concrete.Customer)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="180" />
+      </Target>
+      <Target Target="#147=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.CustomerController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="185" />
+      </Target>
+      <Target Target="#148=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::#ctor(BayiPuan.Business.Abstract.IGiftService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Gift}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="186" />
+      </Target>
+      <Target Target="#149=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.GiftViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="194" />
+      </Target>
+      <Target Target="#150=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Edit(BayiPuan.Entities.Concrete.Gift)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="199" />
+      </Target>
+      <Target Target="#151=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.GiftController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="204" />
+      </Target>
+      <Target Target="#152=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.HomeController::ChangeCulture(System.String, System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="490" />
+      </Target>
+      <Target Target="#153=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.HomeController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="491" />
+      </Target>
+      <Target Target="#154=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::#ctor(BayiPuan.Business.Abstract.IKnowledgeTestService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.KnowledgeTest}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Answer}, BayiPuan.Business.Abstract.IAnswerService, BayiPuan.Business.Abstract.IScoreService)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="205" />
+      </Target>
+      <Target Target="#155=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Question(System.Web.Mvc.FormCollection, System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="213" />
+      </Target>
+      <Target Target="#156=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.KnowledgeTestViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="218" />
+      </Target>
+      <Target Target="#157=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Edit(BayiPuan.Entities.Concrete.KnowledgeTest)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="223" />
+      </Target>
+      <Target Target="#158=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.KnowledgeTestController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="228" />
+      </Target>
+      <Target Target="#159=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MenuHomeController::Index()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="493" />
+      </Target>
+      <Target Target="#160=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MenuHomeController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="494" />
+      </Target>
+      <Target Target="#161=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::#ctor(BayiPuan.Business.Abstract.IMyNewService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.MyNew}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="229" />
+      </Target>
+      <Target Target="#162=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Detail(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="237" />
+      </Target>
+      <Target Target="#163=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.MyNewViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="242" />
+      </Target>
+      <Target Target="#164=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.MyNewViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="247" />
+      </Target>
+      <Target Target="#165=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyNewController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="252" />
+      </Target>
+      <Target Target="#166=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::#ctor(BayiPuan.Business.Abstract.IMyProductService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.MyProduct}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="253" />
+      </Target>
+      <Target Target="#167=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Detail(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="261" />
+      </Target>
+      <Target Target="#168=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.MyProductViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="266" />
+      </Target>
+      <Target Target="#169=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Edit(BayiPuan.Entities.Concrete.MyProduct)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="271" />
+      </Target>
+      <Target Target="#170=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.MyProductController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="276" />
+      </Target>
+      <Target Target="#171=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::#ctor(BayiPuan.Business.Abstract.IProductService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Product}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="277" />
+      </Target>
+      <Target Target="#172=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.ProductViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="285" />
+      </Target>
+      <Target Target="#173=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Edit(BayiPuan.Entities.Concrete.Product)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="290" />
+      </Target>
+      <Target Target="#174=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ProductController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="295" />
+      </Target>
+      <Target Target="#175=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::#ctor(BayiPuan.Business.Abstract.IRelationalPersonService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.RelationalPerson}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="296" />
+      </Target>
+      <Target Target="#176=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.RelationalPersonViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="305" />
+      </Target>
+      <Target Target="#177=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Edit(BayiPuan.Entities.Concrete.RelationalPerson)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="310" />
+      </Target>
+      <Target Target="#178=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RelationalPersonController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="315" />
+      </Target>
+      <Target Target="#179=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::#ctor(BayiPuan.Business.Abstract.IRoleService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Role}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="316" />
+      </Target>
+      <Target Target="#180=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.RoleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="325" />
+      </Target>
+      <Target Target="#181=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Edit(BayiPuan.Entities.Concrete.Role)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="330" />
+      </Target>
+      <Target Target="#182=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.RoleController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="335" />
+      </Target>
+      <Target Target="#183=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::#ctor(BayiPuan.Business.Abstract.ISaleService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Sale}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount}, BayiPuan.Business.Abstract.IUserService, BayiPuan.Business.Abstract.IProductService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Product}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User}, BayiPuan.Business.Abstract.IScoreService)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="336" />
+      </Target>
+      <Target Target="#184=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SaleController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.ApproveSaleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="353" />
+      </Target>
+      <Target Target="#185=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::#ctor(BayiPuan.Business.Abstract.IScoreService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Score}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="360" />
+      </Target>
+      <Target Target="#186=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.ScoreViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="371" />
+      </Target>
+      <Target Target="#187=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Edit(BayiPuan.Entities.Concrete.Score)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="376" />
+      </Target>
+      <Target Target="#188=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ScoreController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="381" />
+      </Target>
+      <Target Target="#189=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::#ctor(BayiPuan.Business.Abstract.ISellerService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Seller}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="382" />
+      </Target>
+      <Target Target="#190=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.SellerViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="390" />
+      </Target>
+      <Target Target="#191=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Edit(BayiPuan.Entities.Concrete.Seller)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="395" />
+      </Target>
+      <Target Target="#192=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.SellerController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="400" />
+      </Target>
+      <Target Target="#193=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::#ctor(BayiPuan.Business.Abstract.IUnitTypeService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.UnitType}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="401" />
+      </Target>
+      <Target Target="#194=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UnitTypeViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="409" />
+      </Target>
+      <Target Target="#195=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Edit(BayiPuan.Entities.Concrete.UnitType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="414" />
+      </Target>
+      <Target Target="#196=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UnitTypeController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="419" />
+      </Target>
+      <Target Target="#197=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::#ctor(BayiPuan.Business.Abstract.IUserService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="420" />
+      </Target>
+      <Target Target="#198=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="428" />
+      </Target>
+      <Target Target="#199=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Edit(BayiPuan.Entities.Concrete.User)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="433" />
+      </Target>
+      <Target Target="#200=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="438" />
+      </Target>
+      <Target Target="#201=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserHomeController::#ctor(BayiPuan.Business.Abstract.ISaleService, BayiPuan.Business.Abstract.IProductService, BayiPuan.Business.Abstract.ICustomerService, BayiPuan.Business.Abstract.IUserService, BayiPuan.Business.Abstract.IGiftService, BayiPuan.Business.Abstract.IBuyService, BayiPuan.Business.Abstract.ICampaignService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Sale}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Product}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Customer}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Gift}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Buy}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.User}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Campaign}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.Score})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="495" />
+      </Target>
+      <Target Target="#202=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserHomeController::Index(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="497" />
+      </Target>
+      <Target Target="#203=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::#ctor(BayiPuan.Business.Abstract.IUserRoleService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.UserRole}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="439" />
+      </Target>
+      <Target Target="#204=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserRoleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="447" />
+      </Target>
+      <Target Target="#205=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Edit([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserRoleViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="452" />
+      </Target>
+      <Target Target="#206=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserRoleController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="457" />
+      </Target>
+      <Target Target="#207=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::#ctor(BayiPuan.Business.Abstract.IUserTypeService, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.Concrete.UserType}, NewGenFramework.Core.DataAccess.IQueryableRepository{[BayiPuan.Entities]BayiPuan.Entities.ComplexTypes.vwRP_StockCount})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="458" />
+      </Target>
+      <Target Target="#208=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Create([BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Models.ViewModels.UserTypeViewModel)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="466" />
+      </Target>
+      <Target Target="#209=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Edit(BayiPuan.Entities.Concrete.UserType)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="471" />
+      </Target>
+      <Target Target="#210=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.UserTypeController::Delete(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="476" />
+      </Target>
+      <Target Target="#211=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController+ChartDemo::get_Count()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="481" />
+      </Target>
+      <Target Target="#212=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController+ChartDemo::set_Count(System.Double)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="483" />
+      </Target>
+      <Target Target="#213=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController+ChartDemo::get_UserName()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="485" />
+      </Target>
+      <Target Target="#214=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController+ChartDemo::set_UserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="487" />
+      </Target>
+      <Target Target="#215=M:[BayiPuan.MvcWebUi]BayiPuan.MvcWebUi.Controllers.ChartDemoController+ChartDemo::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="488" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#216=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.LogAspects.LogAspect">
+    <Instance Declaration="#2" Id="8d3a1ca6910884cf">
+      <Target Target="#3">
+        <JoinPoint Advising="#216" Description="#217=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="5" />
+      </Target>
+      <Target Target="#5">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="8" />
+      </Target>
+      <Target Target="#6">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="11" />
+      </Target>
+      <Target Target="#7">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="28" />
+      </Target>
+      <Target Target="#8">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="31" />
+      </Target>
+      <Target Target="#9">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="34" />
+      </Target>
+      <Target Target="#10">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="42" />
+      </Target>
+      <Target Target="#11">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="45" />
+      </Target>
+      <Target Target="#12">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="50" />
+      </Target>
+      <Target Target="#13">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="55" />
+      </Target>
+      <Target Target="#14">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="61" />
+      </Target>
+      <Target Target="#15">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="64" />
+      </Target>
+      <Target Target="#16">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="69" />
+      </Target>
+      <Target Target="#17">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="74" />
+      </Target>
+      <Target Target="#18">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="80" />
+      </Target>
+      <Target Target="#19">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="83" />
+      </Target>
+      <Target Target="#20">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="86" />
+      </Target>
+      <Target Target="#21">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="91" />
+      </Target>
+      <Target Target="#22">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="96" />
+      </Target>
+      <Target Target="#23">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="102" />
+      </Target>
+      <Target Target="#24">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="107" />
+      </Target>
+      <Target Target="#25">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="111" />
+      </Target>
+      <Target Target="#26">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="114" />
+      </Target>
+      <Target Target="#27">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="119" />
+      </Target>
+      <Target Target="#28">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="124" />
+      </Target>
+      <Target Target="#29">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="130" />
+      </Target>
+      <Target Target="#30">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="133" />
+      </Target>
+      <Target Target="#31">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="138" />
+      </Target>
+      <Target Target="#32">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="143" />
+      </Target>
+      <Target Target="#33">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="149" />
+      </Target>
+      <Target Target="#34">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="152" />
+      </Target>
+      <Target Target="#35">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="157" />
+      </Target>
+      <Target Target="#36">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="162" />
+      </Target>
+      <Target Target="#37">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="168" />
+      </Target>
+      <Target Target="#38">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="171" />
+      </Target>
+      <Target Target="#39">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="176" />
+      </Target>
+      <Target Target="#40">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="181" />
+      </Target>
+      <Target Target="#41">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="187" />
+      </Target>
+      <Target Target="#42">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="190" />
+      </Target>
+      <Target Target="#43">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="195" />
+      </Target>
+      <Target Target="#44">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="200" />
+      </Target>
+      <Target Target="#45">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="206" />
+      </Target>
+      <Target Target="#46">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="209" />
+      </Target>
+      <Target Target="#47">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="214" />
+      </Target>
+      <Target Target="#48">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="219" />
+      </Target>
+      <Target Target="#49">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="224" />
+      </Target>
+      <Target Target="#50">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="230" />
+      </Target>
+      <Target Target="#51">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="233" />
+      </Target>
+      <Target Target="#52">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="238" />
+      </Target>
+      <Target Target="#53">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="243" />
+      </Target>
+      <Target Target="#54">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="248" />
+      </Target>
+      <Target Target="#55">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="254" />
+      </Target>
+      <Target Target="#56">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="257" />
+      </Target>
+      <Target Target="#57">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="262" />
+      </Target>
+      <Target Target="#58">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="267" />
+      </Target>
+      <Target Target="#59">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="272" />
+      </Target>
+      <Target Target="#60">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="278" />
+      </Target>
+      <Target Target="#61">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="281" />
+      </Target>
+      <Target Target="#62">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="286" />
+      </Target>
+      <Target Target="#63">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="291" />
+      </Target>
+      <Target Target="#64">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="299" />
+      </Target>
+      <Target Target="#65">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="301" />
+      </Target>
+      <Target Target="#66">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="306" />
+      </Target>
+      <Target Target="#67">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="311" />
+      </Target>
+      <Target Target="#68">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="319" />
+      </Target>
+      <Target Target="#69">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="321" />
+      </Target>
+      <Target Target="#70">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="326" />
+      </Target>
+      <Target Target="#71">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="331" />
+      </Target>
+      <Target Target="#72">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="337" />
+      </Target>
+      <Target Target="#73">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="340" />
+      </Target>
+      <Target Target="#74">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="343" />
+      </Target>
+      <Target Target="#75">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="349" />
+      </Target>
+      <Target Target="#76">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="354" />
+      </Target>
+      <Target Target="#77">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="361" />
+      </Target>
+      <Target Target="#78">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="364" />
+      </Target>
+      <Target Target="#79">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="367" />
+      </Target>
+      <Target Target="#80">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="372" />
+      </Target>
+      <Target Target="#81">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="377" />
+      </Target>
+      <Target Target="#82">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="383" />
+      </Target>
+      <Target Target="#83">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="386" />
+      </Target>
+      <Target Target="#84">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="391" />
+      </Target>
+      <Target Target="#85">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="396" />
+      </Target>
+      <Target Target="#86">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="402" />
+      </Target>
+      <Target Target="#87">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="405" />
+      </Target>
+      <Target Target="#88">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="410" />
+      </Target>
+      <Target Target="#89">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="415" />
+      </Target>
+      <Target Target="#90">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="421" />
+      </Target>
+      <Target Target="#91">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="424" />
+      </Target>
+      <Target Target="#92">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="429" />
+      </Target>
+      <Target Target="#93">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="434" />
+      </Target>
+      <Target Target="#94">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="440" />
+      </Target>
+      <Target Target="#95">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="443" />
+      </Target>
+      <Target Target="#96">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="448" />
+      </Target>
+      <Target Target="#97">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="453" />
+      </Target>
+      <Target Target="#98">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="459" />
+      </Target>
+      <Target Target="#99">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="462" />
+      </Target>
+      <Target Target="#100">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="467" />
+      </Target>
+      <Target Target="#101">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="472" />
+      </Target>
+      <Target Target="#102">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="346" />
+      </Target>
+      <Target Target="#103">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="357" />
+      </Target>
+      <Target Target="#105">
+        <JoinPoint Advising="#216" Description="#217" />
+      </Target>
+      <Target Target="#106">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="3" />
+      </Target>
+      <Target Target="#107">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="14" />
+      </Target>
+      <Target Target="#108">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="16" />
+      </Target>
+      <Target Target="#109">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="18" />
+      </Target>
+      <Target Target="#110">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="20" />
+      </Target>
+      <Target Target="#111">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="22" />
+      </Target>
+      <Target Target="#112">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="24" />
+      </Target>
+      <Target Target="#113">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="26" />
+      </Target>
+      <Target Target="#114">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="37" />
+      </Target>
+      <Target Target="#115">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="39" />
+      </Target>
+      <Target Target="#117">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="48" />
+      </Target>
+      <Target Target="#118">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="53" />
+      </Target>
+      <Target Target="#119">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="58" />
+      </Target>
+      <Target Target="#121">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="67" />
+      </Target>
+      <Target Target="#122">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="72" />
+      </Target>
+      <Target Target="#123">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="77" />
+      </Target>
+      <Target Target="#125">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="89" />
+      </Target>
+      <Target Target="#126">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="94" />
+      </Target>
+      <Target Target="#127">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="99" />
+      </Target>
+      <Target Target="#129">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="105" />
+      </Target>
+      <Target Target="#131">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="117" />
+      </Target>
+      <Target Target="#132">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="122" />
+      </Target>
+      <Target Target="#133">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="127" />
+      </Target>
+      <Target Target="#135">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="136" />
+      </Target>
+      <Target Target="#136">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="141" />
+      </Target>
+      <Target Target="#137">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="146" />
+      </Target>
+      <Target Target="#138">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="477" />
+      </Target>
+      <Target Target="#141">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="155" />
+      </Target>
+      <Target Target="#142">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="160" />
+      </Target>
+      <Target Target="#143">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="165" />
+      </Target>
+      <Target Target="#145">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="174" />
+      </Target>
+      <Target Target="#146">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="179" />
+      </Target>
+      <Target Target="#147">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="184" />
+      </Target>
+      <Target Target="#149">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="193" />
+      </Target>
+      <Target Target="#150">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="198" />
+      </Target>
+      <Target Target="#151">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="203" />
+      </Target>
+      <Target Target="#152">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="489" />
+      </Target>
+      <Target Target="#155">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="212" />
+      </Target>
+      <Target Target="#156">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="217" />
+      </Target>
+      <Target Target="#157">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="222" />
+      </Target>
+      <Target Target="#158">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="227" />
+      </Target>
+      <Target Target="#159">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="492" />
+      </Target>
+      <Target Target="#162">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="236" />
+      </Target>
+      <Target Target="#163">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="241" />
+      </Target>
+      <Target Target="#164">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="246" />
+      </Target>
+      <Target Target="#165">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="251" />
+      </Target>
+      <Target Target="#167">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="260" />
+      </Target>
+      <Target Target="#168">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="265" />
+      </Target>
+      <Target Target="#169">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="270" />
+      </Target>
+      <Target Target="#170">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="275" />
+      </Target>
+      <Target Target="#172">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="284" />
+      </Target>
+      <Target Target="#173">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="289" />
+      </Target>
+      <Target Target="#174">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="294" />
+      </Target>
+      <Target Target="#176">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="304" />
+      </Target>
+      <Target Target="#177">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="309" />
+      </Target>
+      <Target Target="#178">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="314" />
+      </Target>
+      <Target Target="#180">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="324" />
+      </Target>
+      <Target Target="#181">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="329" />
+      </Target>
+      <Target Target="#182">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="334" />
+      </Target>
+      <Target Target="#184">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="352" />
+      </Target>
+      <Target Target="#186">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="370" />
+      </Target>
+      <Target Target="#187">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="375" />
+      </Target>
+      <Target Target="#188">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="380" />
+      </Target>
+      <Target Target="#190">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="389" />
+      </Target>
+      <Target Target="#191">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="394" />
+      </Target>
+      <Target Target="#192">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="399" />
+      </Target>
+      <Target Target="#194">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="408" />
+      </Target>
+      <Target Target="#195">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="413" />
+      </Target>
+      <Target Target="#196">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="418" />
+      </Target>
+      <Target Target="#198">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="427" />
+      </Target>
+      <Target Target="#199">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="432" />
+      </Target>
+      <Target Target="#200">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="437" />
+      </Target>
+      <Target Target="#202">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="496" />
+      </Target>
+      <Target Target="#204">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="446" />
+      </Target>
+      <Target Target="#205">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="451" />
+      </Target>
+      <Target Target="#206">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="456" />
+      </Target>
+      <Target Target="#208">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="465" />
+      </Target>
+      <Target Target="#209">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="470" />
+      </Target>
+      <Target Target="#210">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="475" />
+      </Target>
+      <Target Target="#211">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="480" />
+      </Target>
+      <Target Target="#212">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="482" />
+      </Target>
+      <Target Target="#213">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="484" />
+      </Target>
+      <Target Target="#214">
+        <JoinPoint Advising="#216" Description="#217" Ordinal="486" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#218=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation">
+    <Instance Declaration="#219=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.GN_ReportController::Create()" Id="8d3a1ca6e439462d">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="498" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#220=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.GN_ReportController::Edit(System.Int32)" Id="8d3a1ca66e8b0a29">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="499" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#221=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.GN_ReportController::Delete(System.Int32, BayiPuan.Entities.Concrete.GN_Report)" Id="8d3a1ca6a526ffa3">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="500" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#222=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageController::LanguageIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})" Id="8d3a1ca63141b8ae">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="501" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#222" Id="8d3a1ca6586a403b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="502" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#223=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageController::Create()" Id="8d3a1ca63ab13d54">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="503" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#224=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageController::Edit(System.Int32)" Id="8d3a1ca64683dbfc">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="504" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#225=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageController::Delete(System.Int32, BayiPuan.Entities.Concrete.Language)" Id="8d3a1ca658d8933e">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="505" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#226=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageWordController::LanguageWordIndex(System.Nullable{System.Int32}, System.Nullable{System.Int32})" Id="8d3a1ca6e535273c">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="506" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#226" Id="8d3a1ca697393011">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="507" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#227=M:[BayiPuan.MvcWebUi]BayiPuan.MVCWebUI.Controllers.LanguageWordController::Create()" Id="8d3a1ca6ec35ce58">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="508" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#3" Id="8d3a1ca6ab7901a0">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="6" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#5" Id="8d3a1ca6946e122e">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="9" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#6" Id="8d3a1ca6fbef00c6">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="12" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#7" Id="8d3a1ca63ed7c6ae">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="29" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#8" Id="8d3a1ca64fed4854">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="32" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#9" Id="8d3a1ca660cdd86a">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="35" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#10" Id="8d3a1ca6fd33df74">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="43" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#11" Id="8d3a1ca604e560f3">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="46" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#12" Id="8d3a1ca6b3c23589">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="51" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#13" Id="8d3a1ca66a0dae52">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="56" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#14" Id="8d3a1ca641fbf030">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="62" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#15" Id="8d3a1ca6cf2b984f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="65" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#16" Id="8d3a1ca63b8baa4f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="70" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#17" Id="8d3a1ca66a181781">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="75" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#18" Id="8d3a1ca66fe83fdd">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="81" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#19" Id="8d3a1ca6604cc5ca">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="84" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#20" Id="8d3a1ca6b853e0de">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="87" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#21" Id="8d3a1ca6b85772df">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="92" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#22" Id="8d3a1ca62c63a99b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="97" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#23" Id="8d3a1ca66945583f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="103" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#24" Id="8d3a1ca6fdb7b802">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="108" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#25" Id="8d3a1ca607072961">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="112" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#26" Id="8d3a1ca69fea0b4d">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="115" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#27" Id="8d3a1ca632308cd0">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="120" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#28" Id="8d3a1ca6cc314ba9">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="125" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#29" Id="8d3a1ca6657fd42d">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="131" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#30" Id="8d3a1ca6a34f5e38">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="134" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#31" Id="8d3a1ca663d6a00f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="139" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#32" Id="8d3a1ca6eeff28a9">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="144" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#33" Id="8d3a1ca670a082d6">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="150" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#34" Id="8d3a1ca6c040388d">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="153" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#35" Id="8d3a1ca67f43cda9">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="158" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#36" Id="8d3a1ca68644b091">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="163" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#37" Id="8d3a1ca670bdda37">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="169" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#38" Id="8d3a1ca6697ec517">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="172" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#39" Id="8d3a1ca6ed96f4b3">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="177" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#40" Id="8d3a1ca68c0a03f7">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="182" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#41" Id="8d3a1ca6ad8cfbf1">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="188" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#42" Id="8d3a1ca61a513ea8">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="191" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#43" Id="8d3a1ca6d4c0a92c">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="196" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#44" Id="8d3a1ca6515cc45c">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="201" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#45" Id="8d3a1ca6a2ac752b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="207" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#46" Id="8d3a1ca6efbf8aa1">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="210" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#47" Id="8d3a1ca6b47776b0">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="215" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#48" Id="8d3a1ca6ede27680">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="220" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#49" Id="8d3a1ca61bb4f3d0">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="225" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#50" Id="8d3a1ca63e0c505a">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="231" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#51" Id="8d3a1ca647aa1248">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="234" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#52" Id="8d3a1ca696059af7">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="239" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#53" Id="8d3a1ca666edd8ac">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="244" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#54" Id="8d3a1ca6e2a3f793">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="249" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#55" Id="8d3a1ca63e327bed">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="255" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#56" Id="8d3a1ca6b66ae76f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="258" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#57" Id="8d3a1ca617957f9c">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="263" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#58" Id="8d3a1ca693641e70">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="268" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#59" Id="8d3a1ca618dd57a9">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="273" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#60" Id="8d3a1ca634fd4b79">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="279" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#61" Id="8d3a1ca62f26e9aa">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="282" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#62" Id="8d3a1ca6af9e034c">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="287" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#63" Id="8d3a1ca649ec896b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="292" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#64" Id="8d3a1ca692f3dbf7">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="298" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#64" Id="8d3a1ca685459282">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="297" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#65" Id="8d3a1ca63c7aa1fb">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="302" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#66" Id="8d3a1ca6a07b5918">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="307" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#67" Id="8d3a1ca61af9c24e">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="312" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#68" Id="8d3a1ca6913ca788">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="318" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#68" Id="8d3a1ca6693d66e4">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="317" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#69" Id="8d3a1ca61015bf40">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="322" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#70" Id="8d3a1ca6fbcba571">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="327" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#71" Id="8d3a1ca6b5aafc8a">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="332" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#72" Id="8d3a1ca6c2d43575">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="338" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#73" Id="8d3a1ca6e3fea809">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="341" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#74" Id="8d3a1ca67b9c9f20">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="344" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#75" Id="8d3a1ca61729bbd4">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="350" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#76" Id="8d3a1ca6399ac08b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="355" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#77" Id="8d3a1ca6fbcf3c3b">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="362" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#78" Id="8d3a1ca69d125ed3">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="365" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#79" Id="8d3a1ca6c58adcab">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="368" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#80" Id="8d3a1ca62a9e2858">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="373" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#81" Id="8d3a1ca6e0db8373">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="378" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#82" Id="8d3a1ca6686a3604">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="384" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#83" Id="8d3a1ca6a0ecf520">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="387" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#84" Id="8d3a1ca61c558a1a">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="392" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#85" Id="8d3a1ca6579830da">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="397" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#86" Id="8d3a1ca6cce70414">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="403" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#87" Id="8d3a1ca686db6996">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="406" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#88" Id="8d3a1ca6defb51cc">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="411" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#89" Id="8d3a1ca667ce3abc">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="416" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#90" Id="8d3a1ca6b3e0b73f">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="422" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#91" Id="8d3a1ca6a697d0d4">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="425" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#92" Id="8d3a1ca6d0e7b7d8">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="430" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#93" Id="8d3a1ca651999142">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="435" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#94" Id="8d3a1ca679af7fd3">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="441" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#95" Id="8d3a1ca60a8972e4">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="444" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#96" Id="8d3a1ca6b6b713db">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="449" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#97" Id="8d3a1ca60166062d">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="454" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#98" Id="8d3a1ca69d70103e">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="460" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#99" Id="8d3a1ca6a0189d94">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="463" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#100" Id="8d3a1ca68d974ebd">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="468" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#101" Id="8d3a1ca69550e32e">
+      <Target>
+        <JoinPoint Advising="#218" Description="#217" Ordinal="473" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#228=T:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
+    <Instance Declaration="#102" Id="8d3a1ca603472b33">
+      <Target>
+        <JoinPoint Advising="#228" Description="#217" Ordinal="347" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#103" Id="8d3a1ca6b83b66b9">
+      <Target>
+        <JoinPoint Advising="#228" Description="#217" Ordinal="358" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#229=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect::OnException(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230=2" Description="#231=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#232=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.LogAspects.LogAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#233=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#234=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#235=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#236=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#237=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#238=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+  <Annotation Target="#239=M:[NewGenFramework.Core]NewGenFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#230" Description="#231" />
+</Symbols>

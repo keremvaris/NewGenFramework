@@ -1,0 +1,81 @@
+﻿@using NonFactors.Mvc.Grid;
+
+@model IGrid
+
+<div@(Html.Raw(Model.Name != null ? " id=\"" + Model.Name + "\"" : "")) class="mvc-grid">
+    <table class="table @Model.CssClasses"@Model.Attributes>
+        <thead>
+            <tr>
+                @foreach (IGridColumn column in Model.Columns)
+                {
+                    String filterableClass = column.IsFilterable == true ? "filterable" : null;
+                    String sortableClass = column.IsSortable == true ? "sortable" : null;
+
+                    <th class="@filterableClass @sortableClass @column.CssClasses"
+                        data-name="@column.Name"
+                        data-filter="@column.IsFilterable"
+                        data-filter-name="@column.FilterName"
+                        data-filter-multi="@column.IsMultiFilterable"
+                        data-filter-first-type="@(column.Filter != null && column.Filter.First != null
+                            ? column.Filter.First.Type : "")"
+                        data-filter-first-val="@(column.Filter != null && column.Filter.First != null
+                            ? column.Filter.First.Value : "")"
+                        data-filter-operator="@(column.Filter != null ? column.Filter.Operator : "")"
+                        data-filter-second-type="@(column.Filter != null && column.Filter.Second != null
+                            ? column.Filter.Second.Type : "")"
+                        data-filter-second-val="@(column.Filter != null && column.Filter.Second != null
+                            ? column.Filter.Second.Value : "")"
+                        data-sort="@column.IsSortable"
+                        data-sort-order="@column.SortOrder"
+                        data-sort-first="@column.FirstSortOrder">
+                        @if (column.IsSortable == true)
+                        {
+                            <span class="mvc-grid-header-title @column.SortOrder.ToString().ToLower()">@column.Title</span>
+                        }
+                        else
+                        {
+                            <span class="mvc-grid-header-title">@column.Title</span>
+                        }
+                        @if (column.IsFilterable == true)
+                        {
+                            String filterApplied = column.Filter != null && (column.Filter.First != null || column.Filter.Second != null) ? "applied" : "";
+                            <span class="mvc-grid-filter @filterApplied"></span>
+                        }
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Rows.Any())
+            {
+                foreach (IGridRow<Object> row in Model.Rows)
+                {
+                    <tr class="@row.CssClasses">
+                        @foreach (IGridColumn column in Model.Columns)
+                        {
+                            <td class="@column.CssClasses">@column.ValueFor(row)</td>
+                        }
+                    </tr>
+                }
+            }
+            else if (Model.EmptyText != null)
+            {
+                <tr class="mvc-grid-empty-row">
+                    <td class="mvc-grid-empty" colspan="@Model.Columns.Count()">
+                        @Model.EmptyText
+                    </td>
+                </tr>
+            }
+        </tbody>
+        @if (Model.FooterPartialViewName != null)
+        {
+            <tfoot>
+                @Html.Partial(Model.FooterPartialViewName, Model)
+            </tfoot>
+        }
+    </table>
+    @if (Model.Pager != null)
+    {
+        @Html.Partial(Model.Pager.PartialViewName, Model.Pager)
+    }
+</div>

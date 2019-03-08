@@ -1,0 +1,17 @@
+﻿@model MyProduct
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+<div class="w3-container">
+
+    <div class="w3-card-4 w3-white w3-center">
+        <h2>@Model.ProductName</h2>
+        @{
+            var base64 = Convert.ToBase64String(Model.MyProductImage);
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+            <a href="@imgSrc" target="_blank"><img src="@imgSrc" width="650" height="350" /></a>
+        }
+        <div class="w3-container w3-center w3-padding-64">
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>

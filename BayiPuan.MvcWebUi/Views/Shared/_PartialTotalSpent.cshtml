@@ -1,0 +1,22 @@
+﻿@model BayiPuan.MvcWebUi.Models.ComplexTypeModels.ViewModel
+<style>
+    .w3-left {
+        padding-left: 5px !important;
+    }
+</style>
+<div class="w3-quarter">
+    <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-gift  w3-xxxlarge"></i></div>
+        <div class="w3-right">
+            <h3>
+                @foreach (var item in Model.spentPoint)
+                {
+                    var puan = "BayiPuan:";
+                    @puan.ToString()@item.SpendPoint.ToString("N")
+                }
+            </h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Toplam Harcanan</h4>
+    </div>
+</div>

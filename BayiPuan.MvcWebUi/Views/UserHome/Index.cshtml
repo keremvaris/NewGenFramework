@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@Html.Hidden("id", Request.QueryString["id"])
+<div class="w3-row-padding w3-margin-bottom">
+
+    @{Html.RenderPartial("_PartialTotalWon");}
+    @{Html.RenderPartial("_PartialTotalSpent");}
+    @{Html.RenderPartial("_PartialRemainingScore");}
+    @{Html.RenderPartial("_PartialRanking");}
+
+</div>
+<div class="w3-card-2">
+    <style>
+        .mySlides {
+            display: none
+        }
+
+        .w3-left, .w3-right, .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0;
+        }
+
+        .fa-stack {
+            display: inline-block;
+            height: 154px;
+            line-height: 2em;
+            position: relative;
+            vertical-align: middle;
+            width: 2em;
+            right: -1em;
+            margin-top: 10px;
+        }
+
+        .w3-hover-light-gray:hover, .w3-hover-light-grey:hover, .w3-light-gray, .w3-light-grey {
+            color: darkorange !important;
+            
+        }
+
+        .fa-stack[data-count]:after {
+            position: absolute;
+            right: 40.7%;
+            top: 29.8%;
+            content: attr(data-count);
+            font-size: 18.9%;
+            padding: .6em;
+            border-radius: 999px;
+            line-height: .75em;
+            color: white;
+            background: rgba(255,0,0,.85);
+            text-align: center;
+            min-width: 2em;
+            font-weight: bold;
+        }
+    </style>
+    <div class="w3-center w3-deep-orange w3-display-container">
+        <h2><i class="fas fa-bullhorn"></i> Kampanyalar</h2>
+    </div>
+
+    @{Html.RenderPartial("_PartialCampaign");}
+    <div class="w3-center w3-green w3-display-container">
+        <h2><i class="fas fa-sort-amount-up"></i> Satış Sıralamaları</h2>
+    </div>
+    <div class="w3-card w3-white w3-padding">
+        <div class="w3-content w3-display-container">
+            @Html.Raw(ViewData["chart"])
+        </div>
+    </div>
+
+
+
+
+    <div class="w3-row">
+
+        <div class="w3-container w3-card-4  w3-quarter">
+
+            @model BayiPuan.MvcWebUi.Models.ComplexTypeModels.ViewModel
+            @{
+
+                var order = 0;
+                var userId = Convert.ToInt32(GeneralHelpers.GetUserId());
+                var models = Model.saleRankings.Where(x => x.UserId == userId);
+
+                foreach (var item in Model.saleRankings)
+                {
+                    order += item.SaleOrder;
+                    if (item.UserId == userId)
+                    {
+                        foreach (var sale in models)
+                        {
+                            if (order<=10)
+                            {
+                                <span class="fa-stack fa-5x has-badge" data-count="@order">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-award fa-stack-1x fa-inverse"></i>
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="fa-stack fa-5x " >
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fas fa-award fa-stack-1x fa-inverse"></i>
+                                </span>
+                            }
+                            
+
+                        }
+
+                    }
+
+                }
+            }
+        </div>
+        <div class="w3-container  w3-threequarter">
+            @{Html.RenderPartial("_PartialRankingList");}
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        //carousel();
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+            setTimeout(showDivs, 2000);
+        }
+    </script>
+
+</div>
