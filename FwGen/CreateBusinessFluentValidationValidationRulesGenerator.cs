@@ -5,32 +5,13 @@ using System.Text;
 
 namespace FwGen
 {
-    public class CreateBusinessFluentValidationValidationRulesGenerator
+    public class CreateBusinessFluentValidationValidationRulesGenerator:GeneratorBase
     {
-        List<Type> types = new List<Type>();
-        public void Add<T>()
-        {
-            Add(typeof(T));
-        }
+       
 
-        public void Add(Type t)
+        protected override void GenerateClassFiles(string path)
         {
-            if (!types.Contains(t))
-                types.Add(t);
-
-        }
-
-        public void Generate(string path)
-        {
-            if (!path.EndsWith("\\")) path += "\\";
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            GenerateClassFiles(path);
-        }
-
-        private void GenerateClassFiles(string path)
-        {
-            foreach (var type in types)
+            foreach (var type in Types)
             {
                 var content = GenerateClassFilesType(type);
                 if (!type.FullName.Contains("ComplexType"))

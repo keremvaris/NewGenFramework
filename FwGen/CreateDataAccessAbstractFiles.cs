@@ -5,52 +5,33 @@ using System.Text;
 
 namespace FwGen
 {
-    public class CreateDataAccessAbstractFiles
-    {
-        List<Type> types = new List<Type>();
-        public void Add<T>()
-        {
-            Add(typeof(T));
-        }
+	public class CreateDataAccessAbstractFiles : GeneratorBase
+	{
 
-        public void Add(Type t)
-        {
-            if (!types.Contains(t))
-                types.Add(t);
 
-        }
+		protected override void GenerateClassFiles(string path)
+		{
+			foreach (var type in Types)
+			{
+				var content = GenerateClassFilesType(type);
+				if (!type.FullName.Contains("ComplexType"))
+					File.WriteAllText(path + "I" + type.Name + "Dal.cs", content, System.Text.Encoding.UTF8);
+			}
+		}
 
-        public void Generate(string path)
-        {
-            if (!path.EndsWith("\\")) path += "\\";
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            GenerateClassFiles(path);
-        }
+		private string GenerateClassFilesType(Type type)
+		{
+			var projectName = Form1.frm.txtProjectName.Text;
 
-        private void GenerateClassFiles(string path)
-        {
-            foreach (var type in types)
-            {
-                var content = GenerateClassFilesType(type);
-                if (!type.FullName.Contains("ComplexType"))
-                    File.WriteAllText(path +"I"+ type.Name + "Dal.cs", content, System.Text.Encoding.UTF8);
-            }
-        }
+			return fmtClassFile
+					.Replace("[ClassName]", type.Name)
+					.Replace("[ProjectName]", projectName);
 
-        private string GenerateClassFilesType(Type type)
-        {
-            var projectName = Form1.frm.txtProjectName.Text;
-
-            return fmtClassFile
-                .Replace("[ClassName]", type.Name)
-                .Replace("[ProjectName]", projectName);
-            
-        }
+		}
 
 
 
-        private const string fmtClassFile = @"
+		private const string fmtClassFile = @"
 using NewGenFramework.Core.DataAccess;
 using [ProjectName].Entities.Concrete;
 namespace [ProjectName].DataAccess.Abstract
@@ -63,5 +44,5 @@ namespace [ProjectName].DataAccess.Abstract
         //List<[ClassName]Detail> Get[ClassName]Details();
     }
 }";
-    }
+	}
 }

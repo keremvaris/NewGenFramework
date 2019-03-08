@@ -71,6 +71,7 @@
     <Compile Include="CreateBusinessFluentValidationValidationRulesGenerator.cs" />
     <Compile Include="CreateMVCViewModel.cs" />
     <Compile Include="EntityFrameworkMappingGenerator.cs" />
+    <Compile Include="GeneratorBase.cs" />
     <Compile Include="HibernateMappingGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

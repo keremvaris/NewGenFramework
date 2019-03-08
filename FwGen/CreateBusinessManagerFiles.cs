@@ -7,32 +7,11 @@ using System.Threading;
 
 namespace FwGen
 {
-    public class CreateBusinessManagerFiles
+    public class CreateBusinessManagerFiles:GeneratorBase
     {
-        List<Type> types = new List<Type>();
-        public void Add<T>()
+        protected override void GenerateClassFiles(string path)
         {
-            Add(typeof(T));
-        }
-
-        public void Add(Type t)
-        {
-            if (!types.Contains(t))
-                types.Add(t);
-
-        }
-
-        public void Generate(string path)
-        {
-            if (!path.EndsWith("\\")) path += "\\";
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            GenerateClassFiles(path);
-        }
-
-        private void GenerateClassFiles(string path)
-        {
-            foreach (var type in types)
+            foreach (var type in Types)
             {
                 var content = GenerateClassFilesType(type);
                 if (!type.FullName.Contains("ComplexType"))
@@ -50,8 +29,6 @@ namespace FwGen
                 .Replace("[ClassToTitleCase]", type.Name.Substring(0, 1).ToLower() + type.Name.Substring(1, type.Name.Length - 1));
 
         }
-
-
 
         private const string fmtClassFile = @"
 using System.Collections.Generic;
