@@ -137,7 +137,6 @@ C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Bu
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\Ninject.dll
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\PostSharp.dll
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\System.ComponentModel.Annotations.dll
-C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\System.ComponentModel.Primitives.dll
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\System.ValueTuple.dll
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\System.Web.Helpers.dll
 C:\Users\kerem\source\repos\NewGenFramework\BayiPuan\NewGenFramework\BayiPuan.Business\bin\Debug\System.Web.Razor.dll
